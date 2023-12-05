@@ -74,44 +74,44 @@ class _ChartWidgetState extends State<ChartWidget> {
       child: Directionality(
         textDirection: TextDirection.ltr,
         child: SfCartesianChart(
-          zoomPanBehavior: widget.enableScrolling
-              ? ZoomPanBehavior(
-                  enablePanning: widget.enablePanning,
-                  zoomMode: ZoomMode.x,
-                )
-              : null,
-          primaryXAxis: DateTimeAxis(
-            // majorTickLines: MajorTickLines(
-            //   width: 0,
-            // ),
-            //Hide the guidelines of x-axis
-            majorGridLines: MajorGridLines(
-              width: 1,
-              dashArray: const [10],
-              color: Get.theme.cardColor,
-            ),
-            //Hide the axis line of x-axis
-            axisLine: const AxisLine(width: 0),
-            labelStyle: Get.textTheme.labelSmall,
-            // autoScrollingDelta: 100,
-            desiredIntervals: 31,
-            autoScrollingMode: AutoScrollingMode.start,
-            labelIntersectAction: AxisLabelIntersectAction.rotate90,
-            plotBands: widget.verticalPlotBands,
-          ),
-          primaryYAxis: NumericAxis(
-            isVisible: true,
-            //Hide the grid lines of y-axis
-            majorGridLines: MajorGridLines(
-              width: 1,
-              dashArray: const [10],
-              color: Get.theme.cardColor,
-            ),
-            //Hide the axis line of y-axis
-            axisLine: const AxisLine(width: 0),
-            plotBands: widget.horizontalPlotBands,
-          ),
-          plotAreaBorderWidth: 0,
+          // zoomPanBehavior: widget.enableScrolling
+          //     ? ZoomPanBehavior(
+          //         enablePanning: widget.enablePanning,
+          //         zoomMode: ZoomMode.x,
+          //       )
+          //     : null,
+          // primaryXAxis: DateTimeAxis(
+          //   // majorTickLines: MajorTickLines(
+          //   //   width: 0,
+          //   // ),
+          //   //Hide the guidelines of x-axis
+          //   majorGridLines: MajorGridLines(
+          //     width: 1,
+          //     dashArray: const [10],
+          //     color: Get.theme.cardColor,
+          //   ),
+          //   //Hide the axis line of x-axis
+          //   axisLine: const AxisLine(width: 0),
+          //   labelStyle: Get.textTheme.labelSmall,
+          //   // autoScrollingDelta: 100,
+          //   desiredIntervals: 31,
+          //   autoScrollingMode: AutoScrollingMode.start,
+          //   labelIntersectAction: AxisLabelIntersectAction.rotate90,
+          //   plotBands: widget.verticalPlotBands,
+          // ),
+          // primaryYAxis: NumericAxis(
+          //   isVisible: true,
+          //   //Hide the grid lines of y-axis
+          //   majorGridLines: MajorGridLines(
+          //     width: 1,
+          //     dashArray: const [10],
+          //     color: Get.theme.cardColor,
+          //   ),
+          //   //Hide the axis line of y-axis
+          //   axisLine: const AxisLine(width: 0),
+          //   plotBands: widget.horizontalPlotBands,
+          // ),
+          // plotAreaBorderWidth: 0,
           // tooltipBehavior: TooltipBehavior(
           //   enable: true,
           //   builder: (data, point, series, pointIndex, seriesIndex) =>
@@ -124,31 +124,31 @@ class _ChartWidgetState extends State<ChartWidget> {
           //   header: '',
           //   duration: 5000,
           // ),
-          enableAxisAnimation: true,
-          selectionGesture: ActivationMode.singleTap,
-          selectionType: SelectionType.point,
-          onSelectionChanged: (selectionArgs) => selectionArgs.selectedColor,
-          legend: Legend(
-            isVisible: widget.legendVisible,
-            position: LegendPosition.bottom,
-            overflowMode: LegendItemOverflowMode.wrap,
-            alignment: ChartAlignment.center,
-            itemPadding: 10,
-          ),
+          // enableAxisAnimation: true,
+          // selectionGesture: ActivationMode.singleTap,
+          // selectionType: SelectionType.point,
+          // onSelectionChanged: (selectionArgs) => selectionArgs.selectedColor,
+          // legend: Legend(
+          //   isVisible: widget.legendVisible,
+          //   position: LegendPosition.bottom,
+          //   overflowMode: LegendItemOverflowMode.wrap,
+          //   alignment: ChartAlignment.center,
+          //   itemPadding: 10,
+          // ),
           // If data is empty show "no data provided" message
-          annotations: first == null
-              ? <CartesianChartAnnotation>[
-                  const CartesianChartAnnotation(
-                    widget: EmptyChartDataWidget(),
-                    coordinateUnit: CoordinateUnit.logicalPixel,
-                    region: AnnotationRegion.plotArea,
-                    x: 150,
-                    y: 200,
-                    horizontalAlignment: ChartAlignment.center,
-                    verticalAlignment: ChartAlignment.center,
-                  )
-                ]
-              : null,
+          // annotations: first == null
+          //     ? <CartesianChartAnnotation>[
+          //         const CartesianChartAnnotation(
+          //           widget: EmptyChartDataWidget(),
+          //           coordinateUnit: CoordinateUnit.logicalPixel,
+          //           region: AnnotationRegion.plotArea,
+          //           x: 150,
+          //           y: 200,
+          //           horizontalAlignment: ChartAlignment.center,
+          //           verticalAlignment: ChartAlignment.center,
+          //         )
+          //       ]
+          //     : null,
           series: <CartesianSeries>[
             // loop on data
             for (final chartData in widget.chartsData!)
