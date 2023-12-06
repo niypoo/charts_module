@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:charts_module/enums/chartType.enum.dart';
 import 'package:charts_module/helpers/chart.helper.dart';
 import 'package:charts_module/models/chartData.model.dart';
+import 'package:charts_module/partials/emptyChartData.widget.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class ChartWidget extends StatefulWidget {
@@ -66,12 +67,6 @@ class _ChartWidgetState extends State<ChartWidget> {
       seriesNames = widget.chartsData!.map((a) {
         if (a.isNotEmpty) return a.first;
       }).toList();
-    }
-
-    for (final chartData in widget.chartsData!) {
-      for (final x in chartData) {
-        print('x ${x.toString()}');
-      }
     }
 
     return SizedBox(
