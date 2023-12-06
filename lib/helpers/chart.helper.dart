@@ -72,50 +72,50 @@ class ChartHelper {
       // ),
 
       dataSource: chartData,
-      animationDuration: animationDuration,
+      // animationDuration: animationDuration,
 
-      // Legend
-      name: chartData.first.legendText,
-      legendIconType: chartData.first.legendIconType ?? LegendIconType.circle,
-      legendItemText: chartData.first.legendText ?? ' ',
-      isVisibleInLegend: chartData.first.legendText != null ? true : false,
+      // // Legend
+      // name: chartData.first.legendText,
+      // legendIconType: chartData.first.legendIconType ?? LegendIconType.circle,
+      // legendItemText: chartData.first.legendText ?? ' ',
+      // isVisibleInLegend: chartData.first.legendText != null ? true : false,
 
-      color: chartData.first.legendColor ?? chartData.first.color,
+      // color: chartData.first.legendColor ?? chartData.first.color,
 
       pointColorMapper: (ChartData data, _) => data.color,
       xValueMapper: (ChartData data, _) => data.date.toString(),
       yValueMapper: (ChartData data, _) => data.value,
       // dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
 
-      markerSettings: MarkerSettings(
-        isVisible: true,
-        borderWidth: 4,
-        width: 12,
-        height: 12,
-        shape: chartData.first.dataMarkerType,
-        // ignore: prefer_null_aware_operators
-        color: chartData.first.color,
-      ),
+      // markerSettings: MarkerSettings(
+      //   isVisible: true,
+      //   borderWidth: 4,
+      //   width: 12,
+      //   height: 12,
+      //   shape: chartData.first.dataMarkerType,
+      //   // ignore: prefer_null_aware_operators
+      //   color: chartData.first.color,
+      // ),
 
-      // data label setting
-      dataLabelSettings: DataLabelSettings(
-        isVisible: true,
-        // textStyle: TextStyle(fontSize: 0),
-        textStyle: Get.textTheme.labelSmall!.copyWith(
-          fontWeight: FontWeight.bold,
-          color: chartData.first.textColor,
-          // fontSize: index != null ? 0 : 11,
-        ),
-        // useSeriesColor: true,
-        showZeroValue: false,
-        labelAlignment: ChartDataLabelAlignment.auto,
-        alignment: ChartAlignment.far,
-        labelPosition: ChartDataLabelPosition.inside,
-        labelIntersectAction: LabelIntersectAction.hide,
-        showCumulativeValues: false,
-      ),
-      splineType: SplineType.monotonic,
-      onPointTap: onPointTap,
+      // // data label setting
+      // dataLabelSettings: DataLabelSettings(
+      //   isVisible: true,
+      //   // textStyle: TextStyle(fontSize: 0),
+      //   textStyle: Get.textTheme.labelSmall!.copyWith(
+      //     fontWeight: FontWeight.bold,
+      //     color: chartData.first.textColor,
+      //     // fontSize: index != null ? 0 : 11,
+      //   ),
+      //   // useSeriesColor: true,
+      //   showZeroValue: false,
+      //   labelAlignment: ChartDataLabelAlignment.auto,
+      //   alignment: ChartAlignment.far,
+      //   labelPosition: ChartDataLabelPosition.inside,
+      //   labelIntersectAction: LabelIntersectAction.hide,
+      //   showCumulativeValues: false,
+      // ),
+      // splineType: SplineType.monotonic,
+      // onPointTap: onPointTap,
     );
   }
 }
