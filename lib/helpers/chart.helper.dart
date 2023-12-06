@@ -64,6 +64,12 @@ class ChartHelper {
     Function(ChartPointDetails)? onPointTap,
   }) {
     return SplineSeries<ChartData, DateTime>(
+      //MAKE SELECTED BAR WITH CUSTOM COLOR
+      // selectionBehavior: SelectionBehavior(
+      //   enable: true,
+      //   selectedBorderWidth: 5,
+      //   unselectedBorderWidth: 0.5,
+      // ),
 
       dataSource: chartData,
       animationDuration: animationDuration,
@@ -77,10 +83,39 @@ class ChartHelper {
       color: chartData.first.legendColor ?? chartData.first.color,
 
       pointColorMapper: (ChartData data, _) => data.color,
-      xValueMapper: (ChartData data, _) => DateTime.now(),
-      yValueMapper: (ChartData data, _) => 100,
-      dataLabelMapper: (ChartData data, _) => 'Label',
+      xValueMapper: (ChartData data, _) => data.date,
+      yValueMapper: (ChartData data, _) => data.value,
+      dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
 
+      markerSettings: MarkerSettings(
+        isVisible: true,
+        borderWidth: 4,
+        width: 12,
+        height: 12,
+        shape: chartData.first.dataMarkerType,
+        // ignore: prefer_null_aware_operators
+        color: chartData.first.color,
+      ),
+
+      // data label setting
+      dataLabelSettings: DataLabelSettings(
+        isVisible: true,
+        // textStyle: TextStyle(fontSize: 0),
+        textStyle: Get.textTheme.labelSmall!.copyWith(
+          fontWeight: FontWeight.bold,
+          color: chartData.first.textColor,
+          // fontSize: index != null ? 0 : 11,
+        ),
+        // useSeriesColor: true,
+        showZeroValue: false,
+        labelAlignment: ChartDataLabelAlignment.auto,
+        alignment: ChartAlignment.far,
+        labelPosition: ChartDataLabelPosition.inside,
+        labelIntersectAction: LabelIntersectAction.hide,
+        showCumulativeValues: false,
+      ),
+      splineType: SplineType.monotonic,
+      onPointTap: onPointTap,
     );
   }
 }
