@@ -103,7 +103,7 @@ class _ChartWidgetState extends State<ChartWidget> {
           primaryYAxis: NumericAxis(
             isVisible: true,
             majorTickLines: const MajorTickLines(
-              width: 0,
+              width: 1,
             ),
             //Hide the grid lines of y-axis
             majorGridLines: const MajorGridLines(
@@ -115,7 +115,7 @@ class _ChartWidgetState extends State<ChartWidget> {
             axisLine: const AxisLine(width: 0),
             plotBands: widget.horizontalPlotBands,
           ),
-          plotAreaBorderWidth: 0,
+          plotAreaBorderWidth: 8,
           // tooltipBehavior: TooltipBehavior(
           //   enable: true,
           //   builder: (data, point, series, pointIndex, seriesIndex) =>

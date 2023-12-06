@@ -73,7 +73,7 @@ class ChartHelper {
 
       dataSource: chartData,
       animationDuration: animationDuration,
-
+      width: 10,
       // Legend
       name: chartData.first.legendText,
       legendIconType: chartData.first.legendIconType ?? LegendIconType.circle,
@@ -114,7 +114,7 @@ class ChartHelper {
         labelIntersectAction: LabelIntersectAction.hide,
         showCumulativeValues: false,
       ),
-      splineType: SplineType.monotonic,
+      splineType: SplineType.cardinal,
       onPointTap: onPointTap,
     );
   }
