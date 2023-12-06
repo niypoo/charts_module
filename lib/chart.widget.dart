@@ -150,23 +150,16 @@ class _ChartWidgetState extends State<ChartWidget> {
           //       ]
           //     : null,
           series: <CartesianSeries>[
-            // // loop on data
-            // for (final chartData in widget.chartsData!)
+            // loop on data
+            for (final chartData in widget.chartsData!)
 
-            //   // if data not empty
-            //   if (chartData.isNotEmpty)
+              // if data not empty
+              if (chartData.isNotEmpty)
 
-            //     // if spline
-            //     if (widget.chartType == ChartType.SplineRange)
-            //       _helper.splineRange(
-            //         chartData: chartData,
-            //         onPointTap: _selectBar,
-            //       )
-            //     else if (widget.chartType == ChartType.Spline)
-            //       _helper.spline(
-            //         chartData: chartData,
-            //         onPointTap: _selectBar,
-            //       )
+                _helper.spline(
+                    chartData: chartData,
+                    onPointTap: _selectBar,
+                  )
           ],
 
           onDataLabelRender: onDataLabelRender,
