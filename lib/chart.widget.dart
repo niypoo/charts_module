@@ -80,7 +80,7 @@ class _ChartWidgetState extends State<ChartWidget> {
           //         zoomMode: ZoomMode.x,
           //       )
           //     : null,
-          primaryXAxis: CategoryAxis(
+          primaryXAxis: DateTimeCategoryAxis(
             isVisible: true,
             // majorTickLines: MajorTickLines(
             //   width: 0,
