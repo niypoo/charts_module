@@ -76,7 +76,7 @@ class _ChartWidgetState extends State<ChartWidget> {
           primaryXAxis: DateTimeAxis(
             isVisible: true,
             majorTickLines: const MajorTickLines(
-              width: 0,
+              width: 3,
             ),
             //Hide the guidelines of x-axis
             majorGridLines: const MajorGridLines(

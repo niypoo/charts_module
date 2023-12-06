@@ -119,7 +119,7 @@ class ChartHelper {
       legendIconType: chartData.first.legendIconType ?? LegendIconType.circle,
       legendItemText: chartData.first.legendText ?? ' ',
       isVisibleInLegend: chartData.first.legendText != null ? true : false,
-
+      
       color: chartData.first.legendColor ?? chartData.first.color,
 
       pointColorMapper: (ChartData data, _) => data.color,
