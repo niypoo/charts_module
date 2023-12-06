@@ -1,5 +1,3 @@
-import 'dart:js_interop';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:charts_module/enums/chartType.enum.dart';
