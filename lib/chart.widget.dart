@@ -56,25 +56,18 @@ class _ChartWidgetState extends State<ChartWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final List<ChartDatax> chartData = [
-      ChartDatax(2010, 35),
-      ChartDatax(2011, 13),
-      ChartDatax(2012, 34),
-      ChartDatax(2013, 27),
-      ChartDatax(2014, 40)
-    ];
-    // // check and sure the chart data not empty
-    // if (widget.chartsData != null &&
-    //     widget.chartsData!.isNotEmpty &&
-    //     (widget.chartsData!.first.isNotEmpty)) {
-    //   // get first child from first series to make it selected as default
-    //   first = widget.chartsData!.first.first;
+    // check and sure the chart data not empty
+    if (widget.chartsData != null &&
+        widget.chartsData!.isNotEmpty &&
+        (widget.chartsData!.first.isNotEmpty)) {
+      // get first child from first series to make it selected as default
+      first = widget.chartsData!.first.first;
 
-    //   // get serial names
-    //   seriesNames = widget.chartsData!.map((a) {
-    //     if (a.isNotEmpty) return a.first;
-    //   }).toList();
-    // }
+      // get serial names
+      seriesNames = widget.chartsData!.map((a) {
+        if (a.isNotEmpty) return a.first;
+      }).toList();
+    }
 
     return SizedBox(
       height: (context.isLandscape ? context.width : context.height) * 0.4,
@@ -157,75 +150,84 @@ class _ChartWidgetState extends State<ChartWidget> {
           //       ]
           //     : null,
           series: <CartesianSeries>[
-            // Renders spline chart
-            SplineSeries<ChartDatax, int>(
+            // loop on data
+            for (final chartData in widget.chartsData!)
+
+              // if data not empty
+              if (chartData.isNotEmpty)
+         SplineSeries<ChartData, dynamic>(
                 dataSource: chartData,
-                xValueMapper: (ChartDatax data, _) => data.x,
-                yValueMapper: (ChartDatax data, _) => data.y)
+                xValueMapper: (ChartData data, _) => data.label,
+                yValueMapper: (ChartData data, _) => data.value)
+                // // if spline
+                // if (widget.chartType == ChartType.SplineRange)
+                //   _helper.splineRange(
+                //     chartData: chartData,
+                //     onPointTap: _selectBar,
+                //   )
+                // else if (widget.chartType == ChartType.Spline)
+                //   _helper.spline(
+                //     chartData: chartData,
+                //     onPointTap: _selectBar,
+                //   )
           ],
 
-          // onDataLabelRender: onDataLabelRender,
+          onDataLabelRender: onDataLabelRender,
         ),
       ),
     );
   }
 
-  // //when user tap on bar or column
-  // void _selectBar(ChartPointDetails args) {
-  //   // if user tap on same selected data reset chart
-  //   if (index == args.pointIndex && seriesIndex == args.seriesIndex) {
-  //     index = null;
-  //     seriesIndex = null;
-  //   } else {
-  //     index = args.pointIndex;
-  //     seriesIndex = args.seriesIndex;
-  //   }
-  //   setState(() {});
-  // }
+  //when user tap on bar or column
+  void _selectBar(ChartPointDetails args) {
+    // if user tap on same selected data reset chart
+    if (index == args.pointIndex && seriesIndex == args.seriesIndex) {
+      index = null;
+      seriesIndex = null;
+    } else {
+      index = args.pointIndex;
+      seriesIndex = args.seriesIndex;
+    }
+    setState(() {});
+  }
 
-  // void onDataLabelRender(DataLabelRenderArgs args) {
-  //   if (
-  //       // check if point is same
-  //       (index != null && index == args.pointIndex) &&
-  //           // check if series same
-  //           (seriesIndex != null &&
-  //               _getSeriesName(seriesIndex) ==
-  //                   (args.seriesRenderer as ChartSeries).name)) {
-  //     ChartData? candidate = _getSeriesPointData(seriesIndex, index);
+  void onDataLabelRender(DataLabelRenderArgs args) {
+    if (
+        // check if point is same
+        (index != null && index == args.pointIndex) &&
+            // check if series same
+            (seriesIndex != null &&
+                _getSeriesName(seriesIndex) ==
+                    (args.seriesRenderer as ChartSeries).name)) {
+      ChartData? candidate = _getSeriesPointData(seriesIndex, index);
 
-  //     args.textStyle = Get.theme.textTheme.labelSmall!.copyWith(
-  //       color: widget.color,
-  //       fontWeight: FontWeight.bold,
-  //     );
+      args.textStyle = Get.theme.textTheme.labelSmall!.copyWith(
+        color: widget.color,
+        fontWeight: FontWeight.bold,
+      );
 
-  //     args.color = candidate?.color ?? args.color;
-  //     args.text = '${args.text} ${candidate?.label}';
-  //   } else {
-  //     args.color = null;
-  //     args.textStyle = Get.theme.textTheme.labelSmall!.copyWith(fontSize: 0);
-  //   }
-  // }
+      args.color = candidate?.color ?? args.color;
+      args.text = '${args.text} ${candidate?.label}';
+    } else {
+      args.color = null;
+      args.textStyle = Get.theme.textTheme.labelSmall!.copyWith(fontSize: 0);
+    }
+  }
 
-  // // Method to return the series name based on tapped point's series index
-  // String? _getSeriesName(int? index) {
-  //   if (index == null || !seriesNames.asMap().containsKey(index)) return '';
-  //   return seriesNames[index]!.legendText;
-  // }
+  // Method to return the series name based on tapped point's series index
+  String? _getSeriesName(int? index) {
+    if (index == null || !seriesNames.asMap().containsKey(index)) return '';
+    return seriesNames[index]!.legendText;
+  }
 
-  // ChartData? _getSeriesPointData(int? seriesIndex, int? index) {
-  //   if (seriesIndex == null || !seriesNames.asMap().containsKey(seriesIndex)) {
-  //     return null;
-  //   }
-  //   if (index == null ||
-  //       !widget.chartsData![seriesIndex].asMap().containsKey(index))
-  //     return null;
+  ChartData? _getSeriesPointData(int? seriesIndex, int? index) {
+    if (seriesIndex == null || !seriesNames.asMap().containsKey(seriesIndex)) {
+      return null;
+    }
+    if (index == null ||
+        !widget.chartsData![seriesIndex].asMap().containsKey(index))
+      return null;
 
-  //   return widget.chartsData![seriesIndex][index];
-  // }
-}
-
-class ChartDatax {
-  ChartDatax(this.x, this.y);
-  final int x;
-  final double? y;
+    return widget.chartsData![seriesIndex][index];
+  }
 }
