@@ -83,7 +83,7 @@ class ChartHelper {
       color: chartData.first.legendColor ?? chartData.first.color,
 
       pointColorMapper: (ChartData data, _) => data.color,
-      xValueMapper: (ChartData data, _) => data.date,
+      xValueMapper: (ChartData data, _) => DateTime.now(),
       yValueMapper: (ChartData data, _) => data.value,
       dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
 
