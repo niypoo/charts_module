@@ -6,6 +6,12 @@ import 'package:charts_module/models/chartData.model.dart';
 import 'package:charts_module/partials/emptyChartData.widget.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
+ class ChartDataX {
+        ChartDataX(this.x, this.y);
+        final String x;
+        final double? y;
+    }
+
 class ChartWidget extends StatefulWidget {
   const ChartWidget({
     Key? key,
@@ -53,6 +59,22 @@ class _ChartWidgetState extends State<ChartWidget> {
     _helper = ChartHelper(animationDuration: widget.animationDuration);
     super.initState();
   }
+
+
+final List<ChartDataX> chartData = <ChartDataX>[
+                ChartDataX('Jan', 21),
+                ChartDataX('Feb', 24),
+                ChartDataX('Mar', 35),
+                ChartDataX('Apr', 38),
+                ChartDataX('May', 54),
+                ChartDataX('Jun', 21),
+                ChartDataX('Jul', 24),
+                ChartDataX('Aug', 35),
+                ChartDataX('Sep', 38),
+                ChartDataX('Oct', 54),
+                ChartDataX('Nov', 38),
+                ChartDataX('Dec', 54)
+             ];
 
   @override
   Widget build(BuildContext context) {
@@ -151,14 +173,14 @@ class _ChartWidgetState extends State<ChartWidget> {
           //     : null,
           series: <CartesianSeries>[
             // loop on data
-            for (final chartData in widget.chartsData!)
+            // for (final chartData in widget.chartsData!)
 
-              // if data not empty
-              if (chartData.isNotEmpty)
-                SplineSeries<ChartData, String>(
+            //   // if data not empty
+            //   if (chartData.isNotEmpty)
+                SplineSeries<ChartDataX, String>(
                   dataSource: chartData,
-                  xValueMapper: (ChartData data, _) => data.label,
-                  yValueMapper: (ChartData data, _) => data.value,
+                  xValueMapper: (ChartDataX data, _) => data.x,
+                  yValueMapper: (ChartDataX data, _) => data.y,
                 )
             // // if spline
             // if (widget.chartType == ChartType.SplineRange)
