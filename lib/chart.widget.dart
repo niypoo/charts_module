@@ -80,8 +80,8 @@ class _ChartWidgetState extends State<ChartWidget> {
           //         zoomMode: ZoomMode.x,
           //       )
           //     : null,
-          primaryXAxis: DateTimeCategoryAxis(
-            isVisible: true,
+          primaryXAxis: DateTimeAxis(
+            isVisible: false,
             // majorTickLines: MajorTickLines(
             //   width: 0,
             // ),
@@ -101,7 +101,7 @@ class _ChartWidgetState extends State<ChartWidget> {
             plotBands: widget.verticalPlotBands,
           ),
           primaryYAxis: NumericAxis(
-            isVisible: true,
+            isVisible: false,
             // //Hide the grid lines of y-axis
             // majorGridLines: MajorGridLines(
             //   width: 1,
