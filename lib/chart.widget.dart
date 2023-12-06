@@ -81,8 +81,9 @@ class _ChartWidgetState extends State<ChartWidget> {
                 )
               : null,
           primaryXAxis: DateTimeAxis(
+            isVisible: true,
             majorTickLines: const MajorTickLines(
-              width: 1,
+              width: 0,
             ),
             //Hide the guidelines of x-axis
             majorGridLines: const MajorGridLines(
@@ -91,16 +92,16 @@ class _ChartWidgetState extends State<ChartWidget> {
               // color: Get.theme.cardColor,
             ),
             //Hide the axis line of x-axis
-            axisLine: const AxisLine(width: 2),
+            axisLine: const AxisLine(width: 0),
             labelStyle: Get.textTheme.labelSmall,
             // autoScrollingDelta: 100,
-            desiredIntervals: 31,
-            autoScrollingMode: AutoScrollingMode.start,
-            labelIntersectAction: AxisLabelIntersectAction.rotate90,
+            // desiredIntervals: 31,
+            // autoScrollingMode: AutoScrollingMode.start,
+            // labelIntersectAction: AxisLabelIntersectAction.rotate90,
             plotBands: widget.verticalPlotBands,
-            isVisible: true,
           ),
           primaryYAxis: NumericAxis(
+            isVisible: true,
             majorTickLines: const MajorTickLines(
               width: 0,
             ),
@@ -111,9 +112,8 @@ class _ChartWidgetState extends State<ChartWidget> {
               // color: Get.theme.cardColor,
             ),
             //Hide the axis line of y-axis
-            axisLine: const AxisLine(width: 2),
+            axisLine: const AxisLine(width: 0),
             plotBands: widget.horizontalPlotBands,
-            isVisible: true,
           ),
           plotAreaBorderWidth: 0,
           // tooltipBehavior: TooltipBehavior(
