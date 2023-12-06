@@ -56,6 +56,13 @@ class _ChartWidgetState extends State<ChartWidget> {
 
   @override
   Widget build(BuildContext context) {
+    final List<ChartDatax> chartData = [
+      ChartDatax(2010, 35),
+      ChartDatax(2011, 13),
+      ChartDatax(2012, 34),
+      ChartDatax(2013, 27),
+      ChartDatax(2014, 40)
+    ];
     // // check and sure the chart data not empty
     // if (widget.chartsData != null &&
     //     widget.chartsData!.isNotEmpty &&
@@ -150,15 +157,11 @@ class _ChartWidgetState extends State<ChartWidget> {
           //       ]
           //     : null,
           series: <CartesianSeries>[
-            // loop on data
-            for (final chartData in widget.chartsData!)
-
-              // if data not empty
-              if (chartData.isNotEmpty)
-                _helper.spline(
-                  chartData: chartData,
-                  // onPointTap: _selectBar,
-                )
+            // Renders spline chart
+            SplineSeries<ChartDatax, int>(
+                dataSource: chartData,
+                xValueMapper: (ChartDatax data, _) => data.x,
+                yValueMapper: (ChartDatax data, _) => data.y)
           ],
 
           // onDataLabelRender: onDataLabelRender,
@@ -219,4 +222,10 @@ class _ChartWidgetState extends State<ChartWidget> {
 
   //   return widget.chartsData![seriesIndex][index];
   // }
+}
+
+class ChartDatax {
+  ChartDatax(this.x, this.y);
+  final int x;
+  final double? y;
 }
