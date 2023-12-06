@@ -10,7 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   get: ^4.5.1
-  syncfusion_flutter_charts: 23.2.6
+  syncfusion_flutter_charts: ^22.1.39
 
 dev_dependencies:
   flutter_test:
