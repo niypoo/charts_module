@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:charts_module/enums/chartType.enum.dart';
 import 'package:charts_module/helpers/chart.helper.dart';
 import 'package:charts_module/models/chartData.model.dart';
+import 'package:charts_module/partials/emptyChartData.widget.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class ChartWidget extends StatefulWidget {
@@ -66,12 +67,6 @@ class _ChartWidgetState extends State<ChartWidget> {
       seriesNames = widget.chartsData!.map((a) {
         if (a.isNotEmpty) return a.first;
       }).toList();
-    }
-
-    for (final chartData in widget.chartsData!) {
-      for (final x in chartData) {
-        print('x ${x.toData()}');
-      }
     }
 
     return SizedBox(
@@ -155,21 +150,23 @@ class _ChartWidgetState extends State<ChartWidget> {
           //       ]
           //     : null,
           series: <CartesianSeries>[
-            // loop on data
-            for (final chartData in widget.chartsData!)
+            // // loop on data
+            // for (final chartData in widget.chartsData!)
 
-              // if data not empty
-              if (chartData.isNotEmpty)
+            //   // if data not empty
+            //   if (chartData.isNotEmpty)
 
-                // if spline
-                if (widget.chartType == ChartType.SplineRange)
-                  _helper.splineRange(
-                      chartData: chartData, onPointTap: _selectBar)
-                else if (widget.chartType == ChartType.Spline)
-                  _helper.spline(
-                    chartData: chartData,
-                    onPointTap: _selectBar,
-                  )
+            //     // if spline
+            //     if (widget.chartType == ChartType.SplineRange)
+            //       _helper.splineRange(
+            //         chartData: chartData,
+            //         onPointTap: _selectBar,
+            //       )
+            //     else if (widget.chartType == ChartType.Spline)
+            //       _helper.spline(
+            //         chartData: chartData,
+            //         onPointTap: _selectBar,
+            //       )
           ],
 
           onDataLabelRender: onDataLabelRender,

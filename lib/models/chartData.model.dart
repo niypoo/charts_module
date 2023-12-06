@@ -32,15 +32,4 @@ class ChartData {
   final bool dataLabelsVisible;
   final DataMarkerType? dataMarkerType;
   final LegendIconType? legendIconType;
-
-  Map<String, dynamic> toData() {
-    return {
-      "value": value,
-      "lowValue": lowValue,
-      "highValue": highValue,
-      "text": text,
-      "date": date?.toIso8601String(),
-      "label": label,
-    };
-  }
 }
