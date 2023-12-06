@@ -6,12 +6,6 @@ import 'package:charts_module/models/chartData.model.dart';
 import 'package:charts_module/partials/emptyChartData.widget.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
- class ChartDataX {
-        ChartDataX(this.x, this.y);
-        final String x;
-        final double? y;
-    }
-
 class ChartWidget extends StatefulWidget {
   const ChartWidget({
     Key? key,
@@ -60,22 +54,6 @@ class _ChartWidgetState extends State<ChartWidget> {
     super.initState();
   }
 
-
-final List<ChartDataX> chartData = <ChartDataX>[
-                ChartDataX('Jan', 21),
-                ChartDataX('Feb', 24),
-                ChartDataX('Mar', 35),
-                ChartDataX('Apr', 38),
-                ChartDataX('May', 54),
-                ChartDataX('Jun', 21),
-                ChartDataX('Jul', 24),
-                ChartDataX('Aug', 35),
-                ChartDataX('Sep', 38),
-                ChartDataX('Oct', 54),
-                ChartDataX('Nov', 38),
-                ChartDataX('Dec', 54)
-             ];
-
   @override
   Widget build(BuildContext context) {
     // check and sure the chart data not empty
@@ -102,38 +80,38 @@ final List<ChartDataX> chartData = <ChartDataX>[
           //         zoomMode: ZoomMode.x,
           //       )
           //     : null,
-          // primaryXAxis: DateTimeAxis(
-          //   // majorTickLines: MajorTickLines(
-          //   //   width: 0,
-          //   // ),
-          //   //Hide the guidelines of x-axis
-          //   majorGridLines: MajorGridLines(
-          //     width: 1,
-          //     dashArray: const [10],
-          //     color: Get.theme.cardColor,
-          //   ),
-          //   //Hide the axis line of x-axis
-          //   axisLine: const AxisLine(width: 0),
-          //   labelStyle: Get.textTheme.labelSmall,
-          //   // autoScrollingDelta: 100,
-          //   desiredIntervals: 31,
-          //   autoScrollingMode: AutoScrollingMode.start,
-          //   labelIntersectAction: AxisLabelIntersectAction.rotate90,
-          //   plotBands: widget.verticalPlotBands,
-          // ),
-          // primaryYAxis: NumericAxis(
-          //   isVisible: true,
-          //   //Hide the grid lines of y-axis
-          //   majorGridLines: MajorGridLines(
-          //     width: 1,
-          //     dashArray: const [10],
-          //     color: Get.theme.cardColor,
-          //   ),
-          //   //Hide the axis line of y-axis
-          //   axisLine: const AxisLine(width: 0),
-          //   plotBands: widget.horizontalPlotBands,
-          // ),
-          // plotAreaBorderWidth: 0,
+          primaryXAxis: DateTimeAxis(
+            // majorTickLines: MajorTickLines(
+            //   width: 0,
+            // ),
+            //Hide the guidelines of x-axis
+            majorGridLines: MajorGridLines(
+              width: 1,
+              dashArray: const [10],
+              color: Get.theme.cardColor,
+            ),
+            //Hide the axis line of x-axis
+            axisLine: const AxisLine(width: 0),
+            labelStyle: Get.textTheme.labelSmall,
+            // autoScrollingDelta: 100,
+            desiredIntervals: 31,
+            autoScrollingMode: AutoScrollingMode.start,
+            labelIntersectAction: AxisLabelIntersectAction.rotate90,
+            plotBands: widget.verticalPlotBands,
+          ),
+          primaryYAxis: NumericAxis(
+            isVisible: true,
+            //Hide the grid lines of y-axis
+            majorGridLines: MajorGridLines(
+              width: 1,
+              dashArray: const [10],
+              color: Get.theme.cardColor,
+            ),
+            //Hide the axis line of y-axis
+            axisLine: const AxisLine(width: 0),
+            plotBands: widget.horizontalPlotBands,
+          ),
+          plotAreaBorderWidth: 0,
           // tooltipBehavior: TooltipBehavior(
           //   enable: true,
           //   builder: (data, point, series, pointIndex, seriesIndex) =>
@@ -158,41 +136,35 @@ final List<ChartDataX> chartData = <ChartDataX>[
           //   itemPadding: 10,
           // ),
           // If data is empty show "no data provided" message
-          // annotations: first == null
-          //     ? <CartesianChartAnnotation>[
-          //         const CartesianChartAnnotation(
-          //           widget: EmptyChartDataWidget(),
-          //           coordinateUnit: CoordinateUnit.logicalPixel,
-          //           region: AnnotationRegion.plotArea,
-          //           x: 150,
-          //           y: 200,
-          //           horizontalAlignment: ChartAlignment.center,
-          //           verticalAlignment: ChartAlignment.center,
-          //         )
-          //       ]
-          //     : null,
+          annotations: first == null
+              ? <CartesianChartAnnotation>[
+                  const CartesianChartAnnotation(
+                    widget: EmptyChartDataWidget(),
+                    coordinateUnit: CoordinateUnit.logicalPixel,
+                    region: AnnotationRegion.plotArea,
+                    x: 150,
+                    y: 200,
+                    horizontalAlignment: ChartAlignment.center,
+                    verticalAlignment: ChartAlignment.center,
+                  )
+                ]
+              : null,
           series: <CartesianSeries>[
             // loop on data
-            // for (final chartData in widget.chartsData!)
+            for (final chartData in widget.chartsData!)
 
-            //   // if data not empty
-            //   if (chartData.isNotEmpty)
-                SplineSeries<ChartDataX, String>(
-                  dataSource: chartData,
-                  xValueMapper: (ChartDataX data, _) => data.x,
-                  yValueMapper: (ChartDataX data, _) => data.y,
-                )
-            // // if spline
-            // if (widget.chartType == ChartType.SplineRange)
-            //   _helper.splineRange(
-            //     chartData: chartData,
-            //     onPointTap: _selectBar,
-            //   )
-            // else if (widget.chartType == ChartType.Spline)
-            //   _helper.spline(
-            //     chartData: chartData,
-            //     onPointTap: _selectBar,
-            //   )
+              // if data not empty
+              if (chartData.isNotEmpty)
+
+                // if spline
+                if (widget.chartType == ChartType.SplineRange)
+                  _helper.splineRange(
+                      chartData: chartData, onPointTap: _selectBar)
+                else if (widget.chartType == ChartType.Spline)
+                  _helper.spline(
+                    chartData: chartData,
+                    onPointTap: _selectBar,
+                  )
           ],
 
           onDataLabelRender: onDataLabelRender,
