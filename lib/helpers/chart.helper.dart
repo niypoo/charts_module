@@ -59,11 +59,11 @@ class ChartHelper {
     );
   }
 
-  SplineSeries<ChartData, DateTime> spline({
+  SplineSeries<ChartData, String> spline({
     required List<ChartData> chartData,
     Function(ChartPointDetails)? onPointTap,
   }) {
-    return SplineSeries<ChartData, DateTime>(
+    return SplineSeries<ChartData, String>(
       //MAKE SELECTED BAR WITH CUSTOM COLOR
       // selectionBehavior: SelectionBehavior(
       //   enable: true,
@@ -83,9 +83,9 @@ class ChartHelper {
       color: chartData.first.legendColor ?? chartData.first.color,
 
       pointColorMapper: (ChartData data, _) => data.color,
-      xValueMapper: (ChartData data, _) => data.date,
+      xValueMapper: (ChartData data, _) => data.date.toString(),
       yValueMapper: (ChartData data, _) => data.value,
-      dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
+      // dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
 
       markerSettings: MarkerSettings(
         isVisible: true,
