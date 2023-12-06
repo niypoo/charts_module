@@ -84,7 +84,7 @@ class ChartHelper {
 
       pointColorMapper: (ChartData data, _) => data.color,
       xValueMapper: (ChartData data, _) => data.date,
-      yValueMapper: (ChartData data, _) => 100,
+      yValueMapper: (ChartData data, _) => data.value,
       dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
 
       markerSettings: MarkerSettings(

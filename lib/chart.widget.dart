@@ -156,7 +156,14 @@ class _ChartWidgetState extends State<ChartWidget> {
               // if data not empty
               if (chartData.isNotEmpty)
 
-                _helper.spline(
+                // if spline
+                if (widget.chartType == ChartType.SplineRange)
+                  _helper.splineRange(
+                    chartData: chartData,
+                    onPointTap: _selectBar,
+                  )
+                else if (widget.chartType == ChartType.Spline)
+                  _helper.spline(
                     chartData: chartData,
                     onPointTap: _selectBar,
                   )
