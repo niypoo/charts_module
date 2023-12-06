@@ -46,13 +46,6 @@ class _ChartWidgetState extends State<ChartWidget> {
   int? seriesIndex;
   // Series Name
   late List<ChartData?> seriesNames;
-  late ChartHelper _helper;
-
-  @override
-  void initState() {
-    _helper = ChartHelper(animationDuration: widget.animationDuration);
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -92,8 +85,8 @@ class _ChartWidgetState extends State<ChartWidget> {
               // color: Get.theme.cardColor,
             ),
             //Hide the axis line of x-axis
-            axisLine: const AxisLine(width: 0),
-            labelStyle: Get.textTheme.labelSmall,
+            axisLine: const AxisLine(width: 1),
+            // labelStyle: Get.textTheme.labelSmall,
             // autoScrollingDelta: 100,
             // desiredIntervals: 31,
             // autoScrollingMode: AutoScrollingMode.start,
@@ -162,71 +155,83 @@ class _ChartWidgetState extends State<ChartWidget> {
 
                 // if spline
                 if (widget.chartType == ChartType.SplineRange)
-                  _helper.splineRange(
-                      chartData: chartData, onPointTap: _selectBar)
-                else if (widget.chartType == ChartType.Spline)
-                  _helper.spline(
+                  ChartHelper.splineRange(
                     chartData: chartData,
-                    onPointTap: _selectBar,
+                    // onPointTap: _selectBar,
+                  )
+                else if (widget.chartType == ChartType.Bars)
+                  ChartHelper.bars(
+                    chartData: chartData,
+                    // onPointTap: _selectBar,
+                  )
+                else if (widget.chartType == ChartType.Spline)
+                  ChartHelper.spline(
+                    chartData: chartData,
+                    // onPointTap: _selectBar,
+                  )
+                else if (widget.chartType == ChartType.BarsRange)
+                  ChartHelper.barsRange(
+                    chartData: chartData,
+                    // onPointTap: _selectBar,
                   )
           ],
 
-          onDataLabelRender: onDataLabelRender,
+          // onDataLabelRender: onDataLabelRender,
         ),
       ),
     );
   }
 
-  //when user tap on bar or column
-  void _selectBar(ChartPointDetails args) {
-    // if user tap on same selected data reset chart
-    if (index == args.pointIndex && seriesIndex == args.seriesIndex) {
-      index = null;
-      seriesIndex = null;
-    } else {
-      index = args.pointIndex;
-      seriesIndex = args.seriesIndex;
-    }
-    setState(() {});
-  }
+  // //when user tap on bar or column
+  // void _selectBar(ChartPointDetails args) {
+  //   // if user tap on same selected data reset chart
+  //   if (index == args.pointIndex && seriesIndex == args.seriesIndex) {
+  //     index = null;
+  //     seriesIndex = null;
+  //   } else {
+  //     index = args.pointIndex;
+  //     seriesIndex = args.seriesIndex;
+  //   }
+  //   setState(() {});
+  // }
 
-  void onDataLabelRender(DataLabelRenderArgs args) {
-    if (
-        // check if point is same
-        (index != null && index == args.pointIndex) &&
-            // check if series same
-            (seriesIndex != null &&
-                _getSeriesName(seriesIndex) ==
-                    (args.seriesRenderer as ChartSeries).name)) {
-      ChartData? candidate = _getSeriesPointData(seriesIndex, index);
+  // void onDataLabelRender(DataLabelRenderArgs args) {
+  //   if (
+  //       // check if point is same
+  //       (index != null && index == args.pointIndex) &&
+  //           // check if series same
+  //           (seriesIndex != null &&
+  //               _getSeriesName(seriesIndex) ==
+  //                   (args.seriesRenderer as ChartSeries).name)) {
+  //     ChartData? candidate = _getSeriesPointData(seriesIndex, index);
 
-      args.textStyle = Get.theme.textTheme.labelSmall!.copyWith(
-        color: widget.color,
-        fontWeight: FontWeight.bold,
-      );
+  //     args.textStyle = Get.theme.textTheme.labelSmall!.copyWith(
+  //       color: widget.color,
+  //       fontWeight: FontWeight.bold,
+  //     );
 
-      args.color = candidate?.color ?? args.color;
-      args.text = '${args.text} ${candidate?.label}';
-    } else {
-      args.color = null;
-      args.textStyle = Get.theme.textTheme.labelSmall!.copyWith(fontSize: 0);
-    }
-  }
+  //     args.color = candidate?.color ?? args.color;
+  //     args.text = '${args.text} ${candidate?.label}';
+  //   } else {
+  //     args.color = null;
+  //     args.textStyle = Get.theme.textTheme.labelSmall!.copyWith(fontSize: 0);
+  //   }
+  // }
 
-  // Method to return the series name based on tapped point's series index
-  String? _getSeriesName(int? index) {
-    if (index == null || !seriesNames.asMap().containsKey(index)) return '';
-    return seriesNames[index]!.legendText;
-  }
+  // // Method to return the series name based on tapped point's series index
+  // String? _getSeriesName(int? index) {
+  //   if (index == null || !seriesNames.asMap().containsKey(index)) return '';
+  //   return seriesNames[index]!.legendText;
+  // }
 
-  ChartData? _getSeriesPointData(int? seriesIndex, int? index) {
-    if (seriesIndex == null || !seriesNames.asMap().containsKey(seriesIndex)) {
-      return null;
-    }
-    if (index == null ||
-        !widget.chartsData![seriesIndex].asMap().containsKey(index))
-      return null;
+  // ChartData? _getSeriesPointData(int? seriesIndex, int? index) {
+  //   if (seriesIndex == null || !seriesNames.asMap().containsKey(seriesIndex)) {
+  //     return null;
+  //   }
+  //   if (index == null ||
+  //       !widget.chartsData![seriesIndex].asMap().containsKey(index))
+  //     return null;
 
-    return widget.chartsData![seriesIndex][index];
-  }
+  //   return widget.chartsData![seriesIndex][index];
+  // }
 }

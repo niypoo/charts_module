@@ -1,6 +1,6 @@
 enum ChartType {
   Spline,
   SplineRange,
-  // Bars,
-  // BarsRange,
+  Bars,
+  BarsRange,
 }
