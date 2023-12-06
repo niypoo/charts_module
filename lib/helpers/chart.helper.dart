@@ -73,7 +73,7 @@ class ChartHelper {
 
       dataSource: chartData,
       animationDuration: animationDuration,
-      width: 10,
+      width: 6,
       // Legend
       name: chartData.first.legendText,
       legendIconType: chartData.first.legendIconType ?? LegendIconType.circle,

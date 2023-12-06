@@ -115,7 +115,7 @@ class _ChartWidgetState extends State<ChartWidget> {
             axisLine: const AxisLine(width: 0),
             plotBands: widget.horizontalPlotBands,
           ),
-          plotAreaBorderWidth: 8,
+          plotAreaBorderWidth: 0,
           // tooltipBehavior: TooltipBehavior(
           //   enable: true,
           //   builder: (data, point, series, pointIndex, seriesIndex) =>
