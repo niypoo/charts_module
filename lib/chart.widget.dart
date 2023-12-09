@@ -112,18 +112,18 @@ class _ChartWidgetState extends State<ChartWidget> {
             plotBands: widget.horizontalPlotBands,
           ),
           plotAreaBorderWidth: 0,
-          tooltipBehavior: TooltipBehavior(
-            enable: true,
-            builder: (data, point, series, pointIndex, seriesIndex) =>
-                Chip(
-              label:Text('${'Lower'.tr} ${data.lowValue} / ${'Higher'.tr} ${data.highValue} \n ${'at'.tr} ${data.text}')
-                  ,
-              color: data.color,
-            ),
-            canShowMarker: false,
-            header: '',
-            duration: 5000,
-          ),
+          // tooltipBehavior: TooltipBehavior(
+          //   enable: true,
+          //   builder: (data, point, series, pointIndex, seriesIndex) =>
+          //       Chip(
+          //     label:Text('${'Lower'.tr} ${data.lowValue} / ${'Higher'.tr} ${data.highValue} \n ${'at'.tr} ${data.text}')
+          //         ,
+          //     color: data.color,
+          //   ),
+          //   canShowMarker: false,
+          //   header: '',
+          //   duration: 5000,
+          // ),
           enableAxisAnimation: true,
           selectionGesture: ActivationMode.singleTap,
           selectionType: SelectionType.point,

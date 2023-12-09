@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:charts_module/models/chartData.model.dart';
+import 'package:get/get.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class ChartHelper {
@@ -18,7 +19,7 @@ class ChartHelper {
       legendIconType: chartData.first.legendIconType ?? LegendIconType.circle,
       legendItemText: chartData.first.legendText ?? ' ',
       isVisibleInLegend: chartData.first.legendText != null ? true : false,
-      color: chartData.first.color?.withOpacity(0.2),
+      color: chartData.first.color,
       borderRadius: BorderRadius.all(Radius.circular(15.sp)),
       dataSource: chartData,
       markerSettings: MarkerSettings(
@@ -36,19 +37,14 @@ class ChartHelper {
       highValueMapper: (ChartData data, _) => data.highValue,
       // Map the data label text for each point from the data source
       // isTrackVisible: false,
-      // dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
+      dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
       dataLabelSettings: DataLabelSettings(
         isVisible: true,
-        textStyle: TextStyle(fontSize: 12.sp),
+                textStyle: TextStyle(fontSize: 10.sp, color: Get.theme.secondaryHeaderColor),
         useSeriesColor: true,
         showZeroValue: true,
-        labelAlignment: ChartDataLabelAlignment.middle,
-        alignment: ChartAlignment.center,
-        labelPosition: ChartDataLabelPosition.outside,
-        labelIntersectAction: LabelIntersectAction.hide,
-        showCumulativeValues: true,
       ),
-      onPointTap: onPointTap,
+      // onPointTap: onPointTap,
     );
   }
 
@@ -88,7 +84,7 @@ class ChartHelper {
       // dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
       dataLabelSettings: DataLabelSettings(
         isVisible: true,
-        textStyle: TextStyle(fontSize: 12.sp),
+                textStyle: TextStyle(fontSize: 10.sp, color: Get.theme.secondaryHeaderColor),
         useSeriesColor: true,
         showZeroValue: true,
         labelAlignment: ChartDataLabelAlignment.middle,
@@ -141,7 +137,8 @@ class ChartHelper {
       // data label setting
       dataLabelSettings: DataLabelSettings(
         isVisible: true,
-        textStyle: TextStyle(fontSize: 12.sp),
+                textStyle: TextStyle(fontSize: 10.sp, color: Get.theme.secondaryHeaderColor),
+
         useSeriesColor: true,
         showZeroValue: true,
         labelAlignment: ChartDataLabelAlignment.auto,
@@ -195,7 +192,7 @@ class ChartHelper {
       // data label setting
       dataLabelSettings: DataLabelSettings(
         isVisible: true,
-        textStyle: TextStyle(fontSize: 12.sp),
+                textStyle: TextStyle(fontSize: 10.sp, color: Get.theme.secondaryHeaderColor),
         useSeriesColor: true,
         showZeroValue: true,
         labelAlignment: ChartDataLabelAlignment.auto,
