@@ -12,15 +12,15 @@ class ChartPageView extends StatefulWidget {
     required this.charts,
     this.horizontalPlotBands,
     this.verticalPlotBands,
-    this.oneDayMode = true,
     this.legendVisible = true,
+    this.chartType = ChartType.Spline,
   }) : super(key: key);
 
   final List<PlotBand>? verticalPlotBands;
   final List<PlotBand>? horizontalPlotBands;
   final List<List<ChartData>> charts;
   final bool legendVisible;
-  final bool oneDayMode;
+  final ChartType chartType;
 
   @override
   State<ChartPageView> createState() => _ChartPageViewState();
@@ -51,8 +51,9 @@ class _ChartPageViewState extends State<ChartPageView> {
       child: ChartWidget(
         chartsData: widget.charts,
         verticalPlotBands: widget.verticalPlotBands,
-        chartType: ChartType.Spline,
+        chartType: widget.chartType,
         enableScrolling: true,
+        autoScrollingDelta: 14,
       ),
     );
   }

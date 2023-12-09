@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:get/get.dart';
 import 'package:charts_module/enums/chartType.enum.dart';
 import 'package:charts_module/helpers/chart.helper.dart';
@@ -12,7 +13,6 @@ class ChartWidget extends StatefulWidget {
     required this.chartsData,
     this.chartType = ChartType.Spline,
     this.animationDuration = 1000,
-    this.enablePanning = false,
     this.horizontalPlotBands,
     this.verticalPlotBands,
     this.label,
@@ -20,18 +20,19 @@ class ChartWidget extends StatefulWidget {
     this.enableScrolling = false,
     this.legendVisible = true,
     this.selectedColor,
+    this.autoScrollingDelta = 7,
   }) : super(key: key);
 
   final List<List<ChartData>>? chartsData;
   final ChartType chartType;
   final double animationDuration;
-  final bool enablePanning;
   final bool legendVisible;
   final bool enableScrolling;
   final List<PlotBand>? verticalPlotBands;
   final List<PlotBand>? horizontalPlotBands;
   final String? label;
   final Color? color;
+  final int autoScrollingDelta;
   final Color? selectedColor;
 
   @override
@@ -69,12 +70,12 @@ class _ChartWidgetState extends State<ChartWidget> {
         child: SfCartesianChart(
           zoomPanBehavior: ZoomPanBehavior(
             enablePanning: true,
-            zoomMode: ZoomMode.x,
+            zoomMode: ZoomMode.xy,
           ),
           primaryXAxis: DateTimeAxis(
             isVisible: true,
-            majorTickLines: const MajorTickLines(
-              width: 3,
+            majorTickLines:  MajorTickLines(
+              width: 5.sp,
             ),
             //Hide the guidelines of x-axis
             majorGridLines: const MajorGridLines(
@@ -83,10 +84,10 @@ class _ChartWidgetState extends State<ChartWidget> {
               // color: Get.theme.cardColor,
             ),
             //Hide the axis line of x-axis
-            axisLine: const AxisLine(width: 1),
-            // labelStyle: Get.textTheme.labelSmall,
+            axisLine:  AxisLine(width: 5.sp),
+            labelStyle: TextStyle(fontSize: 16.sp),
             // desiredIntervals: 31,
-            autoScrollingDelta: 4,
+            autoScrollingDelta: widget.autoScrollingDelta,
             // desiredIntervals: 5,
             autoScrollingMode: AutoScrollingMode.start,
             autoScrollingDeltaType: DateTimeIntervalType.auto,
