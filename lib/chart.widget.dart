@@ -87,9 +87,10 @@ class _ChartWidgetState extends State<ChartWidget> {
             //Hide the axis line of x-axis
             axisLine: const AxisLine(width: 1),
             // labelStyle: Get.textTheme.labelSmall,
-            // autoScrollingDelta: 100,
             // desiredIntervals: 31,
-            // autoScrollingMode: AutoScrollingMode.start,
+            autoScrollingDelta: 4,
+            desiredIntervals: 5,
+            autoScrollingMode: AutoScrollingMode.start,
             // labelIntersectAction: AxisLabelIntersectAction.rotate90,
             plotBands: widget.verticalPlotBands,
           ),

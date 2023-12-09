@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:charts_module/chart.widget.dart';
 import 'package:charts_module/enums/chartType.enum.dart';
 import 'package:charts_module/models/chartData.model.dart';
+import 'package:fly_ui/views/layouts/scaffoldLayout.widget.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class ChartPageView extends StatefulWidget {
@@ -48,9 +49,9 @@ class _ChartPageViewState extends State<ChartPageView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return FlyScaffold.padding(
       appBar: AppBar(),
-      body: ChartWidget(
+      child: ChartWidget(
         chartsData: widget.charts,
         verticalPlotBands: widget.verticalPlotBands,
         chartType: ChartType.Spline,
