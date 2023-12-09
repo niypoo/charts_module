@@ -67,12 +67,10 @@ class _ChartWidgetState extends State<ChartWidget> {
       child: Directionality(
         textDirection: TextDirection.ltr,
         child: SfCartesianChart(
-          zoomPanBehavior: widget.enableScrolling
-              ? ZoomPanBehavior(
-                  enablePanning: widget.enablePanning,
-                  zoomMode: ZoomMode.x,
-                )
-              : null,
+          zoomPanBehavior: ZoomPanBehavior(
+            enablePanning: false,
+            zoomMode: ZoomMode.x,
+          ),
           primaryXAxis: DateTimeAxis(
             isVisible: true,
             majorTickLines: const MajorTickLines(
@@ -89,8 +87,9 @@ class _ChartWidgetState extends State<ChartWidget> {
             // labelStyle: Get.textTheme.labelSmall,
             // desiredIntervals: 31,
             autoScrollingDelta: 4,
-            desiredIntervals: 5,
+            // desiredIntervals: 5,
             autoScrollingMode: AutoScrollingMode.start,
+            autoScrollingDeltaType: DateTimeIntervalType.auto,
             // labelIntersectAction: AxisLabelIntersectAction.rotate90,
             plotBands: widget.verticalPlotBands,
           ),
