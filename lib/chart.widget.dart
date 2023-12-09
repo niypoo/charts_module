@@ -74,8 +74,8 @@ class _ChartWidgetState extends State<ChartWidget> {
           ),
           primaryXAxis: DateTimeAxis(
             isVisible: true,
-            majorTickLines:  MajorTickLines(
-              width: 5.sp,
+            majorTickLines: MajorTickLines(
+              width: 1.sp,
             ),
             //Hide the guidelines of x-axis
             majorGridLines: const MajorGridLines(
@@ -84,11 +84,11 @@ class _ChartWidgetState extends State<ChartWidget> {
               // color: Get.theme.cardColor,
             ),
             //Hide the axis line of x-axis
-            axisLine:  AxisLine(width: 5.sp),
-            labelStyle: TextStyle(fontSize: 16.sp),
+            axisLine: AxisLine(width: 1.sp),
+            labelStyle: TextStyle(fontSize: 10.sp),
             // desiredIntervals: 31,
             autoScrollingDelta: widget.autoScrollingDelta,
-            // desiredIntervals: 5,
+            desiredIntervals: widget.autoScrollingDelta,
             autoScrollingMode: AutoScrollingMode.start,
             autoScrollingDeltaType: DateTimeIntervalType.auto,
             // labelIntersectAction: AxisLabelIntersectAction.rotate90,
