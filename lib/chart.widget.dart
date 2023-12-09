@@ -20,7 +20,7 @@ class ChartWidget extends StatefulWidget {
     this.enableScrolling = false,
     this.legendVisible = true,
     this.selectedColor,
-    this.autoScrollingDelta = 7,
+    this.desiredIntervals = 7,
   }) : super(key: key);
 
   final List<List<ChartData>>? chartsData;
@@ -32,7 +32,7 @@ class ChartWidget extends StatefulWidget {
   final List<PlotBand>? horizontalPlotBands;
   final String? label;
   final Color? color;
-  final int autoScrollingDelta;
+  final int desiredIntervals;
   final Color? selectedColor;
 
   @override
@@ -85,10 +85,10 @@ class _ChartWidgetState extends State<ChartWidget> {
             ),
             //Hide the axis line of x-axis
             axisLine: AxisLine(width: 1.sp),
-            labelStyle: TextStyle(fontSize: 10.sp),
+            labelStyle: TextStyle(fontSize: 12.sp),
             // desiredIntervals: 31,
-            autoScrollingDelta: widget.autoScrollingDelta,
-            desiredIntervals: widget.autoScrollingDelta,
+            // autoScrollingDelta: widget.autoScrollingDelta,
+            desiredIntervals: widget.desiredIntervals,
             autoScrollingMode: AutoScrollingMode.start,
             autoScrollingDeltaType: DateTimeIntervalType.auto,
             // labelIntersectAction: AxisLabelIntersectAction.rotate90,
