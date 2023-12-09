@@ -68,7 +68,7 @@ class _ChartWidgetState extends State<ChartWidget> {
         textDirection: TextDirection.ltr,
         child: SfCartesianChart(
           zoomPanBehavior: ZoomPanBehavior(
-            enablePanning: false,
+            enablePanning: true,
             zoomMode: ZoomMode.x,
           ),
           primaryXAxis: DateTimeAxis(
