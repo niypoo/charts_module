@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:get/get.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:charts_module/models/chartData.model.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
@@ -19,7 +19,7 @@ class ChartHelper {
       legendItemText: chartData.first.legendText ?? ' ',
       isVisibleInLegend: chartData.first.legendText != null ? true : false,
       color: chartData.first.color?.withOpacity(0.2),
-      // borderRadius: BorderRadius.all(Radius.circular(15)),
+      borderRadius: BorderRadius.all(Radius.circular(15.sp)),
       dataSource: chartData,
       markerSettings: MarkerSettings(
         isVisible: true,
@@ -27,7 +27,6 @@ class ChartHelper {
         width: 9,
         height: 9,
         shape: chartData.first.dataMarkerType,
-        // ignore: prefer_null_aware_operators
         color: chartData.first.color,
       ),
 
@@ -40,8 +39,9 @@ class ChartHelper {
       // dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
       dataLabelSettings: DataLabelSettings(
         isVisible: true,
-        textStyle: Get.textTheme.labelSmall!.copyWith(fontSize: 0),
-        showZeroValue: false,
+        textStyle: TextStyle(fontSize: 12.sp),
+        useSeriesColor: true,
+        showZeroValue: true,
         labelAlignment: ChartDataLabelAlignment.middle,
         alignment: ChartAlignment.center,
         labelPosition: ChartDataLabelPosition.outside,
@@ -88,8 +88,9 @@ class ChartHelper {
       // dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
       dataLabelSettings: DataLabelSettings(
         isVisible: true,
-        textStyle: Get.textTheme.labelSmall!.copyWith(fontSize: 0),
-        showZeroValue: false,
+        textStyle: TextStyle(fontSize: 12.sp),
+        useSeriesColor: true,
+        showZeroValue: true,
         labelAlignment: ChartDataLabelAlignment.middle,
         alignment: ChartAlignment.center,
         labelPosition: ChartDataLabelPosition.outside,
@@ -119,7 +120,7 @@ class ChartHelper {
       legendIconType: chartData.first.legendIconType ?? LegendIconType.circle,
       legendItemText: chartData.first.legendText ?? ' ',
       isVisibleInLegend: chartData.first.legendText != null ? true : false,
-      
+
       color: chartData.first.legendColor ?? chartData.first.color,
 
       pointColorMapper: (ChartData data, _) => data.color,
@@ -140,14 +141,9 @@ class ChartHelper {
       // data label setting
       dataLabelSettings: DataLabelSettings(
         isVisible: true,
-        // textStyle: TextStyle(fontSize: 0),
-        textStyle: Get.textTheme.labelSmall!.copyWith(
-          fontWeight: FontWeight.bold,
-          color: chartData.first.textColor,
-          // fontSize: index != null ? 0 : 11,
-        ),
-        // useSeriesColor: true,
-        showZeroValue: false,
+        textStyle: TextStyle(fontSize: 12.sp),
+        useSeriesColor: true,
+        showZeroValue: true,
         labelAlignment: ChartDataLabelAlignment.auto,
         alignment: ChartAlignment.far,
         labelPosition: ChartDataLabelPosition.inside,
@@ -199,14 +195,9 @@ class ChartHelper {
       // data label setting
       dataLabelSettings: DataLabelSettings(
         isVisible: true,
-        // textStyle: TextStyle(fontSize: 0),
-        textStyle: Get.textTheme.labelSmall!.copyWith(
-          fontWeight: FontWeight.bold,
-          color: chartData.first.textColor,
-          // fontSize: index != null ? 0 : 11,
-        ),
-        // useSeriesColor: true,
-        showZeroValue: false,
+        textStyle: TextStyle(fontSize: 12.sp),
+        useSeriesColor: true,
+        showZeroValue: true,
         labelAlignment: ChartDataLabelAlignment.auto,
         alignment: ChartAlignment.far,
         labelPosition: ChartDataLabelPosition.inside,

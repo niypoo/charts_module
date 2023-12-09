@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
+import 'package:fly_ui/views/widgets/containers/container.widget.dart';
 import 'package:get/get.dart';
 import 'package:charts_module/enums/chartType.enum.dart';
 import 'package:charts_module/helpers/chart.helper.dart';
@@ -85,10 +86,10 @@ class _ChartWidgetState extends State<ChartWidget> {
             ),
             //Hide the axis line of x-axis
             axisLine: AxisLine(width: 1.sp),
-            labelStyle: TextStyle(fontSize: 12.sp),
+            labelStyle: TextStyle(fontSize: 10.sp),
             // desiredIntervals: 31,
             // autoScrollingDelta: widget.autoScrollingDelta,
-            desiredIntervals: widget.desiredIntervals,
+            // desiredIntervals: widget.desiredIntervals,
             autoScrollingMode: AutoScrollingMode.start,
             autoScrollingDeltaType: DateTimeIntervalType.auto,
             // labelIntersectAction: AxisLabelIntersectAction.rotate90,
@@ -96,9 +97,10 @@ class _ChartWidgetState extends State<ChartWidget> {
           ),
           primaryYAxis: NumericAxis(
             isVisible: true,
-            majorTickLines: const MajorTickLines(
-              width: 1,
+            majorTickLines:  MajorTickLines(
+              width: 1.sp,
             ),
+            labelStyle: TextStyle(fontSize: 10.sp),
             //Hide the grid lines of y-axis
             majorGridLines: const MajorGridLines(
               width: 0,
@@ -106,22 +108,22 @@ class _ChartWidgetState extends State<ChartWidget> {
               // color: Get.theme.cardColor,
             ),
             //Hide the axis line of y-axis
-            axisLine: const AxisLine(width: 0),
+            axisLine:  AxisLine(width: 1.sp),
             plotBands: widget.horizontalPlotBands,
           ),
           plotAreaBorderWidth: 0,
-          // tooltipBehavior: TooltipBehavior(
-          //   enable: true,
-          //   builder: (data, point, series, pointIndex, seriesIndex) =>
-          //       JTooltipBehavior(
-          //     title:
-          //         '${LocaleService.tra('Lower')} ${data.lowValue} / ${LocaleService.tra('Higher')} ${data.highValue} \n ${LocaleService.tra('at')} ${data.text}',
-          //     color: data.color,
-          //   ),
-          //   canShowMarker: false,
-          //   header: '',
-          //   duration: 5000,
-          // ),
+          tooltipBehavior: TooltipBehavior(
+            enable: true,
+            builder: (data, point, series, pointIndex, seriesIndex) =>
+                Chip(
+              label:Text('${'Lower'.tr} ${data.lowValue} / ${'Higher'.tr} ${data.highValue} \n ${'at'.tr} ${data.text}')
+                  ,
+              color: data.color,
+            ),
+            canShowMarker: false,
+            header: '',
+            duration: 5000,
+          ),
           enableAxisAnimation: true,
           selectionGesture: ActivationMode.singleTap,
           selectionType: SelectionType.point,
