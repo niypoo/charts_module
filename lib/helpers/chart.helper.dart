@@ -54,7 +54,7 @@ class ChartHelper {
         labelIntersectAction: LabelIntersectAction.none,
         labelAlignment: ChartDataLabelAlignment.auto,
       ),
-      onPointTap: onPointTap,
+      // onPointTap: onPointTap,
     );
   }
 
@@ -102,7 +102,7 @@ class ChartHelper {
         labelIntersectAction: LabelIntersectAction.none,
         labelAlignment: ChartDataLabelAlignment.auto,
       ),
-      onPointTap: onPointTap,
+      // onPointTap: onPointTap,
     );
   }
 
@@ -159,7 +159,7 @@ class ChartHelper {
         labelAlignment: ChartDataLabelAlignment.auto,
       ),
       splineType: SplineType.cardinal,
-      onPointTap: onPointTap,
+      // onPointTap: onPointTap,
     );
   }
 
@@ -207,7 +207,7 @@ class ChartHelper {
         labelIntersectAction: LabelIntersectAction.none,
         labelAlignment: ChartDataLabelAlignment.auto,
       ),
-      onPointTap: onPointTap,
+      // onPointTap: onPointTap,
     );
   }
 }
