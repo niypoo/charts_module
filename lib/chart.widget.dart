@@ -76,12 +76,13 @@ class _ChartWidgetState extends State<ChartWidget> {
             enableMouseWheelZooming: true,
             enablePinching: true,
             enableSelectionZooming: true,
-            
+
           ),
           primaryXAxis: DateTimeAxis(
             isVisible: true,
             plotOffset: 15.sp,
             autoScrollingDelta: 7,
+            autoScrollingDeltaType: DateTimeIntervalType.days
             // majorTickLines: MajorTickLines(
             //   width: 1.sp,
             // ),
