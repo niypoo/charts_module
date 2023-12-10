@@ -75,25 +75,25 @@ class _ChartWidgetState extends State<ChartWidget> {
           ),
           primaryXAxis: DateTimeAxis(
             isVisible: true,
-            majorTickLines: MajorTickLines(
-              width: 1.sp,
-            ),
-            //Hide the guidelines of x-axis
-            majorGridLines: const MajorGridLines(
-              width: 0,
-              // dashArray: const [10],
-              // color: Get.theme.cardColor,
-            ),
-            //Hide the axis line of x-axis
-            axisLine: AxisLine(width: 1.sp),
-            labelStyle: TextStyle(fontSize: 10.sp),
-            // desiredIntervals: 31,
-            //autoScrollingDelta: 7,
-            // desiredIntervals: widget.desiredIntervals,
-            //autoScrollingMode: AutoScrollingMode.start,
-            autoScrollingDeltaType: DateTimeIntervalType.auto,
-            labelIntersectAction: AxisLabelIntersectAction.rotate90,
-            plotBands: widget.verticalPlotBands,
+            // majorTickLines: MajorTickLines(
+            //   width: 1.sp,
+            // ),
+            // //Hide the guidelines of x-axis
+            // majorGridLines: const MajorGridLines(
+            //   width: 0,
+            //   // dashArray: const [10],
+            //   // color: Get.theme.cardColor,
+            // ),
+            // //Hide the axis line of x-axis
+            // axisLine: AxisLine(width: 1.sp),
+            // labelStyle: TextStyle(fontSize: 10.sp),
+            // // desiredIntervals: 31,
+            // //autoScrollingDelta: 7,
+            // // desiredIntervals: widget.desiredIntervals,
+            // //autoScrollingMode: AutoScrollingMode.start,
+            // autoScrollingDeltaType: DateTimeIntervalType.auto,
+            // labelIntersectAction: AxisLabelIntersectAction.rotate90,
+            // plotBands: widget.verticalPlotBands,
           ),
           // primaryYAxis: NumericAxis(
           //   isVisible: true,
@@ -124,17 +124,17 @@ class _ChartWidgetState extends State<ChartWidget> {
           //   header: '',
           //   duration: 5000,
           // ),
-          enableAxisAnimation: true,
-          selectionGesture: ActivationMode.singleTap,
-          selectionType: SelectionType.point,
-          onSelectionChanged: (selectionArgs) => selectionArgs.selectedColor,
-          legend: Legend(
-            isVisible: widget.legendVisible,
-            position: LegendPosition.bottom,
-            overflowMode: LegendItemOverflowMode.wrap,
-            alignment: ChartAlignment.center,
-            itemPadding: 10,
-          ),
+          // enableAxisAnimation: true,
+          // selectionGesture: ActivationMode.singleTap,
+          // selectionType: SelectionType.point,
+          // onSelectionChanged: (selectionArgs) => selectionArgs.selectedColor,
+          // legend: Legend(
+          //   isVisible: widget.legendVisible,
+          //   position: LegendPosition.bottom,
+          //   overflowMode: LegendItemOverflowMode.wrap,
+          //   alignment: ChartAlignment.center,
+          //   itemPadding: 10,
+          // ),
           // If data is empty show "no data provided" message
           // annotations: first == null
           //     ? <CartesianChartAnnotation>[
@@ -160,82 +160,82 @@ class _ChartWidgetState extends State<ChartWidget> {
                 if (widget.chartType == ChartType.SplineRange)
                   ChartHelper.splineRange(
                     chartData: chartData,
-                    onPointTap: _selectBar,
+                    // onPointTap: _selectBar,
                   )
                 else if (widget.chartType == ChartType.Bars)
                   ChartHelper.bars(
                     chartData: chartData,
-                    onPointTap: _selectBar,
+                    // onPointTap: _selectBar,
                   )
                 else if (widget.chartType == ChartType.Spline)
                   ChartHelper.spline(
                     chartData: chartData,
-                    onPointTap: _selectBar,
+                    // onPointTap: _selectBar,
                   )
                 else if (widget.chartType == ChartType.BarsRange)
                   ChartHelper.barsRange(
                     chartData: chartData,
-                    onPointTap: _selectBar,
+                    // onPointTap: _selectBar,
                   )
           ],
 
-          onDataLabelRender: onDataLabelRender,
+          // onDataLabelRender: onDataLabelRender,
         ),
       ),
     );
   }
 
-  //when user tap on bar or column
-  void _selectBar(ChartPointDetails args) {
-    // if user tap on same selected data reset chart
-    if (index == args.pointIndex && seriesIndex == args.seriesIndex) {
-      index = null;
-      seriesIndex = null;
-    } else {
-      index = args.pointIndex;
-      seriesIndex = args.seriesIndex;
-    }
-    setState(() {});
-  }
+//   //when user tap on bar or column
+//   void _selectBar(ChartPointDetails args) {
+//     // if user tap on same selected data reset chart
+//     if (index == args.pointIndex && seriesIndex == args.seriesIndex) {
+//       index = null;
+//       seriesIndex = null;
+//     } else {
+//       index = args.pointIndex;
+//       seriesIndex = args.seriesIndex;
+//     }
+//     setState(() {});
+//   }
 
-  void onDataLabelRender(DataLabelRenderArgs args) {
-    if (
-        // check if point is same
-        (index != null && index == args.pointIndex) &&
-            // check if series same
-            (seriesIndex != null &&
-                _getSeriesName(seriesIndex) ==
-                    (args.seriesRenderer as ChartSeries).name)) {
-      ChartData? candidate = _getSeriesPointData(seriesIndex, index);
+//   void onDataLabelRender(DataLabelRenderArgs args) {
+//     if (
+//         // check if point is same
+//         (index != null && index == args.pointIndex) &&
+//             // check if series same
+//             (seriesIndex != null &&
+//                 _getSeriesName(seriesIndex) ==
+//                     (args.seriesRenderer as ChartSeries).name)) {
+//       ChartData? candidate = _getSeriesPointData(seriesIndex, index);
 
-      args.textStyle = Get.theme.textTheme.labelSmall!.copyWith(
-        color: widget.color,
-        fontWeight: FontWeight.bold,
-        fontSize: 11.sp,
-      );
+//       args.textStyle = Get.theme.textTheme.labelSmall!.copyWith(
+//         color: widget.color,
+//         fontWeight: FontWeight.bold,
+//         fontSize: 11.sp,
+//       );
 
-      args.color = candidate?.color ?? args.color;
-      args.text = '${args.text} ${candidate?.label}';
-    } else {
-      args.color = null;
-      args.textStyle = Get.theme.textTheme.labelSmall!.copyWith(fontSize: 0);
-    }
-  }
+//       args.color = candidate?.color ?? args.color;
+//       args.text = '${args.text} ${candidate?.label}';
+//     } else {
+//       args.color = null;
+//       args.textStyle = Get.theme.textTheme.labelSmall!.copyWith(fontSize: 0);
+//     }
+//   }
 
-  // Method to return the series name based on tapped point's series index
-  String? _getSeriesName(int? index) {
-    if (index == null || !seriesNames.asMap().containsKey(index)) return '';
-    return seriesNames[index]!.legendText;
-  }
+//   // Method to return the series name based on tapped point's series index
+//   String? _getSeriesName(int? index) {
+//     if (index == null || !seriesNames.asMap().containsKey(index)) return '';
+//     return seriesNames[index]!.legendText;
+//   }
 
-  ChartData? _getSeriesPointData(int? seriesIndex, int? index) {
-    if (seriesIndex == null || !seriesNames.asMap().containsKey(seriesIndex)) {
-      return null;
-    }
-    if (index == null ||
-        !widget.chartsData![seriesIndex].asMap().containsKey(index))
-      return null;
+//   ChartData? _getSeriesPointData(int? seriesIndex, int? index) {
+//     if (seriesIndex == null || !seriesNames.asMap().containsKey(seriesIndex)) {
+//       return null;
+//     }
+//     if (index == null ||
+//         !widget.chartsData![seriesIndex].asMap().containsKey(index))
+//       return null;
 
-    return widget.chartsData![seriesIndex][index];
-  }
+//     return widget.chartsData![seriesIndex][index];
+//   }
 }
