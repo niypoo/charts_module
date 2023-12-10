@@ -10,12 +10,12 @@ class ChartHelper {
     Function(ChartPointDetails)? onPointTap,
   }) {
     return RangeColumnSeries<ChartData, DateTime>(
-  // selectionBehavior: SelectionBehavior(
-  //       enable: true,
-  //       selectedBorderWidth: 5,
-  //       unselectedBorderWidth: 0.5,
-  //     ),
-  //     // Legend
+      // selectionBehavior: SelectionBehavior(
+      //       enable: true,
+      //       selectedBorderWidth: 5,
+      //       unselectedBorderWidth: 0.5,
+      //     ),
+      //     // Legend
       name: chartData.first.legendText,
       legendIconType: chartData.first.legendIconType ?? LegendIconType.circle,
       legendItemText: chartData.first.legendText ?? ' ',
@@ -36,15 +36,16 @@ class ChartHelper {
       xValueMapper: (ChartData data, _) => data.date,
       lowValueMapper: (ChartData data, _) => data.lowValue,
       highValueMapper: (ChartData data, _) => data.highValue,
-      
+
       // Map the data label text for each point from the data source
       // isTrackVisible: false,
-      // dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
+      dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
       dataLabelSettings: DataLabelSettings(
         isVisible: true,
-      //           textStyle: TextStyle(fontSize: 0, color: Get.theme.secondaryHeaderColor),
-      //   //useSeriesColor: true,
-      //   //showZeroValue: true,
+        textStyle: TextStyle(fontSize:11.sp, color: Get.theme.secondaryHeaderColor),
+        // useSeriesColor: true,
+        showZeroValue: true,
+        labelPosition: ChartDataLabelPosition.inside,
       ),
       // onPointTap: onPointTap,
     );
@@ -55,28 +56,28 @@ class ChartHelper {
     Function(ChartPointDetails)? onPointTap,
   }) {
     return SplineRangeAreaSeries<ChartData, DateTime>(
-  // selectionBehavior: SelectionBehavior(
-  //       enable: true,
-  //       selectedBorderWidth: 5,
-  //       unselectedBorderWidth: 0.5,
-  //     ),
-  //     // Legend
-  //     name: chartData!.first.legendText,
-  //     legendIconType: chartData.first.legendIconType ?? LegendIconType.circle,
-  //     legendItemText: chartData.first.legendText ?? ' ',
-  //     isVisibleInLegend: chartData.first.legendText != null ? true : false,
-  //     color: chartData.first.color?.withOpacity(0.2),
-  //     // borderRadius: BorderRadius.all(Radius.circular(15)),
+      // selectionBehavior: SelectionBehavior(
+      //       enable: true,
+      //       selectedBorderWidth: 5,
+      //       unselectedBorderWidth: 0.5,
+      //     ),
+      //     // Legend
+      //     name: chartData!.first.legendText,
+      //     legendIconType: chartData.first.legendIconType ?? LegendIconType.circle,
+      //     legendItemText: chartData.first.legendText ?? ' ',
+      //     isVisibleInLegend: chartData.first.legendText != null ? true : false,
+      //     color: chartData.first.color?.withOpacity(0.2),
+      //     // borderRadius: BorderRadius.all(Radius.circular(15)),
       dataSource: chartData,
-  //     markerSettings: MarkerSettings(
-  //       isVisible: true,
-  //       borderWidth: 2,
-  //       width: 9,
-  //       height: 9,
-  //       shape: chartData.first.dataMarkerType,
-  //       // ignore: prefer_null_aware_operators
-  //       color: chartData.first.color,
-  //     ),
+      //     markerSettings: MarkerSettings(
+      //       isVisible: true,
+      //       borderWidth: 2,
+      //       width: 9,
+      //       height: 9,
+      //       shape: chartData.first.dataMarkerType,
+      //       // ignore: prefer_null_aware_operators
+      //       color: chartData.first.color,
+      //     ),
 
       // pointColorMapper: (ChartData data, _) => data.color,
       xValueMapper: (ChartData data, _) => data.date,
@@ -106,11 +107,11 @@ class ChartHelper {
   }) {
     return SplineSeries<ChartData, DateTime>(
       //MAKE SELECTED BAR WITH CUSTOM COLOR
-  // selectionBehavior: SelectionBehavior(
-  //       enable: true,
-  //       selectedBorderWidth: 5,
-  //       unselectedBorderWidth: 0.5,
-  //     ),
+      // selectionBehavior: SelectionBehavior(
+      //       enable: true,
+      //       selectedBorderWidth: 5,
+      //       unselectedBorderWidth: 0.5,
+      //     ),
 
       dataSource: chartData,
       // width: 6,
