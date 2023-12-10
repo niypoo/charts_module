@@ -69,10 +69,15 @@ class _ChartWidgetState extends State<ChartWidget> {
       child: Directionality(
         textDirection: TextDirection.ltr,
         child: SfCartesianChart(
-          // zoomPanBehavior: ZoomPanBehavior(
-          //   enablePanning: true,
-          //   zoomMode: ZoomMode.xy,
-          // ),
+          zoomPanBehavior: ZoomPanBehavior(
+            enablePanning: true,
+            maximumZoomLevel: 2,
+            enableDoubleTapZooming: true,
+            enableMouseWheelZooming: true,
+            enablePinching: true,
+            enableSelectionZooming: true,
+            
+          ),
           primaryXAxis: DateTimeAxis(
             isVisible: true,
             plotOffset: 15.sp,
