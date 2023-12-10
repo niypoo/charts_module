@@ -85,7 +85,7 @@ class _ChartWidgetState extends State<ChartWidget> {
             plotOffset: 15.sp,
             autoScrollingDelta: 5,
             autoScrollingMode: AutoScrollingMode.end,
-            // autoScrollingDeltaType: DateTimeIntervalType.auto,
+            autoScrollingDeltaType: DateTimeIntervalType.days,
             // labelIntersectAction: AxisLabelIntersectAction.rotate90,
             plotBands: widget.verticalPlotBands,
             majorTickLines:  MajorTickLines(
