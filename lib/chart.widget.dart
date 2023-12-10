@@ -82,7 +82,7 @@ class _ChartWidgetState extends State<ChartWidget> {
             isVisible: true,
             plotOffset: 15.sp,
             autoScrollingDelta: 7,
-            autoScrollingDeltaType: DateTimeIntervalType.days
+            //autoScrollingDeltaType: DateTimeIntervalType.days
             // majorTickLines: MajorTickLines(
             //   width: 1.sp,
             // ),
