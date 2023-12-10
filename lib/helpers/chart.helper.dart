@@ -37,12 +37,12 @@ class ChartHelper {
       highValueMapper: (ChartData data, _) => data.highValue,
       // Map the data label text for each point from the data source
       // isTrackVisible: false,
-      dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
+      //dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
       dataLabelSettings: DataLabelSettings(
         isVisible: true,
                 textStyle: TextStyle(fontSize: 0, color: Get.theme.secondaryHeaderColor),
-        useSeriesColor: true,
-        showZeroValue: true,
+        //useSeriesColor: true,
+        //showZeroValue: true,
       ),
       // onPointTap: onPointTap,
     );
@@ -85,8 +85,8 @@ class ChartHelper {
       dataLabelSettings: DataLabelSettings(
         isVisible: true,
                 textStyle: TextStyle(fontSize: 0, color: Get.theme.secondaryHeaderColor),
-        useSeriesColor: true,
-        showZeroValue: true,
+        //useSeriesColor: true,
+        //showZeroValue: true,
         // labelAlignment: ChartDataLabelAlignment.middle,
         // alignment: ChartAlignment.center,
         // labelPosition: ChartDataLabelPosition.outside,
@@ -122,7 +122,7 @@ class ChartHelper {
       pointColorMapper: (ChartData data, _) => data.color,
       xValueMapper: (ChartData data, _) => data.date,
       yValueMapper: (ChartData data, _) => data.value,
-      dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
+      //dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
 
       markerSettings: MarkerSettings(
         isVisible: true,
@@ -139,15 +139,15 @@ class ChartHelper {
         isVisible: true,
                 textStyle: TextStyle(fontSize: 0, color: Get.theme.secondaryHeaderColor),
 
-        useSeriesColor: true,
-        showZeroValue: true,
+        //useSeriesColor: true,
+        //showZeroValue: true,
         // labelAlignment: ChartDataLabelAlignment.auto,
         // alignment: ChartAlignment.far,
         // labelPosition: ChartDataLabelPosition.inside,
         // labelIntersectAction: LabelIntersectAction.hide,
         // showCumulativeValues: false,
       ),
-      splineType: SplineType.cardinal,
+      //splineType: SplineType.cardinal,
       onPointTap: onPointTap,
     );
   }
@@ -177,7 +177,7 @@ class ChartHelper {
       pointColorMapper: (ChartData data, _) => data.color,
       xValueMapper: (ChartData data, _) => data.date,
       yValueMapper: (ChartData data, _) => data.value,
-      dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
+      //dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
 
       markerSettings: MarkerSettings(
         isVisible: true,
@@ -193,8 +193,8 @@ class ChartHelper {
       dataLabelSettings: DataLabelSettings(
         isVisible: true,
                 textStyle: TextStyle(fontSize: 0, color: Get.theme.secondaryHeaderColor),
-        useSeriesColor: true,
-        showZeroValue: true,
+        //useSeriesColor: true,
+       // showZeroValue: true,
         // labelAlignment: ChartDataLabelAlignment.auto,
         // alignment: ChartAlignment.far,
         // labelPosition: ChartDataLabelPosition.inside,
