@@ -211,6 +211,7 @@ class _ChartWidgetState extends State<ChartWidget> {
       args.textStyle = Get.theme.textTheme.labelSmall!.copyWith(
         color: widget.color,
         fontWeight: FontWeight.bold,
+        fontSize: 11.sp,
       );
 
       args.color = candidate?.color ?? args.color;

@@ -10,10 +10,11 @@ class ChartHelper {
     Function(ChartPointDetails)? onPointTap,
   }) {
     return RangeColumnSeries<ChartData, DateTime>(
-      // selectionBehavior: SelectionBehavior(
-      //   enable: true,
-      //   selectedColor: widget.selectedColor,
-      // ),
+  selectionBehavior: SelectionBehavior(
+        enable: true,
+        selectedBorderWidth: 5,
+        unselectedBorderWidth: 0.5,
+      ),
       // Legend
       name: chartData!.first.legendText,
       legendIconType: chartData.first.legendIconType ?? LegendIconType.circle,
@@ -53,10 +54,11 @@ class ChartHelper {
     Function(ChartPointDetails)? onPointTap,
   }) {
     return SplineRangeAreaSeries<ChartData, DateTime>(
-      // selectionBehavior: SelectionBehavior(
-      //   enable: true,
-      //   selectedColor: widget.selectedColor,
-      // ),
+  selectionBehavior: SelectionBehavior(
+        enable: true,
+        selectedBorderWidth: 5,
+        unselectedBorderWidth: 0.5,
+      ),
       // Legend
       name: chartData!.first.legendText,
       legendIconType: chartData.first.legendIconType ?? LegendIconType.circle,
@@ -103,11 +105,11 @@ class ChartHelper {
   }) {
     return SplineSeries<ChartData, DateTime>(
       //MAKE SELECTED BAR WITH CUSTOM COLOR
-      // selectionBehavior: SelectionBehavior(
-      //   enable: true,
-      //   selectedBorderWidth: 5,
-      //   unselectedBorderWidth: 0.5,
-      // ),
+  selectionBehavior: SelectionBehavior(
+        enable: true,
+        selectedBorderWidth: 5,
+        unselectedBorderWidth: 0.5,
+      ),
 
       dataSource: chartData,
       width: 6,
@@ -158,11 +160,11 @@ class ChartHelper {
   }) {
     return ColumnSeries<ChartData, DateTime>(
       //MAKE SELECTED BAR WITH CUSTOM COLOR
-      // selectionBehavior: SelectionBehavior(
-      //   enable: true,
-      //   selectedBorderWidth: 5,
-      //   unselectedBorderWidth: 0.5,
-      // ),
+      selectionBehavior: SelectionBehavior(
+        enable: true,
+        selectedBorderWidth: 5,
+        unselectedBorderWidth: 0.5,
+      ),
 
       dataSource: chartData,
       width: 6,
