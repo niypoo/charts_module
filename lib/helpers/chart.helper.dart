@@ -35,12 +35,12 @@ class ChartHelper {
       lowValueMapper: (ChartData data, _) => data.lowValue,
       highValueMapper: (ChartData data, _) => data.highValue,
       // Map the data label text for each point from the data source
-      isTrackVisible: false,
-      dataLabelSettings:const DataLabelSettings(
-        isVisible: true,
-        useSeriesColor: true,
-        showZeroValue: true,
-      ),
+      // isTrackVisible: false,
+      // dataLabelSettings:const DataLabelSettings(
+      //   isVisible: true,
+      //   useSeriesColor: true,
+      //   showZeroValue: true,
+      // ),
       // onPointTap: onPointTap,
     );
   }
@@ -76,16 +76,16 @@ class ChartHelper {
       xValueMapper: (ChartData data, _) => data.date,
       lowValueMapper: (ChartData data, _) => data.lowValue,
       highValueMapper: (ChartData data, _) => data.highValue,
-      dataLabelSettings: const DataLabelSettings(
-        isVisible: true,
-        useSeriesColor: true,
-        showZeroValue: true,
-        // labelAlignment: ChartDataLabelAlignment.middle,
-        // alignment: ChartAlignment.center,
-        // labelPosition: ChartDataLabelPosition.outside,
-        // labelIntersectAction: LabelIntersectAction.hide,
-        // showCumulativeValues: true,
-      ),
+      // dataLabelSettings: const DataLabelSettings(
+      //   isVisible: true,
+      //   useSeriesColor: true,
+      //   showZeroValue: true,
+      //   // labelAlignment: ChartDataLabelAlignment.middle,
+      //   // alignment: ChartAlignment.center,
+      //   // labelPosition: ChartDataLabelPosition.outside,
+      //   // labelIntersectAction: LabelIntersectAction.hide,
+      //   // showCumulativeValues: true,
+      // ),
     );
   }
 
@@ -125,16 +125,16 @@ class ChartHelper {
       // ),
 
       // data label setting
-      dataLabelSettings: const DataLabelSettings(
-        isVisible: true,
-        useSeriesColor: true,
-        showZeroValue: true,
-        // labelAlignment: ChartDataLabelAlignment.auto,
-        // alignment: ChartAlignment.far,
-        // labelPosition: ChartDataLabelPosition.inside,
-        // labelIntersectAction: LabelIntersectAction.hide,
-        // showCumulativeValues: false,
-      ),
+      // dataLabelSettings: const DataLabelSettings(
+      //   isVisible: true,
+      //   useSeriesColor: true,
+      //   showZeroValue: true,
+      //   // labelAlignment: ChartDataLabelAlignment.auto,
+      //   // alignment: ChartAlignment.far,
+      //   // labelPosition: ChartDataLabelPosition.inside,
+      //   // labelIntersectAction: LabelIntersectAction.hide,
+      //   // showCumulativeValues: false,
+      // ),
       splineType: SplineType.cardinal,
     );
   }
@@ -174,17 +174,17 @@ class ChartHelper {
       //   // color: chartData.first.color,
       // ),
 
-      // data label setting
-      dataLabelSettings: const DataLabelSettings(
-        isVisible: true,
-        useSeriesColor: true,
-        showZeroValue: true,
-        // labelAlignment: ChartDataLabelAlignment.auto,
-        // alignment: ChartAlignment.far,
-        // labelPosition: ChartDataLabelPosition.inside,
-        // labelIntersectAction: LabelIntersectAction.hide,
-        // showCumulativeValues: false,
-      ),
+      // // data label setting
+      // dataLabelSettings: const DataLabelSettings(
+      //   isVisible: true,
+      //   useSeriesColor: true,
+      //   showZeroValue: true,
+      //   // labelAlignment: ChartDataLabelAlignment.auto,
+      //   // alignment: ChartAlignment.far,
+      //   // labelPosition: ChartDataLabelPosition.inside,
+      //   // labelIntersectAction: LabelIntersectAction.hide,
+      //   // showCumulativeValues: false,
+      // ),
     );
   }
 }

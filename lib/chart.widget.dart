@@ -73,28 +73,28 @@ class _ChartWidgetState extends State<ChartWidget> {
             enablePanning: true,
             zoomMode: ZoomMode.xy,
           ),
-          // primaryXAxis: DateTimeAxis(
-          //   isVisible: true,
-          //   majorTickLines: MajorTickLines(
-          //     width: 1.sp,
-          //   ),
-          //   //Hide the guidelines of x-axis
-          //   majorGridLines: const MajorGridLines(
-          //     width: 0,
-          //     // dashArray: const [10],
-          //     // color: Get.theme.cardColor,
-          //   ),
-          //   //Hide the axis line of x-axis
-          //   axisLine: AxisLine(width: 1.sp),
-          //   labelStyle: TextStyle(fontSize: 10.sp),
-          //   // desiredIntervals: 31,
-          //   // autoScrollingDelta: widget.autoScrollingDelta,
-          //   // desiredIntervals: widget.desiredIntervals,
-          //   autoScrollingMode: AutoScrollingMode.start,
-          //   autoScrollingDeltaType: DateTimeIntervalType.auto,
-          //   // labelIntersectAction: AxisLabelIntersectAction.rotate90,
-          //   plotBands: widget.verticalPlotBands,
-          // ),
+          primaryXAxis: DateTimeAxis(
+            isVisible: true,
+            majorTickLines: MajorTickLines(
+              width: 1.sp,
+            ),
+            //Hide the guidelines of x-axis
+            majorGridLines: const MajorGridLines(
+              width: 0,
+              // dashArray: const [10],
+              // color: Get.theme.cardColor,
+            ),
+            //Hide the axis line of x-axis
+            axisLine: AxisLine(width: 1.sp),
+            labelStyle: TextStyle(fontSize: 10.sp),
+            // desiredIntervals: 31,
+            autoScrollingDelta: 7,
+            // desiredIntervals: widget.desiredIntervals,
+            autoScrollingMode: AutoScrollingMode.start,
+            autoScrollingDeltaType: DateTimeIntervalType.auto,
+            labelIntersectAction: AxisLabelIntersectAction.rotate90,
+            plotBands: widget.verticalPlotBands,
+          ),
           // primaryYAxis: NumericAxis(
           //   isVisible: true,
           //   majorTickLines:  MajorTickLines(
