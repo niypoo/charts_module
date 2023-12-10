@@ -92,11 +92,11 @@ class _ChartWidgetState extends State<ChartWidget> {
             //   width: 1.sp,
             // ),
             // //Hide the guidelines of x-axis
-            // majorGridLines: const MajorGridLines(
-            //   width: 0,
-            //   // dashArray: const [10],
-            //   // color: Get.theme.cardColor,
-            // ),
+            majorGridLines: const MajorGridLines(
+              width: 0,
+              // dashArray: const [10],
+              // color: Get.theme.cardColor,
+            ),
             // //Hide the axis line of x-axis
             // axisLine: AxisLine(width: 1.sp),
             // labelStyle: TextStyle(fontSize: 10.sp),
@@ -113,11 +113,11 @@ class _ChartWidgetState extends State<ChartWidget> {
             // ),
             // labelStyle: TextStyle(fontSize: 10.sp),
             // //Hide the grid lines of y-axis
-            // majorGridLines: const MajorGridLines(
-            //   width: 0,
-            //   // dashArray: const [10],
-            //   // color: Get.theme.cardColor,
-            // ),
+            majorGridLines: const MajorGridLines(
+              width: 0,
+              // dashArray: const [10],
+              // color: Get.theme.cardColor,
+            ),
             // //Hide the axis line of y-axis
             // axisLine:  AxisLine(width: 1.sp),
             plotBands: widget.horizontalPlotBands,

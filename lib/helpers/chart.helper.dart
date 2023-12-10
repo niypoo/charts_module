@@ -42,11 +42,11 @@ class ChartHelper {
       dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
       dataLabelSettings: DataLabelSettings(
         isVisible: true,
-        textStyle:
-            TextStyle(fontSize: 10.sp, color: Get.theme.secondaryHeaderColor),
-        // useSeriesColor: true,
+        textStyle: TextStyle(fontSize: 10.sp),
+        useSeriesColor: true,
         showZeroValue: true,
         labelPosition: ChartDataLabelPosition.outside,
+        labelIntersectAction: LabelIntersectAction.none
       ),
       // onPointTap: onPointTap,
     );
