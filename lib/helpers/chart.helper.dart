@@ -29,7 +29,7 @@ class ChartHelper {
         width: 5.sp,
         height: 5.sp,
         shape: chartData.first.dataMarkerType,
-        // color: chartData.first.color,
+        color: chartData.first.color,
       ),
 
       pointColorMapper: (ChartData data, _) => data.color,
@@ -43,7 +43,7 @@ class ChartHelper {
       dataLabelSettings: DataLabelSettings(
         isVisible: true,
         textStyle: TextStyle(fontSize: 10.sp),
-        useSeriesColor: true,
+        // useSeriesColor: true,
         showZeroValue: true,
         labelPosition: ChartDataLabelPosition.outside,
         labelIntersectAction: LabelIntersectAction.none

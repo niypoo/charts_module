@@ -119,10 +119,10 @@ class _ChartWidgetState extends State<ChartWidget> {
               // color: Get.theme.cardColor,
             ),
             // //Hide the axis line of y-axis
-            // axisLine:  AxisLine(width: 1.sp),
+            axisLine:  AxisLine(width: 1.sp),
             plotBands: widget.horizontalPlotBands,
           ),
-          // plotAreaBorderWidth: 0,
+          plotAreaBorderWidth: 0,
           // tooltipBehavior: TooltipBehavior(
           //   enable: true,
           //   builder: (data, point, series, pointIndex, seriesIndex) =>
