@@ -82,8 +82,8 @@ class _ChartWidgetState extends State<ChartWidget> {
             isVisible: true,
             plotOffset: 15.sp,
             autoScrollingDelta: 7,
-            autoScrollingDeltaType: DateTimeIntervalType.months,
             autoScrollingMode: AutoScrollingMode.end,
+            autoScrollingDeltaType: DateTimeIntervalType.auto,
             labelIntersectAction: AxisLabelIntersectAction.rotate90,
             plotBands: widget.verticalPlotBands,
             // majorTickLines: MajorTickLines(

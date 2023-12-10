@@ -16,35 +16,36 @@ class ChartHelper {
   //       unselectedBorderWidth: 0.5,
   //     ),
   //     // Legend
-  //     name: chartData!.first.legendText,
-  //     legendIconType: chartData.first.legendIconType ?? LegendIconType.circle,
-  //     legendItemText: chartData.first.legendText ?? ' ',
-  //     isVisibleInLegend: chartData.first.legendText != null ? true : false,
-  //     color: chartData.first.color,
-  //     borderRadius: BorderRadius.all(Radius.circular(15.sp)),
+      name: chartData.first.legendText,
+      legendIconType: chartData.first.legendIconType ?? LegendIconType.circle,
+      legendItemText: chartData.first.legendText ?? ' ',
+      isVisibleInLegend: chartData.first.legendText != null ? true : false,
+      borderRadius: BorderRadius.all(Radius.circular(15.sp)),
       dataSource: chartData,
-  //     markerSettings: MarkerSettings(
-  //       isVisible: true,
-  //       borderWidth: 2,
-  //       width: 9,
-  //       height: 9,
-  //       shape: chartData.first.dataMarkerType,
-  //       color: chartData.first.color,
-  //     ),
+
+      markerSettings: MarkerSettings(
+        isVisible: true,
+        borderWidth: 0,
+        width: 5.sp,
+        height: 5.sp,
+        shape: chartData.first.dataMarkerType,
+        // color: chartData.first.color,
+      ),
 
       pointColorMapper: (ChartData data, _) => data.color,
       xValueMapper: (ChartData data, _) => data.date,
       lowValueMapper: (ChartData data, _) => data.lowValue,
       highValueMapper: (ChartData data, _) => data.highValue,
+      
       // Map the data label text for each point from the data source
       // isTrackVisible: false,
-      //dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
-      // dataLabelSettings: DataLabelSettings(
-      //   isVisible: true,
+      dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
+      dataLabelSettings: DataLabelSettings(
+        isVisible: true,
       //           textStyle: TextStyle(fontSize: 0, color: Get.theme.secondaryHeaderColor),
       //   //useSeriesColor: true,
       //   //showZeroValue: true,
-      // ),
+      ),
       // onPointTap: onPointTap,
     );
   }
