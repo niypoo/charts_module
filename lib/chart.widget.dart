@@ -81,12 +81,12 @@ class _ChartWidgetState extends State<ChartWidget> {
             enableSelectionZooming: true,
           ),
           primaryXAxis: DateTimeAxis(
-            isVisible: true,
+            // isVisible: true,
             plotOffset: 15.sp,
-            autoScrollingDelta: 7,
+            autoScrollingDelta: 5,
             autoScrollingMode: AutoScrollingMode.end,
-            autoScrollingDeltaType: DateTimeIntervalType.auto,
-            labelIntersectAction: AxisLabelIntersectAction.rotate90,
+            // autoScrollingDeltaType: DateTimeIntervalType.auto,
+            // labelIntersectAction: AxisLabelIntersectAction.rotate90,
             plotBands: widget.verticalPlotBands,
             // majorTickLines: MajorTickLines(
             //   width: 1.sp,
@@ -106,22 +106,22 @@ class _ChartWidgetState extends State<ChartWidget> {
             // autoScrollingDeltaType: DateTimeIntervalType.auto,
             // //autoScrollingMode: AutoScrollingMode.start,
           ),
-          // primaryYAxis: NumericAxis(
-          //   isVisible: true,
-          //   majorTickLines:  MajorTickLines(
-          //     width: 1.sp,
-          //   ),
-          //   labelStyle: TextStyle(fontSize: 10.sp),
-          //   //Hide the grid lines of y-axis
-          //   majorGridLines: const MajorGridLines(
-          //     width: 0,
-          //     // dashArray: const [10],
-          //     // color: Get.theme.cardColor,
-          //   ),
-          //   //Hide the axis line of y-axis
-          //   axisLine:  AxisLine(width: 1.sp),
-          //   plotBands: widget.horizontalPlotBands,
-          // ),
+          primaryYAxis: NumericAxis(
+            // isVisible: true,
+            // majorTickLines:  MajorTickLines(
+            //   width: 1.sp,
+            // ),
+            // labelStyle: TextStyle(fontSize: 10.sp),
+            // //Hide the grid lines of y-axis
+            // majorGridLines: const MajorGridLines(
+            //   width: 0,
+            //   // dashArray: const [10],
+            //   // color: Get.theme.cardColor,
+            // ),
+            // //Hide the axis line of y-axis
+            // axisLine:  AxisLine(width: 1.sp),
+            plotBands: widget.horizontalPlotBands,
+          ),
           // plotAreaBorderWidth: 0,
           // tooltipBehavior: TooltipBehavior(
           //   enable: true,
