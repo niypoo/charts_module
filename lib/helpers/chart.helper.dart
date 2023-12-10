@@ -10,11 +10,11 @@ class ChartHelper {
     Function(ChartPointDetails)? onPointTap,
   }) {
     return RangeColumnSeries<ChartData, DateTime>(
-      // selectionBehavior: SelectionBehavior(
-      //       enable: true,
-      //       selectedBorderWidth: 5,
-      //       unselectedBorderWidth: 0.5,
-      //     ),
+      selectionBehavior: SelectionBehavior(
+            enable: true,
+            selectedBorderWidth: 5,
+            unselectedBorderWidth: 0.5,
+          ),
       //     // Legend
       name: chartData.first.legendText,
       legendIconType: chartData.first.legendIconType ?? LegendIconType.circle,
@@ -22,12 +22,12 @@ class ChartHelper {
       isVisibleInLegend: chartData.first.legendText != null ? true : false,
       borderRadius: BorderRadius.all(Radius.circular(15.sp)),
       dataSource: chartData,
-      width: 6.sp,
+
       markerSettings: MarkerSettings(
         isVisible: false,
         borderWidth: 0,
-        width: 12.sp,
-        height: 12.sp,
+        width: 10.sp,
+        height: 10.sp,
         shape: chartData.first.dataMarkerType,
         color: chartData.first.color,
       ),
@@ -70,12 +70,13 @@ class ChartHelper {
       isVisibleInLegend: chartData.first.legendText != null ? true : false,
       dataSource: chartData,
 
-      borderWidth: 6.sp,
+      borderWidth: 5.sp,
+
       markerSettings: MarkerSettings(
         isVisible: true,
         borderWidth: 0,
-        width: 12.sp,
-        height: 12.sp,
+        width: 10.sp,
+        height: 10.sp,
         shape: chartData.first.dataMarkerType,
         color: chartData.first.color,
       ),
@@ -107,14 +108,13 @@ class ChartHelper {
   }) {
     return SplineSeries<ChartData, DateTime>(
       //MAKE SELECTED BAR WITH CUSTOM COLOR
-      // selectionBehavior: SelectionBehavior(
-      //       enable: true,
-      //       selectedBorderWidth: 5,
-      //       unselectedBorderWidth: 0.5,
-      //     ),
+      selectionBehavior: SelectionBehavior(
+            enable: true,
+            selectedBorderWidth: 5,
+            unselectedBorderWidth: 0.5,
+          ),
 
       dataSource: chartData,
-      // width: 6,
       // // Legend
       name: chartData.first.legendText,
       legendIconType: chartData.first.legendIconType ?? LegendIconType.circle,
@@ -126,13 +126,13 @@ class ChartHelper {
       xValueMapper: (ChartData data, _) => data.date,
       yValueMapper: (ChartData data, _) => data.value,
       dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
-      width: 6.sp,
+      width: 5.sp,
 
       markerSettings: MarkerSettings(
         isVisible: true,
         borderWidth: 0,
-        width: 12.sp,
-        height: 12.sp,
+        width: 10.sp,
+        height: 10.sp,
         shape: chartData.first.dataMarkerType,
         color: chartData.first.color,
       ),
@@ -177,7 +177,6 @@ class ChartHelper {
       yValueMapper: (ChartData data, _) => data.value,
       dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
 
-      width: 6.sp,
       markerSettings: MarkerSettings(
         isVisible: false,
         borderWidth: 0,
