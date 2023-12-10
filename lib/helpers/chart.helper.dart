@@ -21,14 +21,14 @@ class ChartHelper {
       color: chartData.first.color,
       borderRadius: BorderRadius.all(Radius.circular(15.sp)),
       dataSource: chartData,
-      // markerSettings: MarkerSettings(
-      //   isVisible: true,
-      //   borderWidth: 2,
-      //   width: 9,
-      //   height: 9,
-      //   shape: chartData.first.dataMarkerType,
-      //   color: chartData.first.color,
-      // ),
+      markerSettings: MarkerSettings(
+        isVisible: true,
+        borderWidth: 2,
+        width: 9,
+        height: 9,
+        shape: chartData.first.dataMarkerType,
+        color: chartData.first.color,
+      ),
 
       // pointColorMapper: (ChartData data, _) => data.color,
       xValueMapper: (ChartData data, _) => data.date,
@@ -36,11 +36,11 @@ class ChartHelper {
       highValueMapper: (ChartData data, _) => data.highValue,
       // Map the data label text for each point from the data source
       // isTrackVisible: false,
-      // dataLabelSettings:const DataLabelSettings(
-      //   isVisible: true,
-      //   useSeriesColor: true,
-      //   showZeroValue: true,
-      // ),
+      dataLabelSettings:const DataLabelSettings(
+        isVisible: true,
+        useSeriesColor: true,
+        showZeroValue: false,
+      ),
       // onPointTap: onPointTap,
     );
   }
@@ -62,30 +62,30 @@ class ChartHelper {
       color: chartData.first.color?.withOpacity(0.2),
       // borderRadius: BorderRadius.all(Radius.circular(15)),
       dataSource: chartData,
-      // markerSettings: MarkerSettings(
-      //   isVisible: true,
-      //   borderWidth: 2,
-      //   width: 9,
-      //   height: 9,
-      //   shape: chartData.first.dataMarkerType,
-      //   // ignore: prefer_null_aware_operators
-      //   color: chartData.first.color,
-      // ),
+      markerSettings: MarkerSettings(
+        isVisible: true,
+        borderWidth: 2,
+        width: 9,
+        height: 9,
+        shape: chartData.first.dataMarkerType,
+        // ignore: prefer_null_aware_operators
+        color: chartData.first.color,
+      ),
 
       // pointColorMapper: (ChartData data, _) => data.color,
       xValueMapper: (ChartData data, _) => data.date,
       lowValueMapper: (ChartData data, _) => data.lowValue,
       highValueMapper: (ChartData data, _) => data.highValue,
-      // dataLabelSettings: const DataLabelSettings(
-      //   isVisible: true,
-      //   useSeriesColor: true,
-      //   showZeroValue: true,
-      //   // labelAlignment: ChartDataLabelAlignment.middle,
-      //   // alignment: ChartAlignment.center,
-      //   // labelPosition: ChartDataLabelPosition.outside,
-      //   // labelIntersectAction: LabelIntersectAction.hide,
-      //   // showCumulativeValues: true,
-      // ),
+      dataLabelSettings: const DataLabelSettings(
+        isVisible: true,
+        useSeriesColor: true,
+        showZeroValue: false,
+        // labelAlignment: ChartDataLabelAlignment.middle,
+        // alignment: ChartAlignment.center,
+        // labelPosition: ChartDataLabelPosition.outside,
+        // labelIntersectAction: LabelIntersectAction.hide,
+        // showCumulativeValues: true,
+      ),
     );
   }
 
@@ -115,26 +115,26 @@ class ChartHelper {
       yValueMapper: (ChartData data, _) => data.value,
       dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
 
-      // markerSettings: MarkerSettings(
-      //   isVisible: true,
-      //   borderWidth: 4,
-      //   width: 12,
-      //   height: 12,
-      //   shape: chartData.first.dataMarkerType,
-      //   color: chartData.first.color,
-      // ),
+      markerSettings: MarkerSettings(
+        isVisible: true,
+        borderWidth: 4,
+        width: 12,
+        height: 12,
+        shape: chartData.first.dataMarkerType,
+        color: chartData.first.color,
+      ),
 
       // data label setting
-      // dataLabelSettings: const DataLabelSettings(
-      //   isVisible: true,
-      //   useSeriesColor: true,
-      //   showZeroValue: true,
-      //   // labelAlignment: ChartDataLabelAlignment.auto,
-      //   // alignment: ChartAlignment.far,
-      //   // labelPosition: ChartDataLabelPosition.inside,
-      //   // labelIntersectAction: LabelIntersectAction.hide,
-      //   // showCumulativeValues: false,
-      // ),
+      dataLabelSettings: const DataLabelSettings(
+        isVisible: true,
+        useSeriesColor: true,
+        showZeroValue: false,
+        // labelAlignment: ChartDataLabelAlignment.auto,
+        // alignment: ChartAlignment.far,
+        // labelPosition: ChartDataLabelPosition.inside,
+        // labelIntersectAction: LabelIntersectAction.hide,
+        // showCumulativeValues: false,
+      ),
       splineType: SplineType.cardinal,
     );
   }
@@ -165,26 +165,26 @@ class ChartHelper {
       yValueMapper: (ChartData data, _) => data.value,
       dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
 
-      // markerSettings: const MarkerSettings(
-      //   isVisible: true,
-      //   borderWidth: 4,
-      //   width: 12,
-      //   height: 12,
-      //   // shape: chartData.first.dataMarkerType,
-      //   // color: chartData.first.color,
-      // ),
+      markerSettings: const MarkerSettings(
+        isVisible: true,
+        borderWidth: 4,
+        width: 12,
+        height: 12,
+        // shape: chartData.first.dataMarkerType,
+        // color: chartData.first.color,
+      ),
 
       // // data label setting
-      // dataLabelSettings: const DataLabelSettings(
-      //   isVisible: true,
-      //   useSeriesColor: true,
-      //   showZeroValue: true,
-      //   // labelAlignment: ChartDataLabelAlignment.auto,
-      //   // alignment: ChartAlignment.far,
-      //   // labelPosition: ChartDataLabelPosition.inside,
-      //   // labelIntersectAction: LabelIntersectAction.hide,
-      //   // showCumulativeValues: false,
-      // ),
+      dataLabelSettings: const DataLabelSettings(
+        isVisible: true,
+        useSeriesColor: true,
+        showZeroValue: false,
+        // labelAlignment: ChartDataLabelAlignment.auto,
+        // alignment: ChartAlignment.far,
+        // labelPosition: ChartDataLabelPosition.inside,
+        // labelIntersectAction: LabelIntersectAction.hide,
+        // showCumulativeValues: false,
+      ),
     );
   }
 }
