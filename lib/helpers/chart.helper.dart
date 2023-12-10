@@ -22,7 +22,7 @@ class ChartHelper {
       isVisibleInLegend: chartData.first.legendText != null ? true : false,
       borderRadius: BorderRadius.all(Radius.circular(15.sp)),
       dataSource: chartData,
-      borderWidth: 10.sp,
+      width: 6.sp,
       markerSettings: MarkerSettings(
         isVisible: false,
         borderWidth: 0,
@@ -70,7 +70,7 @@ class ChartHelper {
       isVisibleInLegend: chartData.first.legendText != null ? true : false,
       dataSource: chartData,
 
-      borderWidth: 10.sp,
+      borderWidth: 6.sp,
       markerSettings: MarkerSettings(
         isVisible: true,
         borderWidth: 0,
@@ -126,7 +126,8 @@ class ChartHelper {
       xValueMapper: (ChartData data, _) => data.date,
       yValueMapper: (ChartData data, _) => data.value,
       dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
-      width: 10.sp,
+      width: 6.sp,
+
       markerSettings: MarkerSettings(
         isVisible: true,
         borderWidth: 0,
@@ -175,7 +176,8 @@ class ChartHelper {
       xValueMapper: (ChartData data, _) => data.date,
       yValueMapper: (ChartData data, _) => data.value,
       dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
-      borderWidth: 10.sp,
+
+      width: 6.sp,
       markerSettings: MarkerSettings(
         isVisible: false,
         borderWidth: 0,
