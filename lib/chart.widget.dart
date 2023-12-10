@@ -82,7 +82,10 @@ class _ChartWidgetState extends State<ChartWidget> {
             isVisible: true,
             plotOffset: 15.sp,
             autoScrollingDelta: 7,
-            //autoScrollingDeltaType: DateTimeIntervalType.days
+            autoScrollingDeltaType: DateTimeIntervalType.months,
+            autoScrollingMode: AutoScrollingMode.end,
+            labelIntersectAction: AxisLabelIntersectAction.rotate90,
+            plotBands: widget.verticalPlotBands,
             // majorTickLines: MajorTickLines(
             //   width: 1.sp,
             // ),
@@ -98,10 +101,8 @@ class _ChartWidgetState extends State<ChartWidget> {
             // // desiredIntervals: 31,
             // //autoScrollingDelta: 7,
             // // desiredIntervals: widget.desiredIntervals,
-            // //autoScrollingMode: AutoScrollingMode.start,
             // autoScrollingDeltaType: DateTimeIntervalType.auto,
-            // labelIntersectAction: AxisLabelIntersectAction.rotate90,
-            // plotBands: widget.verticalPlotBands,
+            // //autoScrollingMode: AutoScrollingMode.start,
           ),
           // primaryYAxis: NumericAxis(
           //   isVisible: true,
