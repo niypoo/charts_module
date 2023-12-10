@@ -32,7 +32,7 @@ class ChartHelper {
   //       color: chartData.first.color,
   //     ),
 
-      // pointColorMapper: (ChartData data, _) => data.color,
+      pointColorMapper: (ChartData data, _) => data.color,
       xValueMapper: (ChartData data, _) => data.date,
       lowValueMapper: (ChartData data, _) => data.lowValue,
       highValueMapper: (ChartData data, _) => data.highValue,
@@ -149,7 +149,7 @@ class ChartHelper {
       //   // labelIntersectAction: LabelIntersectAction.hide,
       //   // showCumulativeValues: false,
       // ),
-      // //splineType: SplineType.cardinal,
+      splineType: SplineType.cardinal,
       // onPointTap: onPointTap,
     );
   }
