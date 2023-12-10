@@ -82,7 +82,7 @@ class _ChartWidgetState extends State<ChartWidget> {
           ),
           primaryXAxis: DateTimeAxis(
             // isVisible: true,
-            plotOffset: 15.sp,
+            // plotOffset: 15.sp,
             autoScrollingDelta: 5,
             autoScrollingMode: AutoScrollingMode.end,
             // autoScrollingDeltaType: DateTimeIntervalType.auto,
@@ -119,22 +119,21 @@ class _ChartWidgetState extends State<ChartWidget> {
               // color: Get.theme.cardColor,
             ),
             // //Hide the axis line of y-axis
-            axisLine:  AxisLine(width: 1.sp),
+            axisLine: AxisLine(width: 1.sp),
             plotBands: widget.horizontalPlotBands,
           ),
           plotAreaBorderWidth: 0,
-          // tooltipBehavior: TooltipBehavior(
-          //   enable: true,
-          //   builder: (data, point, series, pointIndex, seriesIndex) =>
-          //       Chip(
-          //     label:Text('${'Lower'.tr} ${data.lowValue} / ${'Higher'.tr} ${data.highValue} \n ${'at'.tr} ${data.text}')
-          //         ,
-          //     color: data.color,
-          //   ),
-          //   canShowMarker: false,
-          //   header: '',
-          //   duration: 5000,
-          // ),
+          tooltipBehavior: TooltipBehavior(
+            enable: true,
+            builder: (data, point, series, pointIndex, seriesIndex) => Chip(
+              label: Text(
+                  '${'Lower'.tr} ${data.lowValue} / ${'Higher'.tr} ${data.highValue} \n ${'at'.tr} ${data.text}'),
+              color: data.color,
+            ),
+            canShowMarker: true,
+            header: '',
+            duration: 5000,
+          ),
           // enableAxisAnimation: true,
           // selectionGesture: ActivationMode.singleTap,
           // selectionType: SelectionType.point,
