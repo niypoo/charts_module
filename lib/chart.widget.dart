@@ -85,20 +85,20 @@ class _ChartWidgetState extends State<ChartWidget> {
             plotOffset: 15.sp,
             autoScrollingDelta: 5,
             autoScrollingMode: AutoScrollingMode.end,
-            autoScrollingDeltaType: DateTimeIntervalType.days,
+            // autoScrollingDeltaType: DateTimeIntervalType.auto,
             // labelIntersectAction: AxisLabelIntersectAction.rotate90,
             plotBands: widget.verticalPlotBands,
-            majorTickLines:  MajorTickLines(
+            majorTickLines: MajorTickLines(
               width: 1.sp,
             ),
             // //Hide the guidelines of x-axis
-            majorGridLines: const MajorGridLines(
-              width: 0,
+            majorGridLines: MajorGridLines(
+              width: 0.2.sp,
               // dashArray: const [10],
               // color: Get.theme.cardColor,
             ),
             // //Hide the axis line of x-axis
-            axisLine: const AxisLine(width: 0),
+            axisLine: AxisLine(width: 0.2.sp),
             // labelStyle: TextStyle(fontSize: 10.sp),
             // // desiredIntervals: 31,
             // //autoScrollingDelta: 7,
@@ -108,18 +108,18 @@ class _ChartWidgetState extends State<ChartWidget> {
           ),
           primaryYAxis: NumericAxis(
             // isVisible: true,
-            majorTickLines:  MajorTickLines(
+            majorTickLines: MajorTickLines(
               width: 1.sp,
             ),
             // labelStyle: TextStyle(fontSize: 10.sp),
             // //Hide the grid lines of y-axis
-            majorGridLines: const MajorGridLines(
-              width: 0,
+            majorGridLines: MajorGridLines(
+              width: 0.2.sp,
               // dashArray: const [10],
               // color: Get.theme.cardColor,
             ),
             // //Hide the axis line of y-axis
-            axisLine: const AxisLine(width: 0),
+            axisLine: AxisLine(width: 0.2.sp),
             plotBands: widget.horizontalPlotBands,
           ),
           plotAreaBorderWidth: 0,
