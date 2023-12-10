@@ -82,7 +82,7 @@ class _ChartWidgetState extends State<ChartWidget> {
           ),
           primaryXAxis: DateTimeAxis(
             // isVisible: true,
-            // plotOffset: 15.sp,
+            plotOffset: 15.sp,
             autoScrollingDelta: 5,
             autoScrollingMode: AutoScrollingMode.end,
             // autoScrollingDeltaType: DateTimeIntervalType.auto,
@@ -170,22 +170,22 @@ class _ChartWidgetState extends State<ChartWidget> {
                 if (widget.chartType == ChartType.SplineRange)
                   ChartHelper.splineRange(
                     chartData: chartData,
-                    // onPointTap: _selectBar,
+                    onPointTap: _selectBar,
                   )
                 else if (widget.chartType == ChartType.Bars)
                   ChartHelper.bars(
                     chartData: chartData,
-                    // onPointTap: _selectBar,
+                    onPointTap: _selectBar,
                   )
                 else if (widget.chartType == ChartType.Spline)
                   ChartHelper.spline(
                     chartData: chartData,
-                    // onPointTap: _selectBar,
+                    onPointTap: _selectBar,
                   )
                 else if (widget.chartType == ChartType.BarsRange)
                   ChartHelper.barsRange(
                     chartData: chartData,
-                    // onPointTap: _selectBar,
+                    onPointTap: _selectBar,
                   )
           ],
 
@@ -196,56 +196,56 @@ class _ChartWidgetState extends State<ChartWidget> {
   }
 
 //   //when user tap on bar or column
-//   void _selectBar(ChartPointDetails args) {
-//     // if user tap on same selected data reset chart
-//     if (index == args.pointIndex && seriesIndex == args.seriesIndex) {
-//       index = null;
-//       seriesIndex = null;
-//     } else {
-//       index = args.pointIndex;
-//       seriesIndex = args.seriesIndex;
-//     }
-//     setState(() {});
-//   }
+  void _selectBar(ChartPointDetails args) {
+    // if user tap on same selected data reset chart
+    if (index == args.pointIndex && seriesIndex == args.seriesIndex) {
+      index = null;
+      seriesIndex = null;
+    } else {
+      index = args.pointIndex;
+      seriesIndex = args.seriesIndex;
+    }
+    setState(() {});
+  }
 
-//   void onDataLabelRender(DataLabelRenderArgs args) {
-//     if (
-//         // check if point is same
-//         (index != null && index == args.pointIndex) &&
-//             // check if series same
-//             (seriesIndex != null &&
-//                 _getSeriesName(seriesIndex) ==
-//                     (args.seriesRenderer as ChartSeries).name)) {
-//       ChartData? candidate = _getSeriesPointData(seriesIndex, index);
+  void onDataLabelRender(DataLabelRenderArgs args) {
+    if (
+        // check if point is same
+        (index != null && index == args.pointIndex) &&
+            // check if series same
+            (seriesIndex != null &&
+                _getSeriesName(seriesIndex) ==
+                    (args.seriesRenderer as ChartSeries).name)) {
+      ChartData? candidate = _getSeriesPointData(seriesIndex, index);
 
-//       args.textStyle = Get.theme.textTheme.labelSmall!.copyWith(
-//         color: widget.color,
-//         fontWeight: FontWeight.bold,
-//         fontSize: 11.sp,
-//       );
+      args.textStyle = Get.theme.textTheme.labelSmall!.copyWith(
+        color: widget.color,
+        fontWeight: FontWeight.bold,
+        fontSize: 11.sp,
+      );
 
-//       args.color = candidate?.color ?? args.color;
-//       args.text = '${args.text} ${candidate?.label}';
-//     } else {
-//       args.color = null;
-//       args.textStyle = Get.theme.textTheme.labelSmall!.copyWith(fontSize: 0);
-//     }
-//   }
+      args.color = candidate?.color ?? args.color;
+      args.text = '${args.text} ${candidate?.label}';
+    } else {
+      args.color = null;
+      args.textStyle = Get.theme.textTheme.labelSmall!.copyWith(fontSize: 0);
+    }
+  }
 
-//   // Method to return the series name based on tapped point's series index
-//   String? _getSeriesName(int? index) {
-//     if (index == null || !seriesNames.asMap().containsKey(index)) return '';
-//     return seriesNames[index]!.legendText;
-//   }
+  // Method to return the series name based on tapped point's series index
+  String? _getSeriesName(int? index) {
+    if (index == null || !seriesNames.asMap().containsKey(index)) return '';
+    return seriesNames[index]!.legendText;
+  }
 
-//   ChartData? _getSeriesPointData(int? seriesIndex, int? index) {
-//     if (seriesIndex == null || !seriesNames.asMap().containsKey(seriesIndex)) {
-//       return null;
-//     }
-//     if (index == null ||
-//         !widget.chartsData![seriesIndex].asMap().containsKey(index))
-//       return null;
+  ChartData? _getSeriesPointData(int? seriesIndex, int? index) {
+    if (seriesIndex == null || !seriesNames.asMap().containsKey(seriesIndex)) {
+      return null;
+    }
+    if (index == null ||
+        !widget.chartsData![seriesIndex].asMap().containsKey(index))
+      return null;
 
-//     return widget.chartsData![seriesIndex][index];
-//   }
+    return widget.chartsData![seriesIndex][index];
+  }
 }
