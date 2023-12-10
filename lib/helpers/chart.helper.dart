@@ -26,8 +26,8 @@ class ChartHelper {
       markerSettings: MarkerSettings(
         isVisible: true,
         borderWidth: 0,
-        width: 5.sp,
-        height: 5.sp,
+        width: 10.sp,
+        height: 10.sp,
         shape: chartData.first.dataMarkerType,
         color: chartData.first.color,
       ),
@@ -45,7 +45,7 @@ class ChartHelper {
         // textStyle: TextStyle(fontSize: 10.sp),
         // useSeriesColor: true,
         showZeroValue: true,
-        overflowMode:OverflowMode.trim,
+        overflowMode: OverflowMode.trim,
         labelPosition: ChartDataLabelPosition.outside,
         labelIntersectAction: LabelIntersectAction.none,
         labelAlignment: ChartDataLabelAlignment.auto,
@@ -64,23 +64,20 @@ class ChartHelper {
       //       selectedBorderWidth: 5,
       //       unselectedBorderWidth: 0.5,
       //     ),
-      //     // Legend
-      //     name: chartData!.first.legendText,
-      //     legendIconType: chartData.first.legendIconType ?? LegendIconType.circle,
-      //     legendItemText: chartData.first.legendText ?? ' ',
-      //     isVisibleInLegend: chartData.first.legendText != null ? true : false,
-      //     color: chartData.first.color?.withOpacity(0.2),
-      //     // borderRadius: BorderRadius.all(Radius.circular(15)),
+      name: chartData.first.legendText,
+      legendIconType: chartData.first.legendIconType ?? LegendIconType.circle,
+      legendItemText: chartData.first.legendText ?? ' ',
+      isVisibleInLegend: chartData.first.legendText != null ? true : false,
       dataSource: chartData,
-      //     markerSettings: MarkerSettings(
-      //       isVisible: true,
-      //       borderWidth: 2,
-      //       width: 9,
-      //       height: 9,
-      //       shape: chartData.first.dataMarkerType,
-      //       // ignore: prefer_null_aware_operators
-      //       color: chartData.first.color,
-      //     ),
+
+      markerSettings: MarkerSettings(
+        isVisible: true,
+        borderWidth: 0,
+        width: 10.sp,
+        height: 10.sp,
+        shape: chartData.first.dataMarkerType,
+        color: chartData.first.color,
+      ),
 
       // pointColorMapper: (ChartData data, _) => data.color,
       xValueMapper: (ChartData data, _) => data.date,
@@ -88,18 +85,16 @@ class ChartHelper {
       highValueMapper: (ChartData data, _) => data.highValue,
       // Map the data label text for each point from the data source
       // isTrackVisible: false,
-      // dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
-      // dataLabelSettings: DataLabelSettings(
-      //   isVisible: true,
-      //           textStyle: TextStyle(fontSize: 0, color: Get.theme.secondaryHeaderColor),
-      //   //useSeriesColor: true,
-      //   //showZeroValue: true,
-      //   // labelAlignment: ChartDataLabelAlignment.middle,
-      //   // alignment: ChartAlignment.center,
-      //   // labelPosition: ChartDataLabelPosition.outside,
-      //   // labelIntersectAction: LabelIntersectAction.hide,
-      //   // showCumulativeValues: true,
-      // ),
+      dataLabelSettings: const DataLabelSettings(
+        isVisible: true,
+        // textStyle: TextStyle(fontSize: 10.sp),
+        // useSeriesColor: true,
+        showZeroValue: true,
+        overflowMode: OverflowMode.trim,
+        labelPosition: ChartDataLabelPosition.outside,
+        labelIntersectAction: LabelIntersectAction.none,
+        labelAlignment: ChartDataLabelAlignment.auto,
+      ),
       // onPointTap: onPointTap,
     );
   }
@@ -119,11 +114,10 @@ class ChartHelper {
       dataSource: chartData,
       // width: 6,
       // // Legend
-      // name: chartData.first.legendText,
-      // legendIconType: chartData.first.legendIconType ?? LegendIconType.circle,
-      // legendItemText: chartData.first.legendText ?? ' ',
-      // isVisibleInLegend: chartData.first.legendText != null ? true : false,
-
+      name: chartData.first.legendText,
+      legendIconType: chartData.first.legendIconType ?? LegendIconType.circle,
+      legendItemText: chartData.first.legendText ?? ' ',
+      isVisibleInLegend: chartData.first.legendText != null ? true : false,
       // color: chartData.first.legendColor ?? chartData.first.color,
 
       pointColorMapper: (ChartData data, _) => data.color,
@@ -131,29 +125,26 @@ class ChartHelper {
       yValueMapper: (ChartData data, _) => data.value,
       //dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
 
-      // markerSettings: MarkerSettings(
-      //   isVisible: true,
-      //   borderWidth: 4,
-      //   width: 12,
-      //   height: 12,
-      //   shape: chartData.first.dataMarkerType,
-      //   // ignore: prefer_null_aware_operators
-      //   color: chartData.first.color,
-      // ),
+      markerSettings: MarkerSettings(
+        isVisible: true,
+        borderWidth: 0,
+        width: 10.sp,
+        height: 10.sp,
+        shape: chartData.first.dataMarkerType,
+        color: chartData.first.color,
+      ),
 
       // // data label setting
-      // dataLabelSettings: DataLabelSettings(
-      //   isVisible: true,
-      //           textStyle: TextStyle(fontSize: 0, color: Get.theme.secondaryHeaderColor),
-
-      //   //useSeriesColor: true,
-      //   //showZeroValue: true,
-      //   // labelAlignment: ChartDataLabelAlignment.auto,
-      //   // alignment: ChartAlignment.far,
-      //   // labelPosition: ChartDataLabelPosition.inside,
-      //   // labelIntersectAction: LabelIntersectAction.hide,
-      //   // showCumulativeValues: false,
-      // ),
+      dataLabelSettings: const DataLabelSettings(
+        isVisible: true,
+        // textStyle: TextStyle(fontSize: 10.sp),
+        // useSeriesColor: true,
+        showZeroValue: true,
+        overflowMode: OverflowMode.trim,
+        labelPosition: ChartDataLabelPosition.outside,
+        labelIntersectAction: LabelIntersectAction.none,
+        labelAlignment: ChartDataLabelAlignment.auto,
+      ),
       splineType: SplineType.cardinal,
       // onPointTap: onPointTap,
     );
@@ -172,42 +163,37 @@ class ChartHelper {
       // ),
 
       dataSource: chartData,
-      // width: 6,
-      // // Legend
-      // name: chartData.first.legendText,
-      // legendIconType: chartData.first.legendIconType ?? LegendIconType.circle,
-      // legendItemText: chartData.first.legendText ?? ' ',
-      // isVisibleInLegend: chartData.first.legendText != null ? true : false,
-
-      // color: chartData.first.legendColor ?? chartData.first.color,
+      //Legend
+      name: chartData.first.legendText,
+      legendIconType: chartData.first.legendIconType ?? LegendIconType.circle,
+      legendItemText: chartData.first.legendText ?? ' ',
+      isVisibleInLegend: chartData.first.legendText != null ? true : false,
 
       pointColorMapper: (ChartData data, _) => data.color,
       xValueMapper: (ChartData data, _) => data.date,
       yValueMapper: (ChartData data, _) => data.value,
       //dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
 
-      // markerSettings: MarkerSettings(
-      //   isVisible: true,
-      //   borderWidth: 4,
-      //   width: 12,
-      //   height: 12,
-      //   shape: chartData.first.dataMarkerType,
-      //   // ignore: prefer_null_aware_operators
-      //   color: chartData.first.color,
-      // ),
+      markerSettings: MarkerSettings(
+        isVisible: true,
+        borderWidth: 0,
+        width: 10.sp,
+        height: 10.sp,
+        shape: chartData.first.dataMarkerType,
+        color: chartData.first.color,
+      ),
 
       // // data label setting
-      // dataLabelSettings: DataLabelSettings(
-      //   isVisible: true,
-      //           textStyle: TextStyle(fontSize: 0, color: Get.theme.secondaryHeaderColor),
-      //   //useSeriesColor: true,
-      //  // showZeroValue: true,
-      //   // labelAlignment: ChartDataLabelAlignment.auto,
-      //   // alignment: ChartAlignment.far,
-      //   // labelPosition: ChartDataLabelPosition.inside,
-      //   // labelIntersectAction: LabelIntersectAction.hide,
-      //   // showCumulativeValues: false,
-      // ),
+      dataLabelSettings: const DataLabelSettings(
+        isVisible: true,
+        // textStyle: TextStyle(fontSize: 10.sp),
+        // useSeriesColor: true,
+        showZeroValue: true,
+        overflowMode: OverflowMode.trim,
+        labelPosition: ChartDataLabelPosition.outside,
+        labelIntersectAction: LabelIntersectAction.none,
+        labelAlignment: ChartDataLabelAlignment.auto,
+      ),
       // onPointTap: onPointTap,
     );
   }
