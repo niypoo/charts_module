@@ -22,12 +22,12 @@ class ChartHelper {
       isVisibleInLegend: chartData.first.legendText != null ? true : false,
       borderRadius: BorderRadius.all(Radius.circular(15.sp)),
       dataSource: chartData,
-
+      borderWidth: 10.sp,
       markerSettings: MarkerSettings(
-        isVisible: true,
+        isVisible: false,
         borderWidth: 0,
-        width: 10.sp,
-        height: 10.sp,
+        width: 12.sp,
+        height: 12.sp,
         shape: chartData.first.dataMarkerType,
         color: chartData.first.color,
       ),
@@ -70,11 +70,12 @@ class ChartHelper {
       isVisibleInLegend: chartData.first.legendText != null ? true : false,
       dataSource: chartData,
 
+      borderWidth: 10.sp,
       markerSettings: MarkerSettings(
         isVisible: true,
         borderWidth: 0,
-        width: 10.sp,
-        height: 10.sp,
+        width: 12.sp,
+        height: 12.sp,
         shape: chartData.first.dataMarkerType,
         color: chartData.first.color,
       ),
@@ -83,6 +84,7 @@ class ChartHelper {
       xValueMapper: (ChartData data, _) => data.date,
       lowValueMapper: (ChartData data, _) => data.lowValue,
       highValueMapper: (ChartData data, _) => data.highValue,
+
       // Map the data label text for each point from the data source
       // isTrackVisible: false,
       dataLabelSettings: const DataLabelSettings(
@@ -123,13 +125,13 @@ class ChartHelper {
       pointColorMapper: (ChartData data, _) => data.color,
       xValueMapper: (ChartData data, _) => data.date,
       yValueMapper: (ChartData data, _) => data.value,
-      //dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
-
+      dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
+      width: 10.sp,
       markerSettings: MarkerSettings(
         isVisible: true,
         borderWidth: 0,
-        width: 10.sp,
-        height: 10.sp,
+        width: 12.sp,
+        height: 12.sp,
         shape: chartData.first.dataMarkerType,
         color: chartData.first.color,
       ),
@@ -172,13 +174,13 @@ class ChartHelper {
       pointColorMapper: (ChartData data, _) => data.color,
       xValueMapper: (ChartData data, _) => data.date,
       yValueMapper: (ChartData data, _) => data.value,
-      //dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
-
+      dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
+      borderWidth: 10.sp,
       markerSettings: MarkerSettings(
-        isVisible: true,
+        isVisible: false,
         borderWidth: 0,
-        width: 10.sp,
-        height: 10.sp,
+        width: 12.sp,
+        height: 12.sp,
         shape: chartData.first.dataMarkerType,
         color: chartData.first.color,
       ),
