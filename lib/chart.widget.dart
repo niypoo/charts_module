@@ -73,45 +73,45 @@ class _ChartWidgetState extends State<ChartWidget> {
             enablePanning: true,
             zoomMode: ZoomMode.xy,
           ),
-          primaryXAxis: DateTimeAxis(
-            isVisible: true,
-            majorTickLines: MajorTickLines(
-              width: 1.sp,
-            ),
-            //Hide the guidelines of x-axis
-            majorGridLines: const MajorGridLines(
-              width: 0,
-              // dashArray: const [10],
-              // color: Get.theme.cardColor,
-            ),
-            //Hide the axis line of x-axis
-            axisLine: AxisLine(width: 1.sp),
-            labelStyle: TextStyle(fontSize: 10.sp),
-            // desiredIntervals: 31,
-            // autoScrollingDelta: widget.autoScrollingDelta,
-            // desiredIntervals: widget.desiredIntervals,
-            autoScrollingMode: AutoScrollingMode.start,
-            autoScrollingDeltaType: DateTimeIntervalType.auto,
-            // labelIntersectAction: AxisLabelIntersectAction.rotate90,
-            plotBands: widget.verticalPlotBands,
-          ),
-          primaryYAxis: NumericAxis(
-            isVisible: true,
-            majorTickLines:  MajorTickLines(
-              width: 1.sp,
-            ),
-            labelStyle: TextStyle(fontSize: 10.sp),
-            //Hide the grid lines of y-axis
-            majorGridLines: const MajorGridLines(
-              width: 0,
-              // dashArray: const [10],
-              // color: Get.theme.cardColor,
-            ),
-            //Hide the axis line of y-axis
-            axisLine:  AxisLine(width: 1.sp),
-            plotBands: widget.horizontalPlotBands,
-          ),
-          plotAreaBorderWidth: 0,
+          // primaryXAxis: DateTimeAxis(
+          //   isVisible: true,
+          //   majorTickLines: MajorTickLines(
+          //     width: 1.sp,
+          //   ),
+          //   //Hide the guidelines of x-axis
+          //   majorGridLines: const MajorGridLines(
+          //     width: 0,
+          //     // dashArray: const [10],
+          //     // color: Get.theme.cardColor,
+          //   ),
+          //   //Hide the axis line of x-axis
+          //   axisLine: AxisLine(width: 1.sp),
+          //   labelStyle: TextStyle(fontSize: 10.sp),
+          //   // desiredIntervals: 31,
+          //   // autoScrollingDelta: widget.autoScrollingDelta,
+          //   // desiredIntervals: widget.desiredIntervals,
+          //   autoScrollingMode: AutoScrollingMode.start,
+          //   autoScrollingDeltaType: DateTimeIntervalType.auto,
+          //   // labelIntersectAction: AxisLabelIntersectAction.rotate90,
+          //   plotBands: widget.verticalPlotBands,
+          // ),
+          // primaryYAxis: NumericAxis(
+          //   isVisible: true,
+          //   majorTickLines:  MajorTickLines(
+          //     width: 1.sp,
+          //   ),
+          //   labelStyle: TextStyle(fontSize: 10.sp),
+          //   //Hide the grid lines of y-axis
+          //   majorGridLines: const MajorGridLines(
+          //     width: 0,
+          //     // dashArray: const [10],
+          //     // color: Get.theme.cardColor,
+          //   ),
+          //   //Hide the axis line of y-axis
+          //   axisLine:  AxisLine(width: 1.sp),
+          //   plotBands: widget.horizontalPlotBands,
+          // ),
+          // plotAreaBorderWidth: 0,
           // tooltipBehavior: TooltipBehavior(
           //   enable: true,
           //   builder: (data, point, series, pointIndex, seriesIndex) =>
@@ -128,27 +128,27 @@ class _ChartWidgetState extends State<ChartWidget> {
           selectionGesture: ActivationMode.singleTap,
           selectionType: SelectionType.point,
           onSelectionChanged: (selectionArgs) => selectionArgs.selectedColor,
-          legend: Legend(
-            isVisible: widget.legendVisible,
-            position: LegendPosition.bottom,
-            overflowMode: LegendItemOverflowMode.wrap,
-            alignment: ChartAlignment.center,
-            itemPadding: 10,
-          ),
+          // legend: Legend(
+          //   isVisible: widget.legendVisible,
+          //   position: LegendPosition.bottom,
+          //   overflowMode: LegendItemOverflowMode.wrap,
+          //   alignment: ChartAlignment.center,
+          //   itemPadding: 10,
+          // ),
           // If data is empty show "no data provided" message
-          annotations: first == null
-              ? <CartesianChartAnnotation>[
-                  const CartesianChartAnnotation(
-                    widget: EmptyChartDataWidget(),
-                    coordinateUnit: CoordinateUnit.logicalPixel,
-                    region: AnnotationRegion.plotArea,
-                    x: 150,
-                    y: 200,
-                    horizontalAlignment: ChartAlignment.center,
-                    verticalAlignment: ChartAlignment.center,
-                  )
-                ]
-              : null,
+          // annotations: first == null
+          //     ? <CartesianChartAnnotation>[
+          //         const CartesianChartAnnotation(
+          //           widget: EmptyChartDataWidget(),
+          //           coordinateUnit: CoordinateUnit.logicalPixel,
+          //           region: AnnotationRegion.plotArea,
+          //           x: 150,
+          //           y: 200,
+          //           horizontalAlignment: ChartAlignment.center,
+          //           verticalAlignment: ChartAlignment.center,
+          //         )
+          //       ]
+          //     : null,
           series: <CartesianSeries>[
             // loop on data
             for (final chartData in widget.chartsData!)
