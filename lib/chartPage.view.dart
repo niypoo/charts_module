@@ -52,8 +52,7 @@ class _ChartPageViewState extends State<ChartPageView> {
         chartsData: widget.charts,
         verticalPlotBands: widget.verticalPlotBands,
         chartType: widget.chartType,
-        enableScrolling: true,
-        desiredIntervals: 14,
+        horizontalPlotBands: widget.horizontalPlotBands,
       ),
     );
   }
