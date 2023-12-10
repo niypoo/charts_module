@@ -21,6 +21,7 @@ class ChartWidget extends StatefulWidget {
     this.enableScrolling = false,
     this.legendVisible = true,
     this.selectedColor,
+    this.valueKey,
     this.desiredIntervals = 7,
   }) : super(key: key);
 
@@ -35,6 +36,7 @@ class ChartWidget extends StatefulWidget {
   final Color? color;
   final int desiredIntervals;
   final Color? selectedColor;
+  final ValueKey? valueKey;
 
   @override
   // ignore: library_private_types_in_public_api
@@ -69,6 +71,7 @@ class _ChartWidgetState extends State<ChartWidget> {
       child: Directionality(
         textDirection: TextDirection.ltr,
         child: SfCartesianChart(
+          key: widget.valueKey,
           zoomPanBehavior: ZoomPanBehavior(
             enablePanning: true,
             maximumZoomLevel: 2,
@@ -76,7 +79,6 @@ class _ChartWidgetState extends State<ChartWidget> {
             enableMouseWheelZooming: true,
             enablePinching: true,
             enableSelectionZooming: true,
-
           ),
           primaryXAxis: DateTimeAxis(
             isVisible: true,
