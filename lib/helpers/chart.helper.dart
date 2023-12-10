@@ -10,15 +10,15 @@ class ChartHelper {
     Function(ChartPointDetails)? onPointTap,
   }) {
     return RangeColumnSeries<ChartData, DateTime>(
-      selectionBehavior: SelectionBehavior(
-        enable: true,
-        toggleSelection: true,
-        selectedColor: Get.theme.primaryColor,
-        unselectedColor: Get.theme.cardColor,
-        selectedBorderWidth:5.sp,
-        unselectedBorderWidth: 2.sp,
-        unselectedOpacity: 0.7,
-      ),
+      // selectionBehavior: SelectionBehavior(
+      //   enable: true,
+      //   toggleSelection: true,
+      //   selectedColor: Get.theme.primaryColor,
+      //   unselectedColor: Get.theme.cardColor,
+      //   selectedBorderWidth:5.sp,
+      //   unselectedBorderWidth: 2.sp,
+      //   unselectedOpacity: 0.7,
+      // ),
       //     // Legend
       name: chartData.first.legendText,
       legendIconType: chartData.first.legendIconType ?? LegendIconType.circle,
@@ -63,11 +63,11 @@ class ChartHelper {
     Function(ChartPointDetails)? onPointTap,
   }) {
     return SplineRangeAreaSeries<ChartData, DateTime>(
-      selectionBehavior: SelectionBehavior(
-        enable: true,
-        // selectedBorderWidth: 5,
-        // unselectedBorderWidth: 0.5,
-      ),
+      // selectionBehavior: SelectionBehavior(
+      //   enable: true,
+      //   // selectedBorderWidth: 5,
+      //   // unselectedBorderWidth: 0.5,
+      // ),
       name: chartData.first.legendText,
       legendIconType: chartData.first.legendIconType ?? LegendIconType.circle,
       legendItemText: chartData.first.legendText ?? ' ',
@@ -112,17 +112,17 @@ class ChartHelper {
   }) {
     return SplineSeries<ChartData, DateTime>(
       //MAKE SELECTED BAR WITH CUSTOM COLOR
-      selectionBehavior: SelectionBehavior(
-        enable: true,
-        toggleSelection: true,
-        selectedColor: Get.theme.primaryColor,
-        unselectedColor: Get.theme.cardColor,
-        selectedBorderWidth:5.sp,
-        unselectedBorderWidth: 2.sp,
-        unselectedOpacity: 0.7,
-        // selectedBorderWidth: 5,
-        // unselectedBorderWidth: 0.5,
-      ),
+      // selectionBehavior: SelectionBehavior(
+      //   enable: true,
+      //   toggleSelection: true,
+      //   selectedColor: Get.theme.primaryColor,
+      //   unselectedColor: Get.theme.cardColor,
+      //   selectedBorderWidth:5.sp,
+      //   unselectedBorderWidth: 2.sp,
+      //   unselectedOpacity: 0.7,
+      //   // selectedBorderWidth: 5,
+      //   // unselectedBorderWidth: 0.5,
+      // ),
 
       dataSource: chartData,
       // // Legend
@@ -168,12 +168,12 @@ class ChartHelper {
     Function(ChartPointDetails)? onPointTap,
   }) {
     return ColumnSeries<ChartData, DateTime>(
-      // //MAKE SELECTED BAR WITH CUSTOM COLOR
-      selectionBehavior: SelectionBehavior(
-        enable: true,
-        // selectedBorderWidth: 5,
-        // unselectedBorderWidth: 0.5,
-      ),
+      // // //MAKE SELECTED BAR WITH CUSTOM COLOR
+      // selectionBehavior: SelectionBehavior(
+      //   enable: true,
+      //   // selectedBorderWidth: 5,
+      //   // unselectedBorderWidth: 0.5,
+      // ),
 
       dataSource: chartData,
       //Legend
