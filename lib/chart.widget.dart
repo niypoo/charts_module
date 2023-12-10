@@ -88,8 +88,8 @@ class _ChartWidgetState extends State<ChartWidget> {
             // autoScrollingDeltaType: DateTimeIntervalType.auto,
             // labelIntersectAction: AxisLabelIntersectAction.rotate90,
             plotBands: widget.verticalPlotBands,
-            majorTickLines: const MajorTickLines(
-              width: 0,
+            majorTickLines:  MajorTickLines(
+              width: 1.sp,
             ),
             // //Hide the guidelines of x-axis
             majorGridLines: const MajorGridLines(
@@ -98,7 +98,7 @@ class _ChartWidgetState extends State<ChartWidget> {
               // color: Get.theme.cardColor,
             ),
             // //Hide the axis line of x-axis
-            // axisLine: AxisLine(width: 1.sp),
+            axisLine: AxisLine(width: 0),
             // labelStyle: TextStyle(fontSize: 10.sp),
             // // desiredIntervals: 31,
             // //autoScrollingDelta: 7,
@@ -108,8 +108,8 @@ class _ChartWidgetState extends State<ChartWidget> {
           ),
           primaryYAxis: NumericAxis(
             // isVisible: true,
-            majorTickLines: const MajorTickLines(
-              width: 0,
+            majorTickLines:  MajorTickLines(
+              width: 1.sp,
             ),
             // labelStyle: TextStyle(fontSize: 10.sp),
             // //Hide the grid lines of y-axis
@@ -119,7 +119,7 @@ class _ChartWidgetState extends State<ChartWidget> {
               // color: Get.theme.cardColor,
             ),
             // //Hide the axis line of y-axis
-            axisLine: AxisLine(width: 1.sp),
+            axisLine: AxisLine(width: 0),
             plotBands: widget.horizontalPlotBands,
           ),
           plotAreaBorderWidth: 0,
@@ -189,7 +189,7 @@ class _ChartWidgetState extends State<ChartWidget> {
                   )
           ],
 
-          // onDataLabelRender: onDataLabelRender,
+          onDataLabelRender: onDataLabelRender,
         ),
       ),
     );
