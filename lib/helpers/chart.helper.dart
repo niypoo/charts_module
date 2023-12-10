@@ -40,13 +40,15 @@ class ChartHelper {
       // Map the data label text for each point from the data source
       // isTrackVisible: false,
       dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
-      dataLabelSettings: DataLabelSettings(
+      dataLabelSettings: const DataLabelSettings(
         isVisible: true,
-        textStyle: TextStyle(fontSize: 10.sp),
+        // textStyle: TextStyle(fontSize: 10.sp),
         // useSeriesColor: true,
         showZeroValue: true,
+        overflowMode:OverflowMode.trim,
         labelPosition: ChartDataLabelPosition.outside,
-        labelIntersectAction: LabelIntersectAction.none
+        labelIntersectAction: LabelIntersectAction.none,
+        labelAlignment: ChartDataLabelAlignment.auto,
       ),
       // onPointTap: onPointTap,
     );

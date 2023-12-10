@@ -88,9 +88,9 @@ class _ChartWidgetState extends State<ChartWidget> {
             // autoScrollingDeltaType: DateTimeIntervalType.auto,
             // labelIntersectAction: AxisLabelIntersectAction.rotate90,
             plotBands: widget.verticalPlotBands,
-            // majorTickLines: MajorTickLines(
-            //   width: 1.sp,
-            // ),
+            majorTickLines: const MajorTickLines(
+              width: 0,
+            ),
             // //Hide the guidelines of x-axis
             majorGridLines: const MajorGridLines(
               width: 0,
@@ -108,9 +108,9 @@ class _ChartWidgetState extends State<ChartWidget> {
           ),
           primaryYAxis: NumericAxis(
             // isVisible: true,
-            // majorTickLines:  MajorTickLines(
-            //   width: 1.sp,
-            // ),
+            majorTickLines: const MajorTickLines(
+              width: 0,
+            ),
             // labelStyle: TextStyle(fontSize: 10.sp),
             // //Hide the grid lines of y-axis
             majorGridLines: const MajorGridLines(
