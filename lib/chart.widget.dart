@@ -83,7 +83,7 @@ class _ChartWidgetState extends State<ChartWidget> {
           primaryXAxis: DateTimeAxis(
             // isVisible: true,
             // plotOffset: 15.sp,
-            autoScrollingDelta: 5,
+            // autoScrollingDelta: 5,
             autoScrollingMode: AutoScrollingMode.end,
             // autoScrollingDeltaType: DateTimeIntervalType.auto,
             // labelIntersectAction: AxisLabelIntersectAction.rotate90,
