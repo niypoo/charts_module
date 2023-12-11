@@ -23,6 +23,7 @@ class ChartWidget extends StatefulWidget {
     this.selectedColor,
     this.valueKey,
     this.autoScrollingDelta = 5,
+    
   }) : super(key: key);
 
   final List<List<ChartData>>? chartsData;
@@ -85,7 +86,9 @@ class _ChartWidgetState extends State<ChartWidget> {
             // plotOffset: 15.sp,
             autoScrollingDelta: widget.autoScrollingDelta,
             autoScrollingMode: AutoScrollingMode.end,
-            // autoScrollingDeltaType: DateTimeIntervalType.auto,
+            autoScrollingDeltaType: DateTimeIntervalType.auto,
+            maximumLabels: widget.autoScrollingDelta,
+            desiredIntervals:widget.autoScrollingDelta,
             // labelIntersectAction: AxisLabelIntersectAction.rotate90,
             plotBands: widget.verticalPlotBands,
             majorTickLines: MajorTickLines(
