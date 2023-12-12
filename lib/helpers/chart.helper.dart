@@ -44,10 +44,10 @@ class ChartHelper {
       // Map the data label text for each point from the data source
       // isTrackVisible: false,
       // dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
-      dataLabelSettings: const DataLabelSettings(
+      dataLabelSettings:  DataLabelSettings(
         isVisible: true,
-        // textStyle: TextStyle(fontSize: 10.sp),
-        useSeriesColor: true,
+        textStyle: TextStyle(color: chartData.first.color),
+        // useSeriesColor: true,
         showZeroValue: true,
         overflowMode: OverflowMode.trim,
         labelPosition: ChartDataLabelPosition.outside,
@@ -92,10 +92,10 @@ class ChartHelper {
 
       // Map the data label text for each point from the data source
       // isTrackVisible: false,
-      dataLabelSettings: const DataLabelSettings(
+      dataLabelSettings:  DataLabelSettings(
         isVisible: true,
-        // textStyle: TextStyle(fontSize: 10.sp),
-        useSeriesColor: true,
+       textStyle: TextStyle(color: chartData.first.color),
+        // useSeriesColor: true,
         showZeroValue: true,
         overflowMode: OverflowMode.trim,
         labelPosition: ChartDataLabelPosition.outside,
@@ -148,10 +148,10 @@ class ChartHelper {
       ),
 
       // // data label setting
-      dataLabelSettings: const DataLabelSettings(
+      dataLabelSettings:  DataLabelSettings(
         isVisible: true,
-        // textStyle: TextStyle(fontSize: 10.sp),
-        useSeriesColor: true,
+        textStyle: TextStyle(color: chartData.first.color),
+        // useSeriesColor: true,
         showZeroValue: true,
         overflowMode: OverflowMode.trim,
         labelPosition: ChartDataLabelPosition.outside,
@@ -197,10 +197,10 @@ class ChartHelper {
       ),
 
       // // data label setting
-      dataLabelSettings: const DataLabelSettings(
+      dataLabelSettings:  DataLabelSettings(
         isVisible: true,
-        // textStyle: TextStyle(fontSize: 10.sp),
-        useSeriesColor: true,
+        textStyle: TextStyle(color: chartData.first.color),
+        // useSeriesColor: true,
         showZeroValue: true,
         overflowMode: OverflowMode.trim,
         labelPosition: ChartDataLabelPosition.outside,
