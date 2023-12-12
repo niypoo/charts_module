@@ -81,7 +81,7 @@ class _ChartWidgetState extends State<ChartWidget> {
             // enablePinching: true,
             // enableSelectionZooming: true,
           ),
-          primaryXAxis: DateTimeAxis(
+          primaryXAxis: DateTimeCategoryAxis(
             // isVisible: true,
             // plotOffset: 15.sp,
             autoScrollingDelta: widget.autoScrollingDelta,
