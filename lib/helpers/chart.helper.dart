@@ -28,10 +28,10 @@ class ChartHelper {
       dataSource: chartData,
 
       markerSettings: MarkerSettings(
-        isVisible: false,
+        isVisible: true,
         borderWidth: 0,
-        width: 10.sp,
-        height: 10.sp,
+        width: 12.sp,
+        height: 12.sp,
         shape: chartData.first.dataMarkerType,
         color: chartData.first.color,
       ),
@@ -44,13 +44,13 @@ class ChartHelper {
       // Map the data label text for each point from the data source
       // isTrackVisible: false,
       // dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
-      dataLabelSettings:  DataLabelSettings(
+      dataLabelSettings: DataLabelSettings(
         isVisible: true,
         textStyle: TextStyle(color: Get.theme.secondaryHeaderColor),
         useSeriesColor: true,
         showZeroValue: true,
         overflowMode: OverflowMode.trim,
-        labelPosition: ChartDataLabelPosition.outside,  
+        labelPosition: ChartDataLabelPosition.outside,
         labelIntersectAction: LabelIntersectAction.none,
         labelAlignment: ChartDataLabelAlignment.auto,
       ),
@@ -74,13 +74,13 @@ class ChartHelper {
       isVisibleInLegend: chartData.first.legendText != null ? true : false,
       dataSource: chartData,
 
-      borderWidth: 5.sp,
+      borderWidth: 2.sp,
 
       markerSettings: MarkerSettings(
         isVisible: true,
         borderWidth: 0,
-        width: 10.sp,
-        height: 10.sp,
+        width: 12.sp,
+        height: 12.sp,
         shape: chartData.first.dataMarkerType,
         color: chartData.first.color,
       ),
@@ -92,7 +92,7 @@ class ChartHelper {
 
       // Map the data label text for each point from the data source
       // isTrackVisible: false,
-      dataLabelSettings:  DataLabelSettings(
+      dataLabelSettings: DataLabelSettings(
         isVisible: true,
         textStyle: TextStyle(color: Get.theme.secondaryHeaderColor),
         useSeriesColor: true,
@@ -136,21 +136,21 @@ class ChartHelper {
       xValueMapper: (ChartData data, _) => data.date,
       yValueMapper: (ChartData data, _) => data.value,
       dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
-      width: 5.sp,
+      width: 2.sp,
 
       markerSettings: MarkerSettings(
         isVisible: true,
         borderWidth: 0,
-        width: 10.sp,
-        height: 10.sp,
+        width: 12.sp,
+        height: 12.sp,
         shape: chartData.first.dataMarkerType,
         color: chartData.first.color,
       ),
 
       // // data label setting
-      dataLabelSettings:  DataLabelSettings(
+      dataLabelSettings: DataLabelSettings(
         isVisible: true,
-         textStyle: TextStyle(color: Get.theme.secondaryHeaderColor),
+        textStyle: TextStyle(color: Get.theme.secondaryHeaderColor),
         useSeriesColor: true,
         showZeroValue: true,
         overflowMode: OverflowMode.trim,
@@ -188,7 +188,7 @@ class ChartHelper {
       dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
 
       markerSettings: MarkerSettings(
-        isVisible: false,
+        isVisible: true,
         borderWidth: 0,
         width: 12.sp,
         height: 12.sp,
@@ -197,9 +197,9 @@ class ChartHelper {
       ),
 
       // // data label setting
-      dataLabelSettings:  DataLabelSettings(
+      dataLabelSettings: DataLabelSettings(
         isVisible: true,
-         textStyle: TextStyle(color: Get.theme.secondaryHeaderColor),
+        textStyle: TextStyle(color: Get.theme.secondaryHeaderColor),
         useSeriesColor: true,
         showZeroValue: true,
         overflowMode: OverflowMode.trim,

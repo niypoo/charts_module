@@ -140,13 +140,13 @@ class _ChartWidgetState extends State<ChartWidget> {
             // selectionGesture: ActivationMode.singleTap,
             // selectionType: SelectionType.point,
             // onSelectionChanged: (selectionArgs) => selectionArgs.selectedColor,
-            // legend: Legend(
-            //   isVisible: widget.legendVisible,
-            //   position: LegendPosition.bottom,
-            //   overflowMode: LegendItemOverflowMode.wrap,
-            //   alignment: ChartAlignment.center,
-            //   itemPadding: 10,
-            // ),
+            legend: Legend(
+              isVisible: widget.legendVisible,
+              position: LegendPosition.bottom,
+              overflowMode: LegendItemOverflowMode.wrap,
+              alignment: ChartAlignment.center,
+              itemPadding: 10,
+            ),
             // If data is empty show "no data provided" message
             // annotations: first == null
             //     ? <CartesianChartAnnotation>[
