@@ -16,7 +16,7 @@ class ChartHelper {
       //   selectedColor: Get.theme.primaryColor,
       //   unselectedColor: Get.theme.cardColor,
       //   selectedBorderWidth:5.sp,
-      //   unselectedBorderWidth: 2.sp,
+      //   unselectedBorderWidth: 3.sp,
       //   unselectedOpacity: 0.7,
       // ),
       //     // Legend
@@ -31,8 +31,8 @@ class ChartHelper {
       markerSettings: MarkerSettings(
         isVisible: true,
         borderWidth: 0,
-        width: 12.sp,
-        height: 12.sp,
+        width: 10.sp,
+        height: 10.sp,
         shape: chartData.first.dataMarkerType,
         color: chartData.first.color,
       ),
@@ -76,13 +76,13 @@ class ChartHelper {
       isVisibleInLegend: chartData.first.legendText != null ? true : false,
       dataSource: chartData,
 
-      borderWidth: 2.sp,
+      borderWidth: 3.sp,
 
       markerSettings: MarkerSettings(
         isVisible: true,
         borderWidth: 0,
-        width: 12.sp,
-        height: 12.sp,
+        width: 10.sp,
+        height: 10.sp,
         shape: chartData.first.dataMarkerType,
         color: chartData.first.color,
       ),
@@ -96,8 +96,8 @@ class ChartHelper {
       // isTrackVisible: false,
       dataLabelSettings: DataLabelSettings(
         isVisible: true,
-        textStyle: TextStyle(color: Get.theme.secondaryHeaderColor),
-        useSeriesColor: true,
+        textStyle: TextStyle(color: chartData.first.color),
+        useSeriesColor: false,
         showZeroValue: true,
         overflowMode: OverflowMode.trim,
         labelPosition: ChartDataLabelPosition.outside,
@@ -120,7 +120,7 @@ class ChartHelper {
       //   selectedColor: Get.theme.primaryColor,
       //   unselectedColor: Get.theme.cardColor,
       //   selectedBorderWidth:5.sp,
-      //   unselectedBorderWidth: 2.sp,
+      //   unselectedBorderWidth: 3.sp,
       //   unselectedOpacity: 0.7,
       //   // selectedBorderWidth: 5,
       //   // unselectedBorderWidth: 0.5,
@@ -138,13 +138,13 @@ class ChartHelper {
       xValueMapper: (ChartData data, _) => data.date,
       yValueMapper: (ChartData data, _) => data.value,
       dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
-      width: 2.sp,
+      width: 3.sp,
 
       markerSettings: MarkerSettings(
         isVisible: true,
         borderWidth: 0,
-        width: 12.sp,
-        height: 12.sp,
+        width: 10.sp,
+        height: 10.sp,
         shape: chartData.first.dataMarkerType,
         color: chartData.first.color,
       ),
@@ -152,8 +152,8 @@ class ChartHelper {
       // // data label setting
       dataLabelSettings: DataLabelSettings(
         isVisible: true,
-        textStyle: TextStyle(color: Get.theme.secondaryHeaderColor),
-        useSeriesColor: true,
+        textStyle: TextStyle(color: chartData.first.color),
+        useSeriesColor: false,
         showZeroValue: true,
         overflowMode: OverflowMode.trim,
         labelPosition: ChartDataLabelPosition.outside,
@@ -194,8 +194,8 @@ class ChartHelper {
       markerSettings: MarkerSettings(
         isVisible: false,
         borderWidth: 0,
-        width: 12.sp,
-        height: 12.sp,
+        width: 10.sp,
+        height: 10.sp,
         shape: chartData.first.dataMarkerType,
         color: chartData.first.color,
       ),
