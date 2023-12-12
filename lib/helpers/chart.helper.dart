@@ -23,6 +23,7 @@ class ChartHelper {
       name: chartData.first.legendText,
       legendIconType: chartData.first.legendIconType ?? LegendIconType.circle,
       legendItemText: chartData.first.legendText ?? ' ',
+       color: chartData.first.legendColor ?? chartData.first.color,
       isVisibleInLegend: chartData.first.legendText != null ? true : false,
       borderRadius: BorderRadius.all(Radius.circular(15.sp)),
       dataSource: chartData,
@@ -46,8 +47,8 @@ class ChartHelper {
       // dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
       dataLabelSettings: DataLabelSettings(
         isVisible: true,
-        textStyle: TextStyle(color: Get.theme.secondaryHeaderColor),
-        useSeriesColor: true,
+        textStyle: TextStyle(color: chartData.first.color),
+        useSeriesColor: false,
         showZeroValue: true,
         overflowMode: OverflowMode.trim,
         labelPosition: ChartDataLabelPosition.outside,
@@ -71,6 +72,7 @@ class ChartHelper {
       name: chartData.first.legendText,
       legendIconType: chartData.first.legendIconType ?? LegendIconType.circle,
       legendItemText: chartData.first.legendText ?? ' ',
+      color: chartData.first.legendColor ?? chartData.first.color,
       isVisibleInLegend: chartData.first.legendText != null ? true : false,
       dataSource: chartData,
 
@@ -130,7 +132,7 @@ class ChartHelper {
       legendIconType: chartData.first.legendIconType ?? LegendIconType.circle,
       legendItemText: chartData.first.legendText ?? ' ',
       isVisibleInLegend: chartData.first.legendText != null ? true : false,
-      // color: chartData.first.legendColor ?? chartData.first.color,
+      color: chartData.first.legendColor ?? chartData.first.color,
 
       pointColorMapper: (ChartData data, _) => data.color,
       xValueMapper: (ChartData data, _) => data.date,
@@ -181,14 +183,16 @@ class ChartHelper {
       legendIconType: chartData.first.legendIconType ?? LegendIconType.circle,
       legendItemText: chartData.first.legendText ?? ' ',
       isVisibleInLegend: chartData.first.legendText != null ? true : false,
-
+      color: chartData.first.legendColor ?? chartData.first.color,
+       borderRadius: BorderRadius.all(Radius.circular(15.sp)),
+       
       pointColorMapper: (ChartData data, _) => data.color,
       xValueMapper: (ChartData data, _) => data.date,
       yValueMapper: (ChartData data, _) => data.value,
       dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
 
       markerSettings: MarkerSettings(
-        isVisible: true,
+        isVisible: false,
         borderWidth: 0,
         width: 12.sp,
         height: 12.sp,
@@ -199,8 +203,8 @@ class ChartHelper {
       // // data label setting
       dataLabelSettings: DataLabelSettings(
         isVisible: true,
-        textStyle: TextStyle(color: Get.theme.secondaryHeaderColor),
-        useSeriesColor: true,
+        textStyle: TextStyle(color: chartData.first.color),
+        useSeriesColor: false,
         showZeroValue: true,
         overflowMode: OverflowMode.trim,
         labelPosition: ChartDataLabelPosition.outside,
