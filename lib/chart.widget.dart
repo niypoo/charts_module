@@ -77,10 +77,10 @@ class _ChartWidgetState extends State<ChartWidget> {
             // enablePinching: true,
             // enableSelectionZooming: true,
           ),
-          primaryXAxis: DateTimeCategoryAxis(
+          primaryXAxis: DateTimeAxis(
             // isVisible: true,
             // plotOffset: 15.sp,
-            autoScrollingDelta: 5,
+            autoScrollingDelta: 10,
             autoScrollingMode: AutoScrollingMode.end,
             // autoScrollingDeltaType: DateTimeIntervalType.auto,
             // labelIntersectAction: AxisLabelIntersectAction.rotate90,
