@@ -3,8 +3,10 @@ import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:charts_module/enums/chartType.enum.dart';
 import 'package:charts_module/helpers/chart.helper.dart';
 import 'package:charts_module/models/chartData.model.dart';
-import 'package:charts_module/partials/emptyChartData.widget.dart';
+import 'package:fly_ui/views/widgets/notFoundData.widget.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
+import 'package:unicons/unicons.dart';
+import 'package:unicons/unicons.dart';
 
 class ChartWidget extends StatefulWidget {
   const ChartWidget({
@@ -63,7 +65,7 @@ class _ChartWidgetState extends State<ChartWidget> {
     }
 
     if (first == null) {
-      return const EmptyChartDataWidget();
+      return const FlyNotFoundData(icon: UniconsLine.chart);
     } else {
       return SizedBox(
         height: 300.sp,
