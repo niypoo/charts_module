@@ -43,30 +43,30 @@ class ChartWidget extends StatefulWidget {
 
 class _ChartWidgetState extends State<ChartWidget> {
   // the index of selected bar
-  int? index;
-  ChartData? first;
-  int? seriesIndex;
+  // int? index;
+  // ChartData? first;
+  // int? seriesIndex;
   // Series Name
-  late List<ChartData?> seriesNames;
+  // late List<ChartData?> seriesNames;
 
   @override
   Widget build(BuildContext context) {
-    // check and sure the chart data not empty
+    // // check and sure the chart data not empty
+    // if (widget.chartsData != null &&
+    //     widget.chartsData!.isNotEmpty &&
+    //     (widget.chartsData!.first.isNotEmpty)) {
+    //   // get first child from first series to make it selected as default
+    //   first = widget.chartsData!.first.first;
+
+    //   // get serial names
+    //   seriesNames = widget.chartsData!.map((a) {
+    //     if (a.isNotEmpty) return a.first;
+    //   }).toList();
+    // }
+
     if (widget.chartsData != null &&
         widget.chartsData!.isNotEmpty &&
         (widget.chartsData!.first.isNotEmpty)) {
-      // get first child from first series to make it selected as default
-      first = widget.chartsData!.first.first;
-
-      // get serial names
-      seriesNames = widget.chartsData!.map((a) {
-        if (a.isNotEmpty) return a.first;
-      }).toList();
-    }
-
-    if (first == null) {
-      return const FlyNotFoundData(icon: UniconsLine.chart);
-    } else {
       return SizedBox(
         height: 300.sp,
         width: double.maxFinite,
@@ -195,6 +195,8 @@ class _ChartWidgetState extends State<ChartWidget> {
           ),
         ),
       );
+    } else {
+      return const FlyNotFoundData(icon: UniconsLine.chart);
     }
 
 // //   //when user tap on bar or column
