@@ -46,11 +46,11 @@ class ChartHelper {
       // dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
       dataLabelSettings:  DataLabelSettings(
         isVisible: true,
-        textStyle: TextStyle(color: chartData.first.color),
-        // useSeriesColor: true,
+        textStyle: TextStyle(color: Get.theme.secondaryHeaderColor),
+        useSeriesColor: true,
         showZeroValue: true,
         overflowMode: OverflowMode.trim,
-        labelPosition: ChartDataLabelPosition.outside,
+        labelPosition: ChartDataLabelPosition.outside,  
         labelIntersectAction: LabelIntersectAction.none,
         labelAlignment: ChartDataLabelAlignment.auto,
       ),
@@ -94,8 +94,8 @@ class ChartHelper {
       // isTrackVisible: false,
       dataLabelSettings:  DataLabelSettings(
         isVisible: true,
-       textStyle: TextStyle(color: chartData.first.color),
-        // useSeriesColor: true,
+        textStyle: TextStyle(color: Get.theme.secondaryHeaderColor),
+        useSeriesColor: true,
         showZeroValue: true,
         overflowMode: OverflowMode.trim,
         labelPosition: ChartDataLabelPosition.outside,
@@ -150,8 +150,8 @@ class ChartHelper {
       // // data label setting
       dataLabelSettings:  DataLabelSettings(
         isVisible: true,
-        textStyle: TextStyle(color: chartData.first.color),
-        // useSeriesColor: true,
+         textStyle: TextStyle(color: Get.theme.secondaryHeaderColor),
+        useSeriesColor: true,
         showZeroValue: true,
         overflowMode: OverflowMode.trim,
         labelPosition: ChartDataLabelPosition.outside,
@@ -199,8 +199,8 @@ class ChartHelper {
       // // data label setting
       dataLabelSettings:  DataLabelSettings(
         isVisible: true,
-        textStyle: TextStyle(color: chartData.first.color),
-        // useSeriesColor: true,
+         textStyle: TextStyle(color: Get.theme.secondaryHeaderColor),
+        useSeriesColor: true,
         showZeroValue: true,
         overflowMode: OverflowMode.trim,
         labelPosition: ChartDataLabelPosition.outside,
