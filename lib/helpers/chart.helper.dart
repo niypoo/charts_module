@@ -104,7 +104,7 @@ class ChartHelper {
         labelIntersectAction: LabelIntersectAction.none,
         labelAlignment: ChartDataLabelAlignment.auto,
       ),
-      splineType: SplineType.natural,
+      splineType: SplineType.cardinal,
       // onPointTap: onPointTap,
     );
   }
@@ -161,7 +161,7 @@ class ChartHelper {
         labelIntersectAction: LabelIntersectAction.none,
         labelAlignment: ChartDataLabelAlignment.auto,
       ),
-      splineType: SplineType.natural,
+      splineType: SplineType.cardinal,
       // onPointTap: onPointTap,
     );
   }
