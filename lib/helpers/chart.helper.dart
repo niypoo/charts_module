@@ -31,8 +31,8 @@ class ChartHelper {
       markerSettings: MarkerSettings(
         isVisible: true,
         borderWidth: 0,
-        width: 10.sp,
-        height: 10.sp,
+        width: 6.sp,
+        height: 6.sp,
         shape: chartData.first.dataMarkerType,
         color: chartData.first.color,
       ),
@@ -81,8 +81,8 @@ class ChartHelper {
       markerSettings: MarkerSettings(
         isVisible: true,
         borderWidth: 0,
-        width: 10.sp,
-        height: 10.sp,
+        width: 6.sp,
+        height: 6.sp,
         shape: chartData.first.dataMarkerType,
         color: chartData.first.color,
       ),
@@ -104,6 +104,7 @@ class ChartHelper {
         labelIntersectAction: LabelIntersectAction.none,
         labelAlignment: ChartDataLabelAlignment.auto,
       ),
+      splineType: SplineType.natural,
       // onPointTap: onPointTap,
     );
   }
@@ -143,8 +144,8 @@ class ChartHelper {
       markerSettings: MarkerSettings(
         isVisible: true,
         borderWidth: 0,
-        width: 10.sp,
-        height: 10.sp,
+        width: 6.sp,
+        height: 6.sp,
         shape: chartData.first.dataMarkerType,
         color: chartData.first.color,
       ),
@@ -160,7 +161,7 @@ class ChartHelper {
         labelIntersectAction: LabelIntersectAction.none,
         labelAlignment: ChartDataLabelAlignment.auto,
       ),
-      splineType: SplineType.cardinal,
+      splineType: SplineType.natural,
       // onPointTap: onPointTap,
     );
   }
@@ -194,8 +195,8 @@ class ChartHelper {
       markerSettings: MarkerSettings(
         isVisible: false,
         borderWidth: 0,
-        width: 10.sp,
-        height: 10.sp,
+        width: 6.sp,
+        height: 6.sp,
         shape: chartData.first.dataMarkerType,
         color: chartData.first.color,
       ),
