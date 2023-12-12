@@ -47,7 +47,7 @@ class ChartHelper {
       dataLabelSettings: const DataLabelSettings(
         isVisible: true,
         // textStyle: TextStyle(fontSize: 10.sp),
-        // useSeriesColor: true,
+        useSeriesColor: true,
         showZeroValue: true,
         overflowMode: OverflowMode.trim,
         labelPosition: ChartDataLabelPosition.outside,
@@ -95,7 +95,7 @@ class ChartHelper {
       dataLabelSettings: const DataLabelSettings(
         isVisible: true,
         // textStyle: TextStyle(fontSize: 10.sp),
-        // useSeriesColor: true,
+        useSeriesColor: true,
         showZeroValue: true,
         overflowMode: OverflowMode.trim,
         labelPosition: ChartDataLabelPosition.outside,
@@ -151,7 +151,7 @@ class ChartHelper {
       dataLabelSettings: const DataLabelSettings(
         isVisible: true,
         // textStyle: TextStyle(fontSize: 10.sp),
-        // useSeriesColor: true,
+        useSeriesColor: true,
         showZeroValue: true,
         overflowMode: OverflowMode.trim,
         labelPosition: ChartDataLabelPosition.outside,
@@ -200,7 +200,7 @@ class ChartHelper {
       dataLabelSettings: const DataLabelSettings(
         isVisible: true,
         // textStyle: TextStyle(fontSize: 10.sp),
-        // useSeriesColor: true,
+        useSeriesColor: true,
         showZeroValue: true,
         overflowMode: OverflowMode.trim,
         labelPosition: ChartDataLabelPosition.outside,
