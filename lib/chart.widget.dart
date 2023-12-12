@@ -22,8 +22,7 @@ class ChartWidget extends StatefulWidget {
     this.legendVisible = true,
     this.selectedColor,
     this.valueKey,
-    this.autoScrollingDelta = 5,
-    
+    this.desiredIntervals = 7,
   }) : super(key: key);
 
   final List<List<ChartData>>? chartsData;
@@ -35,7 +34,7 @@ class ChartWidget extends StatefulWidget {
   final List<PlotBand>? horizontalPlotBands;
   final String? label;
   final Color? color;
-  final int autoScrollingDelta;
+  final int desiredIntervals;
   final Color? selectedColor;
   final ValueKey? valueKey;
 
@@ -81,14 +80,12 @@ class _ChartWidgetState extends State<ChartWidget> {
             // enablePinching: true,
             // enableSelectionZooming: true,
           ),
-          primaryXAxis: DateTimeCategoryAxis(
+          primaryXAxis: DateTimeAxis(
             // isVisible: true,
-            // plotOffset: 15.sp,
-            autoScrollingDelta: widget.autoScrollingDelta,
+            plotOffset: 15.sp,
+            autoScrollingDelta: 5,
             autoScrollingMode: AutoScrollingMode.end,
-            autoScrollingDeltaType: DateTimeIntervalType.auto,
-            maximumLabels: widget.autoScrollingDelta,
-            desiredIntervals:widget.autoScrollingDelta,
+            // autoScrollingDeltaType: DateTimeIntervalType.auto,
             // labelIntersectAction: AxisLabelIntersectAction.rotate90,
             plotBands: widget.verticalPlotBands,
             majorTickLines: MajorTickLines(
