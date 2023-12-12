@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
-import 'package:fly_ui/views/widgets/containers/container.widget.dart';
 import 'package:get/get.dart';
 import 'package:charts_module/enums/chartType.enum.dart';
 import 'package:charts_module/helpers/chart.helper.dart';
@@ -18,7 +17,6 @@ class ChartWidget extends StatefulWidget {
     this.verticalPlotBands,
     this.label,
     this.color,
-    this.enableScrolling = false,
     this.legendVisible = true,
     this.selectedColor,
     this.valueKey,
@@ -29,7 +27,6 @@ class ChartWidget extends StatefulWidget {
   final ChartType chartType;
   final double animationDuration;
   final bool legendVisible;
-  final bool enableScrolling;
   final List<PlotBand>? verticalPlotBands;
   final List<PlotBand>? horizontalPlotBands;
   final String? label;
