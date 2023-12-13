@@ -12,12 +12,15 @@ class ChartMinSplineWidget extends StatelessWidget {
     required this.chartsData,
     this.chartType = ChartType.Spline,
     this.autoScrollingDelta = 1,
+        this.horizontalPlotBands,
+    this.verticalPlotBands,
   }) : super(key: key);
 
   final List<List<ChartData>>? chartsData;
   final ChartType chartType;
   final int autoScrollingDelta;
-
+  final List<PlotBand>? verticalPlotBands;
+  final List<PlotBand>? horizontalPlotBands;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -41,6 +44,7 @@ class ChartMinSplineWidget extends StatelessWidget {
             axisLine: AxisLine(width: 0.2.sp),
             autoScrollingDelta: autoScrollingDelta,
             autoScrollingMode: AutoScrollingMode.end,
+            plotBands: verticalPlotBands,
           ),
           primaryYAxis: NumericAxis(
             isVisible: true,
@@ -51,6 +55,7 @@ class ChartMinSplineWidget extends StatelessWidget {
               width: 0.2.sp,
             ),
             axisLine: AxisLine(width: 0.2.sp),
+             plotBands: horizontalPlotBands,
           ),
           plotAreaBorderWidth: 0.2.sp,
           enableAxisAnimation: true,
