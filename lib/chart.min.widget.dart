@@ -40,7 +40,7 @@ class ChartMinSplineWidget extends StatelessWidget {
             majorGridLines: MajorGridLines(
               width: 0.2.sp,
             ),
-
+            plotOffset: 10.sp,
             axisLine: AxisLine(width: 0.2.sp),
             autoScrollingDelta: autoScrollingDelta,
             autoScrollingMode: AutoScrollingMode.end,
