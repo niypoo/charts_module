@@ -11,10 +11,12 @@ class ChartMinSplineWidget extends StatelessWidget {
     Key? key,
     required this.chartsData,
     this.chartType = ChartType.Spline,
+    this.autoScrollingDelta = 1,
   }) : super(key: key);
 
   final List<List<ChartData>>? chartsData;
   final ChartType chartType;
+  final int autoScrollingDelta;
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +39,7 @@ class ChartMinSplineWidget extends StatelessWidget {
             ),
 
             axisLine: AxisLine(width: 0.2.sp),
-            autoScrollingDelta: 10,
+            autoScrollingDelta: autoScrollingDelta,
             autoScrollingMode: AutoScrollingMode.end,
           ),
           primaryYAxis: NumericAxis(
