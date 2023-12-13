@@ -23,9 +23,11 @@ class ChartMinSplineWidget extends StatelessWidget {
       child: Directionality(
         textDirection: TextDirection.ltr,
         child: SfCartesianChart(
+          zoomPanBehavior: ZoomPanBehavior(
+            enablePanning: true,
+          ),
           primaryXAxis: DateTimeAxis(
             isVisible: true,
-            plotOffset: 15.sp,
             majorTickLines: MajorTickLines(
               width: 0.1.sp,
             ),
@@ -35,18 +37,20 @@ class ChartMinSplineWidget extends StatelessWidget {
             ),
 
             axisLine: AxisLine(width: 0.2.sp),
+            autoScrollingDelta: 10,
+            autoScrollingMode: AutoScrollingMode.end,
           ),
           primaryYAxis: NumericAxis(
             isVisible: true,
-              majorTickLines: MajorTickLines(
-                width: 0.1.sp,
-              ),
-              majorGridLines: MajorGridLines(
-                width: 0.2.sp,
-              ),
-              axisLine: AxisLine(width: 0.2.sp),
+            majorTickLines: MajorTickLines(
+              width: 0.1.sp,
+            ),
+            majorGridLines: MajorGridLines(
+              width: 0.2.sp,
+            ),
+            axisLine: AxisLine(width: 0.2.sp),
           ),
-          plotAreaBorderWidth:  0.2.sp,
+          plotAreaBorderWidth: 0.2.sp,
           enableAxisAnimation: true,
           onSelectionChanged: (selectionArgs) => selectionArgs.selectedColor,
           series: <CartesianSeries>[
