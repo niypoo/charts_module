@@ -9,11 +9,11 @@ import 'package:syncfusion_flutter_charts/charts.dart';
 class ChartMinSplineWidget extends StatelessWidget {
   const ChartMinSplineWidget({
     Key? key,
-    required this.chartData,
+    required this.chartsData,
     this.chartType = ChartType.Spline,
   }) : super(key: key);
 
-  final List<ChartData> chartData;
+  final List<List<ChartData>>? chartsData;
   final ChartType chartType;
 
   @override
@@ -54,27 +54,33 @@ class ChartMinSplineWidget extends StatelessWidget {
           enableAxisAnimation: true,
           onSelectionChanged: (selectionArgs) => selectionArgs.selectedColor,
           series: <CartesianSeries>[
-            // if spline
-            if (chartType == ChartType.SplineRange)
-              ChartHelper.splineRange(
-                chartData: chartData,
-                // onPointTap: _selectBar,
-              )
-            else if (chartType == ChartType.Bars)
-              ChartHelper.bars(
-                chartData: chartData,
-                // onPointTap: _selectBar,
-              )
-            else if (chartType == ChartType.Spline)
-              ChartHelper.spline(
-                chartData: chartData,
-                // onPointTap: _selectBar,
-              )
-            else if (chartType == ChartType.BarsRange)
-              ChartHelper.barsRange(
-                chartData: chartData,
-                // onPointTap: _selectBar,
-              )
+            // loop on data
+            for (final chartData in chartsData!)
+
+              // if data not empty
+              if (chartData.isNotEmpty)
+
+                // if spline
+                if (chartType == ChartType.SplineRange)
+                  ChartHelper.splineRange(
+                    chartData: chartData,
+                    // onPointTap: _selectBar,
+                  )
+                else if (chartType == ChartType.Bars)
+                  ChartHelper.bars(
+                    chartData: chartData,
+                    // onPointTap: _selectBar,
+                  )
+                else if (chartType == ChartType.Spline)
+                  ChartHelper.spline(
+                    chartData: chartData,
+                    // onPointTap: _selectBar,
+                  )
+                else if (chartType == ChartType.BarsRange)
+                  ChartHelper.barsRange(
+                    chartData: chartData,
+                    // onPointTap: _selectBar,
+                  )
           ],
         ),
       ),
