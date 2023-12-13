@@ -25,8 +25,9 @@ class ChartMinSplineWidget extends StatelessWidget {
         child: SfCartesianChart(
           primaryXAxis: DateTimeAxis(
             isVisible: true,
+            plotOffset: 15.sp,
             majorTickLines: MajorTickLines(
-              width: 1.sp,
+              width: 0.1.sp,
             ),
             // //Hide the guidelines of x-axis
             majorGridLines: MajorGridLines(
@@ -38,7 +39,7 @@ class ChartMinSplineWidget extends StatelessWidget {
           primaryYAxis: NumericAxis(
             isVisible: true,
               majorTickLines: MajorTickLines(
-                width: 1.sp,
+                width: 0.1.sp,
               ),
               majorGridLines: MajorGridLines(
                 width: 0.2.sp,
