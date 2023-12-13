@@ -1,6 +1,7 @@
 import 'package:charts_module/enums/chartType.enum.dart';
 import 'package:charts_module/helpers/chart.helper.dart';
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:get/get.dart';
 import 'package:charts_module/models/chartData.model.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
@@ -23,15 +24,29 @@ class ChartMinSplineWidget extends StatelessWidget {
         textDirection: TextDirection.ltr,
         child: SfCartesianChart(
           primaryXAxis: DateTimeAxis(
-            isVisible: false,
+            isVisible: true,
+            majorTickLines: MajorTickLines(
+              width: 1.sp,
+            ),
+            // //Hide the guidelines of x-axis
+            majorGridLines: MajorGridLines(
+              width: 0.2.sp,
+            ),
+
+            axisLine: AxisLine(width: 0.2.sp),
           ),
           primaryYAxis: NumericAxis(
-            isVisible: false,
+            isVisible: true,
+              majorTickLines: MajorTickLines(
+                width: 1.sp,
+              ),
+              majorGridLines: MajorGridLines(
+                width: 0.2.sp,
+              ),
+              axisLine: AxisLine(width: 0.2.sp),
           ),
-          plotAreaBorderWidth: 0,
+          plotAreaBorderWidth:  0.2.sp,
           enableAxisAnimation: true,
-          selectionGesture: ActivationMode.singleTap,
-          selectionType: SelectionType.point,
           onSelectionChanged: (selectionArgs) => selectionArgs.selectedColor,
           series: <CartesianSeries>[
             // if spline
