@@ -30,7 +30,7 @@ class ChartMinSplineWidget extends StatelessWidget {
             enablePanning: true,
           ),
           primaryXAxis: DateTimeAxis(
-            isVisible: true,
+            isVisible: false,
             majorTickLines: MajorTickLines(
               width: 0.1.sp,
             ),
@@ -43,7 +43,7 @@ class ChartMinSplineWidget extends StatelessWidget {
             plotBands: verticalPlotBands,
           ),
           primaryYAxis: NumericAxis(
-            isVisible: true,
+            isVisible: false,
             majorTickLines: MajorTickLines(
               width: 0.1.sp,
             ),
@@ -53,7 +53,8 @@ class ChartMinSplineWidget extends StatelessWidget {
             axisLine: AxisLine(width: 0.2.sp),
              plotBands: horizontalPlotBands,
           ),
-          plotAreaBorderWidth: 0.2.sp,
+          // plotAreaBorderWidth: 0.2.sp,
+          plotAreaBorderWidth: 0,
           enableAxisAnimation: true,
           onSelectionChanged: (selectionArgs) => selectionArgs.selectedColor,
           series: <CartesianSeries>[
