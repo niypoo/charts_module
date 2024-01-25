@@ -30,27 +30,27 @@ class ChartMinSplineWidget extends StatelessWidget {
             enablePanning: true,
           ),
           primaryXAxis: DateTimeAxis(
-            isVisible: false,
+            isVisible: true,
             majorTickLines: MajorTickLines(
-              width: 0.1.sp,
+              width: 0,
             ),
             // //Hide the guidelines of x-axis
             majorGridLines: MajorGridLines(
-              width: 0.2.sp,
+              width: 0,
             ),
-            plotOffset: 10.sp,
-            axisLine: AxisLine(width: 0.2.sp),
+            plotOffset:0,
+            axisLine: AxisLine(width: 0),
             plotBands: verticalPlotBands,
           ),
           primaryYAxis: NumericAxis(
-            isVisible: false,
+            isVisible: true,
             majorTickLines: MajorTickLines(
-              width: 0.1.sp,
+              width: 0,
             ),
             majorGridLines: MajorGridLines(
-              width: 0.2.sp,
+              width: 0,
             ),
-            axisLine: AxisLine(width: 0.2.sp),
+            axisLine: AxisLine(width: 0),
              plotBands: horizontalPlotBands,
           ),
           // plotAreaBorderWidth: 0.2.sp,

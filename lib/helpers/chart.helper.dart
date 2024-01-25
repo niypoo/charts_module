@@ -1,7 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:charts_module/models/chartData.model.dart';
-import 'package:get/get.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class ChartHelper {
