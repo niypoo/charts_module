@@ -6,7 +6,6 @@ import 'package:charts_module/models/chartData.model.dart';
 import 'package:fly_ui/views/widgets/notFoundData.widget.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:unicons/unicons.dart';
-import 'package:unicons/unicons.dart';
 
 class ChartWidget extends StatefulWidget {
   const ChartWidget({
