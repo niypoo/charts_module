@@ -75,13 +75,13 @@ class ChartHelper {
       isVisibleInLegend: chartData.first.legendText != null ? true : false,
       dataSource: chartData,
 
-      borderWidth: 4.sp,
+      borderWidth: 3.sp,
 
       markerSettings: MarkerSettings(
         isVisible: true,
         borderWidth: 0,
-        width: 6.sp,
-        height: 6.sp,
+        width: 8.sp,
+        height: 8.sp,
         shape: chartData.first.dataMarkerType,
         color: chartData.first.color,
       ),
@@ -138,13 +138,13 @@ class ChartHelper {
       xValueMapper: (ChartData data, _) => data.date,
       yValueMapper: (ChartData data, _) => data.value,
       dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
-      width: 4.sp,
+      width: 3.sp,
 
       markerSettings: MarkerSettings(
         isVisible: true,
         borderWidth: 0,
-        width: 6.sp,
-        height: 6.sp,
+        width: 8.sp,
+        height: 8.sp,
         shape: chartData.first.dataMarkerType,
         color: chartData.first.color,
       ),
