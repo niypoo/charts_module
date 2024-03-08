@@ -38,7 +38,7 @@ class _ChartPageViewState extends State<ChartPageView> {
   Widget build(BuildContext context) {
     return FlyScaffold.padding(
       appBar: AppBar(),
-      child: widget.child,
+      child: Center(child: widget.child),
     );
   }
 }
