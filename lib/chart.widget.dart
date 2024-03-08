@@ -3,14 +3,12 @@ import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:charts_module/enums/chartType.enum.dart';
 import 'package:charts_module/helpers/chart.helper.dart';
 import 'package:charts_module/models/chartData.model.dart';
-import 'package:fly_ui/views/widgets/notFoundData.widget.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-import 'package:unicons/unicons.dart';
 
 class ChartWidget extends StatefulWidget {
   const ChartWidget({
     Key? key,
-    required this.chartsData,
+    this.chartsData = const [],
     this.chartType = ChartType.Spline,
     this.animationDuration = 1000,
     this.horizontalPlotBands,
@@ -23,7 +21,7 @@ class ChartWidget extends StatefulWidget {
     this.desiredIntervals = 7,
   }) : super(key: key);
 
-  final List<List<ChartData>>? chartsData;
+  final List<List<ChartData>> chartsData;
   final ChartType chartType;
   final double animationDuration;
   final bool legendVisible;
@@ -63,140 +61,140 @@ class _ChartWidgetState extends State<ChartWidget> {
     //   }).toList();
     // }
 
-    if (widget.chartsData != null &&
-        widget.chartsData!.isNotEmpty &&
-        (widget.chartsData!.first.isNotEmpty)) {
-      return SizedBox(
-        height: 300.sp,
-        width: double.maxFinite,
-        child: Directionality(
-          textDirection: TextDirection.ltr,
-          child: SfCartesianChart(
-            key: widget.valueKey,
-            zoomPanBehavior: ZoomPanBehavior(
-              enablePanning: true,
-              // maximumZoomLevel: 2,
-              // enableDoubleTapZooming: true,
-              // enableMouseWheelZooming: true,
-              // enablePinching: true,
-              // enableSelectionZooming: true,
-            ),
-            primaryXAxis: DateTimeAxis(
-              // isVisible: true,
-              // plotOffset: 15.sp,
-              autoScrollingDelta: 10,
-              autoScrollingMode: AutoScrollingMode.end,
-              // autoScrollingDeltaType: DateTimeIntervalType.auto,
-              // labelIntersectAction: AxisLabelIntersectAction.rotate90,
-              plotBands: widget.verticalPlotBands,
-              majorTickLines: MajorTickLines(
-                width: 1.sp,
-              ),
-              // //Hide the guidelines of x-axis
-              majorGridLines: MajorGridLines(
-                width: 0.2.sp,
-                // dashArray: const [10],
-                // color: Get.theme.cardColor,
-              ),
-              // //Hide the axis line of x-axis
-              axisLine: AxisLine(width: 0.2.sp),
-              // labelStyle: TextStyle(fontSize: 10.sp),
-              // // desiredIntervals: 31,
-              // //autoScrollingDelta: 7,
-              // // desiredIntervals: widget.desiredIntervals,
-              // autoScrollingDeltaType: DateTimeIntervalType.auto,
-              // //autoScrollingMode: AutoScrollingMode.start,
-            ),
-            primaryYAxis: NumericAxis(
-              // isVisible: true,
-              majorTickLines: MajorTickLines(
-                width: 1.sp,
-              ),
-              // labelStyle: TextStyle(fontSize: 10.sp),
-              // //Hide the grid lines of y-axis
-              majorGridLines: MajorGridLines(
-                width: 0.2.sp,
-                // dashArray: const [10],
-                // color: Get.theme.cardColor,
-              ),
-              // //Hide the axis line of y-axis
-              axisLine: AxisLine(width: 0.2.sp),
-              plotBands: widget.horizontalPlotBands,
-            ),
-            plotAreaBorderWidth: 0,
-            // tooltipBehavior: TooltipBehavior(
-            //   enable: true,
-            //   builder: (data, point, series, pointIndex, seriesIndex) => Chip(
-            //     label: Text(
-            //         '${'Lower'.tr} ${data.lowValue} / ${'Higher'.tr} ${data.highValue} \n ${'at'.tr} ${data.text}'),
-            //     color: data.color,
-            //   ),
-            //   canShowMarker: true,
-            //   header: '',
-            //   duration: 5000,
-            // ),
-            // enableAxisAnimation: true,
-            // selectionGesture: ActivationMode.singleTap,
-            // selectionType: SelectionType.point,
-            // onSelectionChanged: (selectionArgs) => selectionArgs.selectedColor,
-            legend: Legend(
-              isVisible: widget.legendVisible,
-              position: LegendPosition.bottom,
-              overflowMode: LegendItemOverflowMode.wrap,
-              alignment: ChartAlignment.center,
-              itemPadding: 10,
-            ),
-            // If data is empty show "no data provided" message
-            // annotations: first == null
-            //     ? <CartesianChartAnnotation>[
-            //         const CartesianChartAnnotation(
-            //           widget: EmptyChartDataWidget(),
-            //           coordinateUnit: CoordinateUnit.logicalPixel,
-            //           region: AnnotationRegion.plotArea,
-            //           x: 150,
-            //           y: 200,
-            //           horizontalAlignment: ChartAlignment.center,
-            //           verticalAlignment: ChartAlignment.center,
-            //         )
-            //       ]
-            //     : null,
-            series: <CartesianSeries>[
-              // loop on data
-              for (final chartData in widget.chartsData!)
-
-                // if data not empty
-                if (chartData.isNotEmpty)
-
-                  // if spline
-                  if (widget.chartType == ChartType.SplineRange)
-                    ChartHelper.splineRange(
-                      chartData: chartData,
-                      // onPointTap: _selectBar,
-                    )
-                  else if (widget.chartType == ChartType.Bars)
-                    ChartHelper.bars(
-                      chartData: chartData,
-                      // onPointTap: _selectBar,
-                    )
-                  else if (widget.chartType == ChartType.Spline)
-                    ChartHelper.spline(
-                      chartData: chartData,
-                      // onPointTap: _selectBar,
-                    )
-                  else if (widget.chartType == ChartType.BarsRange)
-                    ChartHelper.barsRange(
-                      chartData: chartData,
-                      // onPointTap: _selectBar,
-                    )
-            ],
-
-            // onDataLabelRender: onDataLabelRender,
+    // if (widget.chartsData != null &&
+    //     widget.chartsData!.isNotEmpty &&
+    //     (widget.chartsData!.first.isNotEmpty)) {
+    return SizedBox(
+      height: 300.sp,
+      width: double.maxFinite,
+      child: Directionality(
+        textDirection: TextDirection.ltr,
+        child: SfCartesianChart(
+          key: widget.valueKey,
+          zoomPanBehavior: ZoomPanBehavior(
+            enablePanning: true,
+            // maximumZoomLevel: 2,
+            // enableDoubleTapZooming: true,
+            // enableMouseWheelZooming: true,
+            // enablePinching: true,
+            // enableSelectionZooming: true,
           ),
+          primaryXAxis: DateTimeAxis(
+            // isVisible: true,
+            // plotOffset: 15.sp,
+            autoScrollingDelta: 10,
+            autoScrollingMode: AutoScrollingMode.end,
+            // autoScrollingDeltaType: DateTimeIntervalType.auto,
+            // labelIntersectAction: AxisLabelIntersectAction.rotate90,
+            plotBands: widget.verticalPlotBands,
+            majorTickLines: MajorTickLines(
+              width: 1.sp,
+            ),
+            // //Hide the guidelines of x-axis
+            majorGridLines: MajorGridLines(
+              width: 0.2.sp,
+              // dashArray: const [10],
+              // color: Get.theme.cardColor,
+            ),
+            // //Hide the axis line of x-axis
+            axisLine: AxisLine(width: 0.2.sp),
+            // labelStyle: TextStyle(fontSize: 10.sp),
+            // // desiredIntervals: 31,
+            // //autoScrollingDelta: 7,
+            // // desiredIntervals: widget.desiredIntervals,
+            // autoScrollingDeltaType: DateTimeIntervalType.auto,
+            // //autoScrollingMode: AutoScrollingMode.start,
+          ),
+          primaryYAxis: NumericAxis(
+            // isVisible: true,
+            majorTickLines: MajorTickLines(
+              width: 1.sp,
+            ),
+            // labelStyle: TextStyle(fontSize: 10.sp),
+            // //Hide the grid lines of y-axis
+            majorGridLines: MajorGridLines(
+              width: 0.2.sp,
+              // dashArray: const [10],
+              // color: Get.theme.cardColor,
+            ),
+            // //Hide the axis line of y-axis
+            axisLine: AxisLine(width: 0.2.sp),
+            plotBands: widget.horizontalPlotBands,
+          ),
+          plotAreaBorderWidth: 0,
+          // tooltipBehavior: TooltipBehavior(
+          //   enable: true,
+          //   builder: (data, point, series, pointIndex, seriesIndex) => Chip(
+          //     label: Text(
+          //         '${'Lower'.tr} ${data.lowValue} / ${'Higher'.tr} ${data.highValue} \n ${'at'.tr} ${data.text}'),
+          //     color: data.color,
+          //   ),
+          //   canShowMarker: true,
+          //   header: '',
+          //   duration: 5000,
+          // ),
+          // enableAxisAnimation: true,
+          // selectionGesture: ActivationMode.singleTap,
+          // selectionType: SelectionType.point,
+          // onSelectionChanged: (selectionArgs) => selectionArgs.selectedColor,
+          legend: Legend(
+            isVisible: widget.legendVisible,
+            position: LegendPosition.bottom,
+            overflowMode: LegendItemOverflowMode.wrap,
+            alignment: ChartAlignment.center,
+            itemPadding: 10,
+          ),
+          // If data is empty show "no data provided" message
+          // annotations: first == null
+          //     ? <CartesianChartAnnotation>[
+          //         const CartesianChartAnnotation(
+          //           widget: EmptyChartDataWidget(),
+          //           coordinateUnit: CoordinateUnit.logicalPixel,
+          //           region: AnnotationRegion.plotArea,
+          //           x: 150,
+          //           y: 200,
+          //           horizontalAlignment: ChartAlignment.center,
+          //           verticalAlignment: ChartAlignment.center,
+          //         )
+          //       ]
+          //     : null,
+          series: <CartesianSeries>[
+            // loop on data
+            for (final chartData in widget.chartsData)
+
+              // if data not empty
+              if (chartData.isNotEmpty)
+
+                // if spline
+                if (widget.chartType == ChartType.SplineRange)
+                  ChartHelper.splineRange(
+                    chartData: chartData,
+                    // onPointTap: _selectBar,
+                  )
+                else if (widget.chartType == ChartType.Bars)
+                  ChartHelper.bars(
+                    chartData: chartData,
+                    // onPointTap: _selectBar,
+                  )
+                else if (widget.chartType == ChartType.Spline)
+                  ChartHelper.spline(
+                    chartData: chartData,
+                    // onPointTap: _selectBar,
+                  )
+                else if (widget.chartType == ChartType.BarsRange)
+                  ChartHelper.barsRange(
+                    chartData: chartData,
+                    // onPointTap: _selectBar,
+                  )
+          ],
+
+          // onDataLabelRender: onDataLabelRender,
         ),
-      );
-    } else {
-      return const FlyNotFoundData(icon: UniconsLine.chart);
-    }
+      ),
+    );
+    // } else {
+    //   return const FlyNotFoundData(icon: UniconsLine.chart);
+    // }
 
 // //   //when user tap on bar or column
 //   void _selectBar(ChartPointDetails args) {
