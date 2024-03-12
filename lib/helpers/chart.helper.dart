@@ -47,13 +47,13 @@ class ChartHelper {
       
       dataLabelSettings: DataLabelSettings(
         isVisible: true,
-        // textStyle: TextStyle(color: chartData.first.color),
-        // useSeriesColor: false,
-        // showZeroValue: true,
-        // overflowMode: OverflowMode.trim,
-        // labelPosition: ChartDataLabelPosition.outside,
-        // labelIntersectAction: LabelIntersectAction.none,
-        // labelAlignment: ChartDataLabelAlignment.auto,
+        textStyle: TextStyle(color: chartData.first.color),
+        useSeriesColor: false,
+        showZeroValue: true,
+        overflowMode: OverflowMode.trim,
+        labelPosition: ChartDataLabelPosition.outside,
+        labelIntersectAction: LabelIntersectAction.none,
+        labelAlignment: ChartDataLabelAlignment.auto,
       ),
       // onPointTap: onPointTap,
     );
