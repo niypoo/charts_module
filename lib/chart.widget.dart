@@ -13,8 +13,8 @@ class ChartWidget extends StatefulWidget {
     required this.chartsData,
     this.chartType = ChartType.Spline,
     this.animationDuration = 1000,
-    this.horizontalPlotBands,
-    this.verticalPlotBands,
+    this.horizontalPlotBands = const [],
+    this.verticalPlotBands  = const [],
     this.label,
     this.color,
     this.legendVisible = true,
@@ -27,8 +27,8 @@ class ChartWidget extends StatefulWidget {
   final ChartType chartType;
   final double animationDuration;
   final bool legendVisible;
-  final List<PlotBand>? verticalPlotBands;
-  final List<PlotBand>? horizontalPlotBands;
+  final List<PlotBand> verticalPlotBands;
+  final List<PlotBand> horizontalPlotBands;
   final String? label;
   final Color? color;
   final int desiredIntervals;

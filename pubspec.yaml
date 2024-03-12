@@ -10,7 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   get: ^4.5.1
-  syncfusion_flutter_charts: ^22.1.39
+  syncfusion_flutter_charts: ^24.2.9
   fly_ui:
     git:
       url: git@github.com:niypoo/fly_ui.git

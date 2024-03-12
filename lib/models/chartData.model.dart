@@ -14,9 +14,9 @@ class ChartData {
     this.legendText,
     this.date,
     this.type,
-    this.legendIconType,
     this.dataLabelsVisible = true,
-    this.dataMarkerType,
+    this.legendIconType = LegendIconType.circle,
+    this.dataMarkerType = DataMarkerType.circle,
   });
   final num value;
   final num lowValue;
@@ -30,6 +30,6 @@ class ChartData {
   final String label;
   final String? legendText;
   final bool dataLabelsVisible;
-  final DataMarkerType? dataMarkerType;
-  final LegendIconType? legendIconType;
+  final DataMarkerType dataMarkerType;
+  final LegendIconType legendIconType;
 }

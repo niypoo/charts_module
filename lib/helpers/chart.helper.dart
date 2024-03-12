@@ -20,9 +20,9 @@ class ChartHelper {
       // ),
       //     // Legend
       name: chartData.first.legendText,
-      legendIconType: chartData.first.legendIconType ?? LegendIconType.circle,
-      legendItemText: chartData.first.legendText ?? ' ',
-       color: chartData.first.legendColor ?? chartData.first.color,
+      legendIconType: chartData.first.legendIconType,
+      legendItemText: chartData.first.legendText,
+      color: chartData.first.legendColor ?? chartData.first.color,
       isVisibleInLegend: chartData.first.legendText != null ? true : false,
       borderRadius: BorderRadius.all(Radius.circular(15.sp)),
       dataSource: chartData,
@@ -44,7 +44,7 @@ class ChartHelper {
       // Map the data label text for each point from the data source
       // isTrackVisible: false,
       dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
-     
+
       dataLabelSettings: DataLabelSettings(
         isVisible: true,
         textStyle: TextStyle(color: chartData.first.color),
@@ -70,8 +70,8 @@ class ChartHelper {
       //   // unselectedBorderWidth: 0.5,
       // ),
       name: chartData.first.legendText,
-      legendIconType: chartData.first.legendIconType ?? LegendIconType.circle,
-      legendItemText: chartData.first.legendText ?? ' ',
+      legendIconType: chartData.first.legendIconType,
+      legendItemText: chartData.first.legendText,
       color: chartData.first.legendColor ?? chartData.first.color,
       isVisibleInLegend: chartData.first.legendText != null ? true : false,
       dataSource: chartData,
@@ -130,7 +130,7 @@ class ChartHelper {
       dataSource: chartData,
       // // Legend
       name: chartData.first.legendText,
-      legendIconType: chartData.first.legendIconType ?? LegendIconType.circle,
+      legendIconType: chartData.first.legendIconType,
       legendItemText: chartData.first.legendText ?? ' ',
       isVisibleInLegend: chartData.first.legendText != null ? true : false,
       color: chartData.first.legendColor ?? chartData.first.color,
@@ -181,12 +181,12 @@ class ChartHelper {
       dataSource: chartData,
       //Legend
       name: chartData.first.legendText,
-      legendIconType: chartData.first.legendIconType ?? LegendIconType.circle,
-      legendItemText: chartData.first.legendText ?? ' ',
+      legendIconType: chartData.first.legendIconType,
+      legendItemText: chartData.first.legendText,
       isVisibleInLegend: chartData.first.legendText != null ? true : false,
       color: chartData.first.legendColor ?? chartData.first.color,
-       borderRadius: BorderRadius.all(Radius.circular(15.sp)),
-       
+      borderRadius: BorderRadius.all(Radius.circular(15.sp)),
+
       pointColorMapper: (ChartData data, _) => data.color,
       xValueMapper: (ChartData data, _) => data.date,
       yValueMapper: (ChartData data, _) => data.value,

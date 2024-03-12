@@ -11,14 +11,14 @@ class ChartMinSplineWidget extends StatelessWidget {
     Key? key,
     required this.chartsData,
     this.chartType = ChartType.Spline,
-        this.horizontalPlotBands,
-    this.verticalPlotBands,
+    this.horizontalPlotBands = const [],
+    this.verticalPlotBands = const [],
   }) : super(key: key);
 
   final List<List<ChartData>>? chartsData;
   final ChartType chartType;
-  final List<PlotBand>? verticalPlotBands;
-  final List<PlotBand>? horizontalPlotBands;
+  final List<PlotBand> verticalPlotBands;
+  final List<PlotBand> horizontalPlotBands;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -51,7 +51,7 @@ class ChartMinSplineWidget extends StatelessWidget {
               width: 0.2.sp,
             ),
             axisLine: AxisLine(width: 0.2.sp),
-             plotBands: horizontalPlotBands,
+            plotBands: horizontalPlotBands,
           ),
           // plotAreaBorderWidth: 0.2.sp,
           plotAreaBorderWidth: 0,
