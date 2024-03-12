@@ -44,16 +44,16 @@ class ChartHelper {
       // Map the data label text for each point from the data source
       // isTrackVisible: false,
       dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
-
+      
       dataLabelSettings: DataLabelSettings(
         isVisible: true,
-        textStyle: TextStyle(color: chartData.first.color),
-        useSeriesColor: false,
-        showZeroValue: true,
-        overflowMode: OverflowMode.trim,
-        labelPosition: ChartDataLabelPosition.outside,
-        labelIntersectAction: LabelIntersectAction.none,
-        labelAlignment: ChartDataLabelAlignment.auto,
+        // textStyle: TextStyle(color: chartData.first.color),
+        // useSeriesColor: false,
+        // showZeroValue: true,
+        // overflowMode: OverflowMode.trim,
+        // labelPosition: ChartDataLabelPosition.outside,
+        // labelIntersectAction: LabelIntersectAction.none,
+        // labelAlignment: ChartDataLabelAlignment.auto,
       ),
       // onPointTap: onPointTap,
     );
