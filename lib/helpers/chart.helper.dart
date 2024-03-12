@@ -30,8 +30,8 @@ class ChartHelper {
       markerSettings: MarkerSettings(
         isVisible: true,
         borderWidth: 0,
-        width: 6.sp,
-        height: 6.sp,
+        width: 10.sp,
+        height: 10.sp,
         shape: chartData.first.dataMarkerType,
         color: chartData.first.color,
       ),
@@ -43,7 +43,8 @@ class ChartHelper {
 
       // Map the data label text for each point from the data source
       // isTrackVisible: false,
-      // dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
+      dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
+     
       dataLabelSettings: DataLabelSettings(
         isVisible: true,
         textStyle: TextStyle(color: chartData.first.color),
@@ -194,8 +195,8 @@ class ChartHelper {
       markerSettings: MarkerSettings(
         isVisible: false,
         borderWidth: 0,
-        width: 6.sp,
-        height: 6.sp,
+        width: 10.sp,
+        height: 10.sp,
         shape: chartData.first.dataMarkerType,
         color: chartData.first.color,
       ),
