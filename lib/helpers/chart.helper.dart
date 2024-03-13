@@ -28,10 +28,10 @@ class ChartHelper {
       dataSource: chartData,
 
       markerSettings: MarkerSettings(
-        isVisible: true,
+        isVisible: false,
         borderWidth: 0,
-        width: 10.sp,
-        height: 10.sp,
+        width: 2.sp,
+        height: 2.sp,
         shape: chartData.first.dataMarkerType,
         color: chartData.first.color,
       ),
@@ -142,7 +142,7 @@ class ChartHelper {
       width: 3.sp,
 
       markerSettings: MarkerSettings(
-        isVisible: true,
+        isVisible: false,
         borderWidth: 0,
         width: 8.sp,
         height: 8.sp,
