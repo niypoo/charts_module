@@ -26,7 +26,7 @@ class ChartHelper {
       isVisibleInLegend: chartData.first.legendText != null ? true : false,
       borderRadius: BorderRadius.all(Radius.circular(15.sp)),
       dataSource: chartData,
-
+      width: 0.9,
       markerSettings: MarkerSettings(
         isVisible: false,
         borderWidth: 0,
