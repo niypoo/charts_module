@@ -43,7 +43,7 @@ class ChartHelper {
 
       // Map the data label text for each point from the data source
       // isTrackVisible: false,
-      dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
+      dataLabelMapper: (ChartData data, _) => ' TEST 100101',
       
       dataLabelSettings: DataLabelSettings(
         isVisible: true,
