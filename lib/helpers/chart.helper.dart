@@ -76,13 +76,13 @@ class ChartHelper {
       isVisibleInLegend: chartData.first.legendText != null ? true : false,
       dataSource: chartData,
 
-      borderWidth: 3.sp,
+      borderWidth: 8.sp,
 
       markerSettings: MarkerSettings(
         isVisible: true,
-        borderWidth: 0,
-        width: 8.sp,
-        height: 8.sp,
+        borderWidth: 3.sp,
+        width: 3.sp,
+        height: 3.sp,
         shape: chartData.first.dataMarkerType,
         color: chartData.first.color,
       ),
