@@ -133,7 +133,7 @@ class ChartHelper {
       legendIconType: chartData.first.legendIconType,
       legendItemText: chartData.first.legendText ?? ' ',
       isVisibleInLegend: chartData.first.legendText != null ? true : false,
-      color: chartData.first.legendColor ?? chartData.first.color,
+      color: chartData.first.legendColor?.withOpacity(0.5) ?? chartData.first.color?.withOpacity(0.5),
 
       pointColorMapper: (ChartData data, _) => data.color,
       xValueMapper: (ChartData data, _) => data.date,
@@ -148,7 +148,7 @@ class ChartHelper {
         width: 8.sp,
         height: 8.sp,
         shape: chartData.first.dataMarkerType,
-        color: chartData.first.color?.withOpacity(0.5),
+        color: chartData.first.color,
       ),
 
       // // data label setting
