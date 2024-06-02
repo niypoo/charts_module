@@ -135,17 +135,18 @@ class ChartHelper {
       isVisibleInLegend: chartData.first.legendText != null ? true : false,
       color: chartData.first.legendColor ?? chartData.first.color,
 
-      pointColorMapper: (ChartData data, _) => data.color,
+      pointColorMapper: (ChartData data, _) => data.color?.withOpacity(0.5),
       xValueMapper: (ChartData data, _) => data.date,
       yValueMapper: (ChartData data, _) => data.value,
       dataLabelMapper: (ChartData data, _) => '${data.value} ${data.label}',
-      width: 8.sp,
-
+      
+      width: 2.sp,
+      
       markerSettings: MarkerSettings(
-        isVisible: false,
-        borderWidth: 2.sp,
-        width: 2.sp,
-        height: 2.sp,
+        isVisible: true,
+        borderWidth: 0,
+        width: 8.sp,
+        height: 8.sp,
         shape: chartData.first.dataMarkerType,
         color: chartData.first.color,
       ),
